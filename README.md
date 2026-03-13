@@ -49,9 +49,22 @@ This is one of the reusable modules shared by the
 - Industrial metrics (FPS, infer_ms, device, etc.)
 - Configurable `class_id` mode
 
+## Table of Contents
 
-[TOC]
 
+- [Getting Started](#getting-started)
+  - [Dependencies](#dependencies)
+- [What is Included in the Module](#what-is-included-in-the-module)
+  - [Keyword Matcher](#keyword-matcher)
+  - [ONNX Detector](#onnx-detector)
+  - [Pipeline Monitor](#pipeline-monitor)
+- [Custom Interfaces](#custom-interfaces)
+  - [Pipeline Statistics](#pipeline-statistics)
+  - [Detection Action](#detection-action)
+- [Defining the Models](#defining-the-models)
+- [Connecting to FIWARE's Context Broker](#connecting-to-fiwares-context-broker)
+  - [Grafana Connection](#grafana-connection)
+- [Running the Module](#running-the-module)
 
 # Getting started
 Start by cloning the repository
