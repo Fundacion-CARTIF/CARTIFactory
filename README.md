@@ -1,13 +1,20 @@
 <p align="center">
+
+  <!-- ---------- TOP IMAGE ---------- -->
+  <img src="images/cartifactory-whitebg.png" alt="Top image" height="200"/>
+
+</p>
+
+<p align="center">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
-  <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" width="50%"/>
+  <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
 
   <!-- Dark mode -->
-  <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" width="50%"/>
+  <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
 
   <!-- ---------- CARTIF logo ---------- -->
-  <img src="images/CARTIF_transparente.png" width="20%"/>
+  <img src="images/CARTIF_transparente.png" height="60">
 
 </p>
 
@@ -214,3 +221,14 @@ ros2 launch cartifactory cartifactory_pipeline.launch.py toml_path:=/path/to/mod
 > [!WARNING]
 > TODO list:
 >- [ ] Add `requirements.txt` file.
+
+---
+<p align="left">
+  <!-- ---------- ARISE logo ---------- -->
+  <!-- Light mode -->
+  <img src="images/EN_FundedbytheEU_RGB_POS.png#gh-light-mode-only" alt="EU Funding for light mode" height="100"/>
+
+  <!-- Dark mode -->
+  <img src="images/EN_FundedbytheEU_RGB_NEG.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="100"/>
+
+</p>
