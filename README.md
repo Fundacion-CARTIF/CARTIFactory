@@ -20,20 +20,18 @@
 
 <p align="center">
   These 
-  Reusable Modules are part of the ARISE Middleware<br>
+  Modules are part of the ARISE Middleware<br>
   <a href="https://arise-middleware.eu/">ARISE Middleware site</a>
 </p>
 
 <hr>
 
 
-[![jazzy](https://img.shields.io/badge/ROS2%20Distro-Jazzy-%2322314E?style=flat&logo=ros
-)](https://docs.ros.org/en/jazzy/index.html)
-
-[![iron](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
-[![ubuntu24](https://img.shields.io/badge/Ubuntu-22.04-%23E95420?style=flat&logo=ubuntu
+[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
+[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu
 )](https://releases.ubuntu.com/24.04/)
-
+[![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat
+)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)
 
 
 
@@ -82,8 +80,6 @@ All Python dependencies are included inside the `requirements.txt` file. To inst
 ```bash
 pip install -r /requirements.txt
 ```
-
-
 
 This package is dependent on other ROS2 interfaces:
 ``` bash
@@ -210,13 +206,31 @@ ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw
 > ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: <'your keyword'>}" --feedback
 > ```
 
-# Defining the Models
+# Defining the Models (TOML)
+We are using [Tom's Obvious Minimal Language](https://toml.io/en/) for the configuration description of the models. The file follows this structure:
+```bash
+title = "Wheels"
+description = "This model can detect wheels"
+type = "Segmentation"
 
+[model]
+weights = "ruedasL-seg_v4.onnx"
+
+[parameters]
+confidence = 0.6
+
+[classes]
+classes=["Left","Right"]
+colours = [[0, 0, 250], [250, 0, 0]]
+```
 
 
 
 # Connecting to FIWARE's Context Broker
 
+The ecosystem the interaction is running under [Engineering Group's PoC](https://github.com/Engineering-Research-and-Development/arise-poc/) ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.
+
+Database is PostGreSQL
 
 
 ## Grafana Connection
@@ -231,11 +245,33 @@ ros2 launch cartifactory cartifactory_pipeline.launch.py toml_path:=/path/to/mod
 ```
 
 
+The following launch arguments configure the behavior of the ONNX detector node and its ROS2 interfaces.
+
+## Launch Arguments
+
+| Argument | Default | Type | Description |
+|--------|--------|--------|--------|
+| `toml_path` | `""` | string | Path to the `model.toml` configuration file used by the `onnx_detector` node. |
+| `image_topic` | `/camera/camera/color/image_raw` | string | Input ROS2 image topic from which the detector subscribes to images. |
+| `detections_topic` | `/detections` | string | Base topic where detection results are published. Annotated images are published on `<detections_topic>/image`. |
+| `publish_debug_image` | `true` | bool | Enables publishing of the annotated debug image showing detections. |
+| `detections_qos` | `sensor_data` | string | QoS profile used when publishing detection messages. |
+| `debug_qos` | `best_effort` | string | QoS profile used when publishing the debug image topic. |
+| `img_h` | `480` | int | Height of the image expected by the ONNX model. |
+| `img_w` | `640` | int | Width of the image expected by the ONNX model. |
+| `class_id_mode` | `name` | string | Determines how the detected class is published: `id` (numeric class id) or `name` (class label). |
+
+
+
 > [!WARNING]
 > TODO list:
 >- [ ] Add `requirements.txt` file.
+>- [ ] Revise TOML description - Delete unused.
+>- [ ] Finalize FIWARE's Context Broker Description
 
 ---
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement no. 101135784.
 <p align="left">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
