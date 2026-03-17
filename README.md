@@ -36,7 +36,9 @@
 
 
 # General Overview
-This is one of the reusable modules shared by the 
+[ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors.
+
+This is one of the reusable modules created to serve as an example on the ARISE Middleware.
 
 
 ## Features
