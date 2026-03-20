@@ -1,7 +1,11 @@
 <p align="center">
 
   <!-- ---------- TOP IMAGE ---------- -->
-  <img src="images/cartifactory-whitebg.png" alt="Top image" height="200"/>
+  <img src="images/cartifactory-transparent.png" alt="Top image" height="100"/>
+
+  <!-- ---------- CARTIF logo ---------- -->
+  <img src="images/CARTIF_transparente.png" height="100">
+
 
 </p>
 
@@ -12,9 +16,6 @@
 
   <!-- Dark mode -->
   <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-
-  <!-- ---------- CARTIF logo ---------- -->
-  <img src="images/CARTIF_transparente.png" height="60">
 
 </p>
 
