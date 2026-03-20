@@ -312,10 +312,99 @@ colours = [[0, 0, 250], [250, 0, 0]]
 
 The ecosystem the interaction is running under [Engineering Group's PoC](https://github.com/Engineering-Research-and-Development/arise-poc/) ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.
 
-Database is PostGreSQL
+## Configure FIWARE to store the reusable module topic
+
+To make FIWARE store the topic published by the reusable module, you first need to edit the configuration file located at:
+
+```bash
+conf/orionld/config-dds.json
+```
+
+Inside this file, add the following block inside:
+
+```json
+"ngsild": {
+  "topics": { 
+    ...
+  }
+```
+
+Add this entry:
+
+```json
+"rt/stats/pipeline": {
+  "entityType": "PipelineDetection",
+  "entityId": "urn:ngsi-ld:stats:1",
+  "attribute": "stats"
+}
+```
+
+After adding this configuration, FIWARE will be able to detect the `/stats/pipeline` topic and store its data correctly in the TimescaleDB database.
 
 
-## Grafana Connection
+## Grafana connection and visualizing
+
+To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation. ([GitHub][1])
+
+In particular, the documentation includes:
+
+* how to configure the TimescaleDB datasource in Grafana,
+* how to create a new dashboard,
+* how to add a panel,
+* how to write a query for the selected datasource,
+* and how to choose the most suitable visualization for the data. ([GitHub][1])
+
+
+<details>
+
+<summary>Example query</summary>
+
+The following query can be used to visualize action-goal statistics for the reusable module:
+
+
+```sql
+SELECT
+  ts AS "time",
+  (compound ->> 'action_goals_received')::integer AS "Received",
+  (compound ->> 'action_goals_accepted')::integer AS "Accepted",
+  (compound ->> 'action_goals_rejected')::integer AS "Rejected",
+  (compound ->> 'action_goals_canceled')::integer AS "Canceled",
+  (compound ->> 'action_goals_succeeded')::integer AS "Succeeded",
+  (compound ->> 'action_goals_failed')::integer AS "Failed"
+FROM public.attributes
+WHERE entityid = 'urn:ngsi-ld:stats:1'
+ORDER BY 1;
+```
+
+This query retrieves time-series data for the entity `urn:ngsi-ld:stats:1` from the `public.attributes` table. For each timestamp (`ts`), it extracts several counters stored inside the `compound` JSON field and converts them to integers.
+
+The resulting series represent:
+
+* **Received**: number of action goals received by the module,
+* **Accepted**: number of action goals accepted,
+* **Rejected**: number of action goals rejected,
+* **Canceled**: number of action goals canceled,
+* **Succeeded**: number of action goals successfully completed,
+* **Failed**: number of action goals that failed.
+
+In Grafana, this query can be displayed as a
+
+</details>
+
+ time-series chart to monitor how the action-goal counters evolve over time.
+
+### Reusable module dashboard JSON
+
+Additionally, the repository already includes a [JSON file](dashboard_templat.json) containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
+
+Example of reusable module dashboard: 
+
+![Reusable module dashboard](images/dashboard_image.png)
+
+
+[1]: https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md "arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub"
+
+
 
 
 
