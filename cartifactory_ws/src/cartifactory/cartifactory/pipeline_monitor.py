@@ -9,7 +9,6 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPo
 from sensor_msgs.msg import Image
 from custom_interfaces.msg import PipelineStats
 
-
 class PipelineMonitorNode(Node):
     """
     Aggregates event-driven stats from:
@@ -20,6 +19,7 @@ class PipelineMonitorNode(Node):
       - fps_input from image_topic
       - fps_processed from debug_image_topic
       - avg_inference_ms (approx end-to-end processing latency) from debug_image.header.stamp
+      - camera_available from image_topic timeout
 
     Publishes:
       - /stats/pipeline
@@ -37,6 +37,8 @@ class PipelineMonitorNode(Node):
 
         self.declare_parameter("fps_ema_alpha", 0.2)
         self.declare_parameter("latency_window_size", 30)
+        self.declare_parameter("camera_timeout_sec", 5.0)
+        self.declare_parameter("camera_check_period_sec", 1.0)
 
         self.detector_stats_topic = self.get_parameter("detector_stats_topic").value
         self.matcher_stats_topic = self.get_parameter("matcher_stats_topic").value
@@ -48,6 +50,8 @@ class PipelineMonitorNode(Node):
 
         self.fps_ema_alpha = float(self.get_parameter("fps_ema_alpha").value)
         self.latency_window_size = int(self.get_parameter("latency_window_size").value)
+        self.camera_timeout_sec = float(self.get_parameter("camera_timeout_sec").value)
+        self.camera_check_period_sec = float(self.get_parameter("camera_check_period_sec").value)
 
         qos_stats = QoSProfile(
             history=HistoryPolicy.KEEP_LAST,
@@ -67,7 +71,6 @@ class PipelineMonitorNode(Node):
             PipelineStats, self.pipeline_stats_topic, qos_stats
         )
 
-        # image subscriptions for FPS / latency estimation
         self.sub_input_image = self.create_subscription(
             Image, self.image_topic, self.on_input_image, qos_profile_sensor_data
         )
@@ -79,15 +82,21 @@ class PipelineMonitorNode(Node):
         self._matcher_stats: Optional[PipelineStats] = None
         self._last_published_state = None
 
-        # FPS state
         self._last_input_t = None
         self._last_processed_t = None
         self._fps_input_ema = 0.0
         self._fps_processed_ema = 0.0
 
-        # Approx processing latency state
         self._latency_ms_values = deque(maxlen=max(1, self.latency_window_size))
         self._avg_latency_ms = 0.0
+
+        self._last_camera_msg_time = None
+        self._camera_available = False
+
+        self._camera_timer = self.create_timer(
+            self.camera_check_period_sec,
+            self._check_camera_timeout
+        )
 
         self.get_logger().info(
             f"Pipeline monitor ready.\n"
@@ -109,11 +118,19 @@ class PipelineMonitorNode(Node):
         return new_ema, now_sec
 
     def on_input_image(self, msg: Image):
+        _ = msg
         now_sec = time_now_sec(self)
         self._fps_input_ema, self._last_input_t = self._update_fps_ema(
             now_sec, self._last_input_t, self._fps_input_ema
         )
-        self._maybe_publish_global()
+        self._last_camera_msg_time = now_sec
+
+        prev = self._camera_available
+        self._camera_available = True
+        if prev != self._camera_available:
+            self._maybe_publish_global()
+        else:
+            self._maybe_publish_global()
 
     def on_debug_image(self, msg: Image):
         now_sec = time_now_sec(self)
@@ -121,7 +138,6 @@ class PipelineMonitorNode(Node):
             now_sec, self._last_processed_t, self._fps_processed_ema
         )
 
-        # Approx end-to-end latency using original header stamp carried by detector
         src_stamp_sec = float(msg.header.stamp.sec) + float(msg.header.stamp.nanosec) / 1e9
         latency_ms = max((now_sec - src_stamp_sec) * 1000.0, 0.0)
 
@@ -130,6 +146,18 @@ class PipelineMonitorNode(Node):
             self._avg_latency_ms = sum(self._latency_ms_values) / len(self._latency_ms_values)
 
         self._maybe_publish_global()
+
+    def _check_camera_timeout(self):
+        now_sec = time_now_sec(self)
+
+        prev = self._camera_available
+        if self._last_camera_msg_time is None:
+            self._camera_available = False
+        else:
+            self._camera_available = (now_sec - self._last_camera_msg_time) <= self.camera_timeout_sec
+
+        if prev != self._camera_available:
+            self._maybe_publish_global()
 
     def on_detector_stats(self, msg: PipelineStats):
         self._detector_stats = msg
@@ -147,15 +175,12 @@ class PipelineMonitorNode(Node):
         det = self._detector_stats
         mat = self._matcher_stats
 
-        # detector-side counters
         msg.frames_dropped = int(det.frames_dropped) if det is not None else 0
 
-        # computed in monitor
         msg.fps_input = float(int(round(self._fps_input_ema)))
         msg.fps_processed = float(int(round(self._fps_processed_ema)))
         msg.avg_inference_ms = float(int(round(self._avg_latency_ms)))
 
-        # matcher-side counters
         msg.action_goals_received = int(mat.action_goals_received) if mat is not None else 0
         msg.action_goals_accepted = int(mat.action_goals_accepted) if mat is not None else 0
         msg.action_goals_rejected = int(mat.action_goals_rejected) if mat is not None else 0
@@ -167,8 +192,7 @@ class PipelineMonitorNode(Node):
         msg.match_success = int(mat.match_success) if mat is not None else 0
         msg.match_fail = int(mat.match_fail) if mat is not None else 0
 
-        # trust matcher for camera availability
-        msg.camera_available = bool(mat.camera_available) if mat is not None else False
+        msg.camera_available = bool(self._camera_available)
 
         return msg
 

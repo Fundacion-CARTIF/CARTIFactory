@@ -119,6 +119,49 @@ def _nms_xyxy(boxes: np.ndarray, scores: np.ndarray, iou_thres: float = 0.45) ->
 
     return keep
 
+def _clip_u8_color(c):
+    return tuple(int(np.clip(v, 0, 255)) for v in c)
+
+
+def _class_color_from_id(class_id: int) -> Tuple[int, int, int]:
+    """
+    Pseudo-random but stable color for each class_id.
+    Returns BGR for OpenCV.
+    """
+    rng = np.random.default_rng(seed=class_id + 12345)
+    color = rng.integers(60, 256, size=3)
+    return int(color[0]), int(color[1]), int(color[2])
+
+
+def _to_bgr_color(c) -> Tuple[int, int, int]:
+    """
+    Normalizes a TOML [r,g,b] or [b,g,r] list/tuple into an int tuple.
+    Here we assume TOML uses RGB and convert it to BGR for OpenCV.
+    """
+    if not isinstance(c, (list, tuple)) or len(c) != 3:
+        return 0, 255, 0
+    r, g, b = int(c[0]), int(c[1]), int(c[2])
+    return b, g, r
+
+
+def _reddish_tone(color_bgr: Tuple[int, int, int], alpha: float = 0.45) -> Tuple[int, int, int]:
+    """
+    Blends the base color with red in BGR space.
+    """
+    red_bgr = np.array([0, 0, 255], dtype=np.float32)
+    base = np.array(color_bgr, dtype=np.float32)
+    out = (1.0 - alpha) * base + alpha * red_bgr
+    return _clip_u8_color(out)
+
+
+def _bluish_tone(color_bgr: Tuple[int, int, int], alpha: float = 0.45) -> Tuple[int, int, int]:
+    """
+    Blends the base color with blue in BGR space.
+    """
+    blue_bgr = np.array([255, 0, 0], dtype=np.float32)
+    base = np.array(color_bgr, dtype=np.float32)
+    out = (1.0 - alpha) * base + alpha * blue_bgr
+    return _clip_u8_color(out)
 
 class DetectorOnnxNode(Node):
     def __init__(self):
@@ -143,7 +186,7 @@ class DetectorOnnxNode(Node):
         self.declare_parameter('publish_debug_image', True)
         self.declare_parameter('class_id_mode', 'name')
 
-        # stats
+        # Stats
         self.declare_parameter('publish_stats', True)
         self.declare_parameter('stats_topic', '/stats/detector')
         self.declare_parameter('drop_if_busy', False)
@@ -192,6 +235,7 @@ class DetectorOnnxNode(Node):
 
         self.model_type: str = "Unknown"
         self.class_names: Optional[List[str]] = None
+        self.class_colours: Optional[List[Tuple[int, int, int]]] = None
         toml_conf_default: Optional[float] = None
         cfg = None
         toml_dir: Optional[str] = None
@@ -207,11 +251,17 @@ class DetectorOnnxNode(Node):
                 toml_dir = os.path.dirname(os.path.abspath(self.toml_path))
                 self.model_type = str(cfg.get("parameters", {}).get("type", "Unknown"))
                 self.class_names = cfg.get("classes", {}).get("classes", None)
+                raw_colours = cfg.get("classes", {}).get("colours", None)
+                if raw_colours is not None:
+                    self.class_colours = [_to_bgr_color(c) for c in raw_colours]
+                else:
+                    self.class_colours = None
                 toml_conf_default = cfg.get("parameters", {}).get("confidence", None)
 
                 self.get_logger().info(
                     f'Loaded TOML: type={self.model_type}, '
                     f'classes={len(self.class_names) if self.class_names else "n/a"}, '
+                    f'colours={len(self.class_colours) if self.class_colours else "n/a"}, '
                     f'confidence={toml_conf_default if toml_conf_default is not None else "n/a"}'
                 )
             except Exception as e:
@@ -306,6 +356,11 @@ class DetectorOnnxNode(Node):
         h = (ymax - ymin)
         return float(cx), float(cy), float(w), float(h)
 
+    def _get_class_color(self, cid: int) -> Tuple[int, int, int]:
+        if self.class_colours is not None and 0 <= cid < len(self.class_colours):
+            return self.class_colours[cid]
+        return _class_color_from_id(cid)
+
     def _publish_stats_event(self):
         if not self.publish_stats:
             return
@@ -351,7 +406,7 @@ class DetectorOnnxNode(Node):
             self.class_names = [str(i) for i in range(nc)]
             if self.class_id_mode == "name":
                 self.get_logger().warning(
-                    "class_id_mode=name pero no hay class names reales en TOML -> usando nombres '0..nc-1'."
+                    "class_id_mode=name but there are no real class names in TOML -> using names '0..nc-1'."
                 )
 
         payload = {str(i): str(name) for i, name in enumerate(self.class_names)}
@@ -545,7 +600,13 @@ class DetectorOnnxNode(Node):
                 mask_bin_rs = (masks_up[i] > 0.5).astype(np.uint8)
                 mask_bin = cv2.resize(mask_bin_rs, (w0, h0), interpolation=cv2.INTER_NEAREST)
 
-                # Recortar máscara al bounding box axis-aligned
+                cid = int(cls_ids[i])
+
+                base_color = self._get_class_color(cid)         # Mask color
+                bbox_color = _reddish_tone(base_color)          # Axis-aligned bounding box color
+                obb_color = _bluish_tone(base_color)            # Oriented bounding box color
+
+                # Restrict the mask to the axis-aligned bounding box
                 x1i = int(np.clip(np.floor(x1o), 0, w0 - 1))
                 y1i = int(np.clip(np.floor(y1o), 0, h0 - 1))
                 x2i = int(np.clip(np.ceil(x2o), 0, w0 - 1))
@@ -572,7 +633,6 @@ class DetectorOnnxNode(Node):
                 d.bbox = bbox
 
                 hyp = ObjectHypothesisWithPose()
-                cid = int(cls_ids[i])
 
                 if self.class_id_mode == "name" and self.class_names and 0 <= cid < len(self.class_names):
                     class_label = str(self.class_names[cid])
@@ -589,28 +649,51 @@ class DetectorOnnxNode(Node):
                 det_array.detections.append(d)
 
                 if debug_frame is not None:
-                    green = np.array([0, 255, 0], dtype=np.uint8)
+                    # 1) Mask with base color and transparency
                     m = mask_bin.astype(bool)
-                    debug_frame[m] = (0.6 * debug_frame[m] + 0.4 * green).astype(np.uint8)
+                    color_arr = np.array(base_color, dtype=np.uint8)
+                    debug_frame[m] = (0.6 * debug_frame[m] + 0.4 * color_arr).astype(np.uint8)
 
-                    cv2.rectangle(debug_frame, (x1i, y1i), (x2i, y2i), (0, 0, 255), 2)
+                    # 2) Axis-aligned bounding box with a reddish tone
+                    cv2.rectangle(debug_frame, (x1i, y1i), (x2i, y2i), bbox_color, 2)
 
+                    # 3) Oriented bounding box with a bluish tone
                     if self.use_mask_obb:
                         obb = _obb_from_mask(mask_bin)
                         if obb is not None:
                             ocx, ocy, ow, oh, otheta = obb
                             rect = ((ocx, ocy), (ow, oh), math.degrees(otheta))
                             pts = cv2.boxPoints(rect).astype(np.int32)
-                            cv2.polylines(debug_frame, [pts], True, (255, 0, 0), 2)
+                            cv2.polylines(debug_frame, [pts], True, obb_color, 2)
+
+                    # 4) White text over a reddish box
+                    label_text = f"{class_label}  {float(scores[i]):.2f}"
+                    font = cv2.FONT_HERSHEY_SIMPLEX
+                    font_scale = 0.7
+                    thickness = 1
+
+                    (tw, th), baseline = cv2.getTextSize(label_text, font, font_scale, thickness)
+
+                    tx1 = x1i
+                    ty2 = max(th + baseline + 4, y1i)
+                    ty1 = ty2 - th - baseline - 6
+                    tx2 = tx1 + tw + 8
+
+                    tx1 = int(np.clip(tx1, 0, w0 - 1))
+                    tx2 = int(np.clip(tx2, 0, w0 - 1))
+                    ty1 = int(np.clip(ty1, 0, h0 - 1))
+                    ty2 = int(np.clip(ty2, 0, h0 - 1))
+
+                    cv2.rectangle(debug_frame, (tx1, ty1), (tx2, ty2), bbox_color, thickness=-1)
 
                     cv2.putText(
                         debug_frame,
-                        f"{class_label} {float(scores[i]):.2f}",
-                        (x1i, max(0, y1i - 5)),
-                        cv2.FONT_HERSHEY_SIMPLEX,
-                        0.7,
+                        label_text,
+                        (tx1 + 4, ty2 - baseline - 3),
+                        font,
+                        font_scale,
                         (255, 255, 255),
-                        2,
+                        thickness,
                         cv2.LINE_AA,
                     )
 

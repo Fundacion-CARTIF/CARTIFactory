@@ -117,33 +117,85 @@ The `detector_onnx` node performs image-based object detection and segmentation 
 
 The node also supports optional publication of a debug image where masks, bounding boxes, labels, and oriented boxes are drawn on top of the original image. It publishes a latched class map topic so that downstream nodes can resolve class IDs to human-readable labels, either from a TOML configuration file or from fallback numeric IDs.
 
-Configuration can be provided through ROS2 parameters and optionally complemented with a .toml file, which may define metadata such as model type, class names, default confidence threshold, and model path. The node supports execution on CPU or CUDA, depending on the selected device and available ONNX Runtime providers.
+Configuration can be provided through ROS2 parameters and optionally complemented with a `.toml` file, which may define metadata such as model type, class names, default confidence threshold, and model path. The node supports execution on CPU or CUDA, depending on the selected device and available ONNX Runtime providers.
 
-For monitoring and integration into production pipelines, the node can also publish pipeline statistics such as dropped frames and node identity. It includes an optional drop_if_busy mode to avoid queue buildup by discarding incoming frames when inference is still running on the previous one.
+For monitoring and integration into production pipelines, the node can also publish pipeline statistics such as dropped frames and node identity. It includes an optional `drop_if_busy` mode to avoid queue buildup by discarding incoming frames when inference is still running on the previous one.
 
 Overall, this node is designed as a ROS2 perception component for real-time industrial vision pipelines, combining ONNX inference, mask-based oriented detections, debug visualization, class mapping, and runtime statistics in a single detector node.
 
-What does this node do:
-- Subscribes to an RGB image topic
-- Loads an ONNX detection/segmentation model
-- Runs inference on each incoming frame, filtering detections by a confidence threshold.
-- Converts segmentation masks into oriented bounding boxes and publishes detections as vision_msgs/Detection2DArray.
-- Optionally publishes an annotated debug image and pipeline statistics.
-- Supports CPU or CUDA execution with ONNX Runtime.
-
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary>Supported ONNX model format</summary>
 
-### You can add a header
+The current implementation expects ONNX models that follow a **dense detection output structure**, with optional instance segmentation support.
 
-You can add text within a collapsed section.
+#### Outputs
 
-You can add an image or a code block, too.
+The model must provide either:
 
-```ruby
-   puts "Hello World"
-```
+**Detection only**
+
+- `output[0]`: tensor containing bounding boxes and class scores
+
+**Detection + segmentation**
+
+- `output[0]`: tensor containing bounding boxes, class scores, and mask coefficients
+- `output[1]`: tensor containing mask prototypes
+
+#### Expected prediction structure
+
+Each prediction row is expected to encode:
+
+- Bounding boxes in **center-based format**: `(cx, cy, w, h)`
+- Per-class confidence scores
+- Optional mask coefficients for instance mask reconstruction
+
+If segmentation is enabled, masks are reconstructed internally by combining the mask coefficients with the prototype tensor.
+
+#### Internal postprocessing
+
+The node assumes a dense prediction tensor where each row represents one detection candidate. Postprocessing is handled internally and includes:
+
+- Confidence filtering
+- Non-maximum suppression (NMS)
+- Optional mask reconstruction
+- Optional oriented bounding box (OBB) extraction from masks
+
+If mask outputs are not present, the node automatically operates in detection-only mode.
+
+#### Input preprocessing
+
+Before inference, each image is preprocessed using the following steps:
+
+- Color conversion (`BGR → RGB`)
+- Resize or letterbox to match model input size
+- Normalization to `[0, 1]`
+- Layout conversion to `NCHW`
+
+#### Output
+
+The node publishes:
+
+- `vision_msgs/Detection2DArray`
+
+Optionally, it can also publish a debug image including:
+
+- Bounding boxes
+- Segmentation masks
+- Oriented bounding boxes (OBB)
+- Class labels and scores
+
+#### Model compatibility
+
+This node is compatible with ONNX models that:
+
+- Output bounding boxes and class scores in a unified tensor
+- Optionally include mask prototype outputs for instance segmentation
+- Use center-based box representation `(cx, cy, w, h)`
+
+>[!WARNING]
+>Models that do not follow this structure may require adapting the postprocessing logic.
+
 
 </details>
 
@@ -239,12 +291,13 @@ We are using [Tom's Obvious Minimal Language](https://toml.io/en/) for the confi
 ```bash
 title = "Wheels"
 description = "This model can detect wheels"
-type = "Segmentation"
+path = "/path_to_your_model"
 
 [model]
-weights = "ruedasL-seg_v4.onnx"
+weights = "wheels-seg.onnx"
 
 [parameters]
+type = "Segmentation"
 confidence = 0.6
 
 [classes]

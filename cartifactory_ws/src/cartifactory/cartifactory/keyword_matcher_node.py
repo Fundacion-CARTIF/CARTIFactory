@@ -28,20 +28,6 @@ def _norm(s: str, case_insensitive: bool) -> str:
 
 
 class KeywordMatcherNode(Node):
-    """
-    Sub:
-      - /detections (vision_msgs/Detection2DArray)
-      - /detections/class_map (std_msgs/String JSON) [optional]
-      - /detections/image (sensor_msgs/Image)
-      - /camera/.../camera_info (sensor_msgs/CameraInfo)
-
-    Pub:
-      - /keyword_match (std_msgs/Bool)
-      - /keyword_matches (std_msgs/String JSON)
-      - /detections_matched (vision_msgs/Detection2DArray) [optional]
-      - /stats/matcher (custom_interfaces/PipelineStats) [event-driven]
-    """
-
     def __init__(self):
         super().__init__("keyword_matcher")
 
@@ -50,7 +36,6 @@ class KeywordMatcherNode(Node):
         self.declare_parameter("class_map_topic", "/detections/class_map")
         self.declare_parameter("keyword_topic", "/keyword")
         self.declare_parameter("image_topic", "/camera/camera/color/image_raw")
-        self.declare_parameter("camera_info_topic", "/camera/camera/color/camera_info")
 
         self.declare_parameter("publish_matched_detections", True)
         self.declare_parameter("detections_matched_topic", "/detections_matched")
@@ -68,7 +53,6 @@ class KeywordMatcherNode(Node):
         self.class_map_topic = self.get_parameter("class_map_topic").value
         self.keyword_topic = self.get_parameter("keyword_topic").value
         self.camera_topic = self.get_parameter("image_topic").value
-        self.camera_info_topic = self.get_parameter("camera_info_topic").value
         self.debug_image_topic = f"{self.detections_topic}/image"
 
         self.publish_matched_detections = bool(self.get_parameter("publish_matched_detections").value)
@@ -102,8 +86,6 @@ class KeywordMatcherNode(Node):
         self._match_success = 0
         self._match_fail = 0
 
-        self._last_camera_available_published = None
-
         # ---- QoS ----
         qos_det = QoSProfile(
             history=HistoryPolicy.KEEP_LAST,
@@ -119,14 +101,6 @@ class KeywordMatcherNode(Node):
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
         )
 
-        qos_kw = QoSProfile(
-            history=HistoryPolicy.KEEP_LAST,
-            depth=10,
-            reliability=ReliabilityPolicy.RELIABLE,
-            durability=DurabilityPolicy.VOLATILE,
-        )
-        _ = qos_kw  # por ahora no se usa
-
         # ---- Subs ----
         self.sub_det = self.create_subscription(
             Detection2DArray, self.detections_topic, self.on_detections, qos_det
@@ -136,9 +110,6 @@ class KeywordMatcherNode(Node):
         )
         self.sub_image = self.create_subscription(
             Image, self.debug_image_topic, self.on_image, qos_profile_sensor_data
-        )
-        self.sub_camera_info = self.create_subscription(
-            CameraInfo, self.camera_info_topic, self.on_camera_info, 10
         )
 
         # ---- Pubs ----
@@ -180,12 +151,6 @@ class KeywordMatcherNode(Node):
             f"  class_id_mode={self.class_id_mode}, score_threshold={self.score_threshold}, case_insensitive={self.case_insensitive}"
         )
 
-        # camera monitoring
-        self.timeout_sec = 5
-        self.last_msg_time = self.get_clock().now()
-        self.timer = self.create_timer(1.0, self.check_camera_timeout)
-        self.camera_available = False
-
         self._latest_frame = Image()
         self._last_detections = Detection2DArray()
 
@@ -212,38 +177,18 @@ class KeywordMatcherNode(Node):
         msg.match_success = int(self._match_success)
         msg.match_fail = int(self._match_fail)
 
-        # matcher metrics
+        # matcher metrics not computed here
         msg.fps_input = 0.0
         msg.fps_processed = 0.0
         msg.avg_inference_ms = 0.0
 
-        msg.camera_available = bool(self.camera_available)
+        # camera_available computed in pipeline_monitor
+        msg.camera_available = False
 
         self.pub_stats.publish(msg)
 
-    def check_camera_timeout(self) -> None:
-        now = self.get_clock().now()
-        elapsed = (now - self.last_msg_time).nanoseconds / 1e9
-
-        prev = self.camera_available
-
-        if elapsed > self.timeout_sec:
-            self.camera_available = False
-        else:
-            self.camera_available = True
-
-        if self._last_camera_available_published is None:
-            self._last_camera_available_published = self.camera_available
-        elif self.camera_available != self._last_camera_available_published:
-            self._publish_stats_event()
-            self._last_camera_available_published = self.camera_available
-
-    def on_camera_info(self, msg: CameraInfo):
-        _ = msg
-        self.last_msg_time = self.get_clock().now()
-
     def on_image(self, msg: Image):
-        self._latest_frame = msg.data or Image()
+        self._latest_frame = msg
 
     def on_class_map(self, msg: String):
         try:
@@ -341,13 +286,13 @@ class KeywordMatcherNode(Node):
         self._keyword = goal_request.kw
 
         try:
-            if self.camera_available and isinstance(self._keyword, str):
+            if isinstance(self._keyword, str):
                 self._goals_accepted += 1
                 self._publish_stats_event()
                 return GoalResponse.ACCEPT
             else:
                 self._goals_rejected += 1
-                self.get_logger().warn("Action not started. No camera connected.")
+                self.get_logger().warn("Action not started. Invalid keyword.")
                 self._publish_stats_event()
                 return GoalResponse.REJECT
 
@@ -371,7 +316,6 @@ class KeywordMatcherNode(Node):
         def fb(text: str) -> None:
             goal_handle.publish_feedback(MatchAction.Feedback(feedback=text))
 
-        t0 = time.perf_counter()
         self._match_requests += 1
         self._publish_stats_event()
 
@@ -390,13 +334,11 @@ class KeywordMatcherNode(Node):
                 feedback_msg.feedback = "No matches found"
                 result_msg.match_success = False
                 result_msg.det = Detection2DArray()
-
                 self._match_fail += 1
             else:
                 feedback_msg.feedback = "Matching process succesfull"
                 result_msg.match_success = True
                 result_msg.det = det
-
                 self._match_success += 1
 
                 if self.pub_det_matched is not None:
@@ -424,9 +366,6 @@ class KeywordMatcherNode(Node):
             self._goals_failed += 1
             self._match_fail += 1
             goal_handle.abort()
-
-        elapsed_ms = (time.perf_counter() - t0) * 1000.0
-        _ = elapsed_ms  # por ahora no se publica; se puede añadir luego si quieres
 
         self._publish_stats_event()
         return result_msg
