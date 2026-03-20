@@ -36,9 +36,16 @@
 
 
 # General Overview
-[ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors.
+[ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors. 
+Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:
+- CARTIF Technology Centre: [**CARTIFactory**](https://github.com/Fundacion-CARTIF/CARTIFactory) (You are currently here!📍😃)
+- Intellimech: []()
+- PAL Robotics: []()
+- Politecnico di Milano: []()
 
-This is one of the reusable modules created to serve as an example on the ARISE Middleware.
+These modules hope to present an integration between [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware robotic and industrial applications, alongside [ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.
+
+
 
 
 ## Features
@@ -50,8 +57,6 @@ This is one of the reusable modules created to serve as an example on the ARISE 
 - Configurable `class_id` mode
 
 ## Table of Contents
-
-
 - [Getting Started](#getting-started)
   - [Dependencies](#dependencies)
 - [What is Included in the Module](#what-is-included-in-the-module)
@@ -67,13 +72,18 @@ This is one of the reusable modules created to serve as an example on the ARISE 
 - [Running the Module](#running-the-module)
 
 # Getting started
-Start by cloning the repository
 
-Then move to the workspace.
-```bash
-cd cartifactory_ws
-```
+This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
+<p align="left">
+  <!-- ---------- REUSABLE MODULE DIAGRAM ---------- -->
+  <!-- Light mode -->
+  <img src="images/Diagram_light.png#gh-light-mode-only" alt="EU Funding for light mode" height="500"/>
+
+  <!-- Dark mode -->
+  <img src="images/Diagram_dark.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="500"/>
+
+</p>
 
 ## Dependencies
 
@@ -87,7 +97,6 @@ This package is dependent on other ROS2 interfaces:
 ``` bash
 sudo apt install \
   ros-${ROS_DISTRO}-vision-msgs \
-  ros-${ROS_DISTRO}-diagnostic-msgs \
   ros-${ROS_DISTRO}-cv-bridge
 ```
 
@@ -121,6 +130,23 @@ What does this node do:
 - Converts segmentation masks into oriented bounding boxes and publishes detections as vision_msgs/Detection2DArray.
 - Optionally publishes an annotated debug image and pipeline statistics.
 - Supports CPU or CUDA execution with ONNX Runtime.
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section.
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+</details>
+
 
 ## Pipeline Monitor
 This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about [FIWARE's Context Broker](#connecting-to-fiwares-context-broker)). 
