@@ -431,15 +431,6 @@ The following launch arguments configure the behavior of the ONNX detector node 
 | `img_h` | `480` | int | Height of the image expected by the ONNX model. |
 | `img_w` | `640` | int | Width of the image expected by the ONNX model. |
 | `class_id_mode` | `name` | string | Determines how the detected class is published: `id` (numeric class id) or `name` (class label). |
-
-
-
-> [!WARNING]
-> TODO list:
->- [ ] Add `requirements.txt` file.
->- [ ] Revise TOML description - Delete unused.
->- [ ] Finalize FIWARE's Context Broker Description
-
 ---
 
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement no. 101135784.
