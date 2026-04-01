@@ -11,26 +11,14 @@
 
 </p>
 
-<!-- <p align="center">
+<p align="center">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
-  <a href="https://arise-middleware.eu/">
-    <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
-  </a>
+  <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
   <!-- Dark mode -->
-  <a href="https://arise-middleware.eu/">
-    <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-  </a>
-</p> -->
-
-<p align="center">
-<!-- ---------- ARISE logo ---------- -->
-<!-- Light mode -->
-[![ARISE logo](images/ARISE_logo-light_mode.png#gh-light-mode-only)](https://arise-middleware.eu/)
-<!-- Dark mode -->
-[![ARISE logo](images/ARISE_logo-dark_mode.png#gh-dark-mode-only)](https://arise-middleware.eu/)
-
+  <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
 </p>
+
 
 <p align="center">
   These 
