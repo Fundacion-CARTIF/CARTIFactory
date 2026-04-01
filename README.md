@@ -1,22 +1,26 @@
 <p align="center">
 
   <!-- ---------- TOP IMAGE ---------- -->
-  <img src="images/cartifactory-transparent.png" alt="Top image" height="100"/>
-
+  <a href="https://www.cartif.es/en/human-robot-collaboration-pilot-plant-cartifactory/">
+    <img src="images/cartifactory-transparent.png" alt="Top image" height="100"/>
+  </a>
   <!-- ---------- CARTIF logo ---------- -->
-  <img src="images/CARTIF_transparente.png" height="100">
-
+  <a href="https://www.cartif.es/en/home/">
+    <img src="images/CARTIF_transparente.png" height="100">
+  </a>
 
 </p>
 
 <p align="center">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
-  <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
-
+  <a href="https://arise-middleware.eu/">
+    <img src="images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
+  </a>
   <!-- Dark mode -->
-  <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-
+  <a href="https://arise-middleware.eu/">
+    <img src="images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
+  </a>
 </p>
 
 <p align="center">
