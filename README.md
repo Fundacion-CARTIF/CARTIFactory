@@ -198,9 +198,7 @@ This node is compatible with ONNX models that:
 >[!WARNING]
 >Models that do not follow this structure may require adapting the postprocessing logic.
 
-
 </details>
-
 
 ## Pipeline Monitor
 This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about [FIWARE's Context Broker](#connecting-to-fiwares-context-broker)). 
@@ -219,9 +217,6 @@ flowchart LR
     onnx[ONNX Detector] --/stats/detector--> pipeline[Pipeline Monitor]
     pipeline[Pipeline Monitor] --/stats/pipeline --> CB
 ```
-
-
-
 
 # Custom Interfaces
 
@@ -311,7 +306,7 @@ colours = [[0, 0, 250], [250, 0, 0]]
 
 # Connecting to FIWARE's Context Broker
 
-The ecosystem the interaction is running under [Engineering Group's PoC](https://github.com/Engineering-Research-and-Development/arise-poc/) ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.
+The ecosystem the interaction is running under [Engineering Group's PoC](https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md) ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.
 
 ## Configure FIWARE to store the reusable module topic
 
@@ -342,19 +337,17 @@ Add this entry:
 
 After adding this configuration, FIWARE will be able to detect the `/stats/pipeline` topic and store its data correctly in the TimescaleDB database.
 
-
 ## Grafana connection and visualizing
 
-To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation. ([GitHub][1])
+To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation.
 
-In particular, the documentation includes:
+In particular, the documentation includesa how to:
 
-* how to configure the TimescaleDB datasource in Grafana,
-* how to create a new dashboard,
-* how to add a panel,
-* how to write a query for the selected datasource,
-* and how to choose the most suitable visualization for the data. ([GitHub][1])
-
+* Configure the TimescaleDB datasource in Grafana,
+* Create a new dashboard,
+* Add a panel,
+* Write a query for the selected datasource,
+* Choose the most suitable visualization for the data.
 
 <details>
 
@@ -396,19 +389,11 @@ In Grafana, this query can be displayed as a
 
 ### Reusable module dashboard JSON
 
-Additionally, the repository already includes a [JSON file](dashboard_templat.json) containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
+Additionally, the repository already includes a [JSON file](dashboard_template.json) containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
 
 Example of reusable module dashboard: 
 
 ![Reusable module dashboard](images/dashboard_image.png)
-
-
-[1]: https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md "arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub"
-
-
-
-
-
 
 # Running the Module
 The launch file `cartifactory_pipeline.launch.py` provides an easy way to start the module. You only need to define 
