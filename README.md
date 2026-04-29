@@ -419,7 +419,7 @@ The following launch arguments configure the behavior of the ONNX detector node 
 | `class_id_mode` | `name` | string | Determines how the detected class is published: `id` (numeric class id) or `name` (class label). |
 ---
 
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement no. 101135784.
+This project has received funding from the Horizon Europe research and innovation programme under grant agreement no. 101135784.
 <p align="left">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
