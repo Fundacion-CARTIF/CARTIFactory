@@ -16,6 +16,8 @@
 
 # Welcome to CARTIFactory!
 
+Link to our GitHub Pages: https://fundacion-cartif.github.io/CARTIFactory/
+
 # ARISE MODULES
 [ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors. 
 CARTIFactory provides the following reusable modules to serve as examples of implementations of the ARISE Middleware:
