@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Welcome to CARTIFactory
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## What is CARTIFactory?
+CARTIFactory iHub is a digital innovation pilot developed by the CARTIF Technology Centre to help companies access and adopt advanced technologies such as collaborative robotics, generative AI, digital twins, and industrial IoT. Based in the Boecillo Technology Park (Valladolid), it is part of the international FIWARE iHub network, promoting open, interoperable, and human-centered solutions for industrial digitalization.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Focused on the principles of Industry 5.0, CARTIFactory fosters collaboration between industry, research, and public entities, providing testing facilities, training, and support for developing scalable and interoperable solutions. Its infrastructure enables real-world experimentation in areas such as human-robot interaction, advanced manufacturing, and smart logistics.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Through this initiative, CARTIF strengthens its role as a key player in industrial innovation, contributing to a more sustainable, resilient, and human-centric digital transformation.

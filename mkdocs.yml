@@ -1,3 +1,7 @@
 site_name: CARTIFactory
 theme:
   name: material
+  logo: images/CARTIF_transparente.png
+  palette:
+    primary: blue
+    accent: orange
