@@ -18,7 +18,7 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Contents:
 
    ARISE/index
