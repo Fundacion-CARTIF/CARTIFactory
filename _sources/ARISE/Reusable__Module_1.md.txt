@@ -152,9 +152,9 @@ This node is compatible with ONNX models that:
 - Optionally include mask prototype outputs for instance segmentation
 - Use center-based box representation `(cx, cy, w, h)`
 
->[!WARNING]
->Models that do not follow this structure may require adapting the postprocessing logic.
-
+```{warning}
+Models that do not follow this structure may require adapting the postprocessing logic.
+```
 
 </details>
 
@@ -193,9 +193,9 @@ For the sending the diagnostics to the Context Broker we use a custom interface 
 | `node_name`              | `string`          | Name of the node publishing these metrics.                                              |
 
 
-> [!WARNING]
-> If infer_ms > 200 ms, a WARN status is published.
-
+```{warning}
+If infer_ms > 200 ms, a WARN status is published.
+```
 
 ## Detection action
 This action allows a client to request a visual search operation using a keyword.
@@ -229,6 +229,12 @@ ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw
 > ```bash
 > ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: <'your keyword'>}" --feedback
 > ```
+```{tip}
+If you want to also see the feedback from the action, add `--feedback` at the end.
+  ```bash
+  ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: <'your keyword'>}" --feedback
+  ```
+```
 
 # Defining the Models (TOML)
 We are using [Tom's Obvious Minimal Language](https://toml.io/en/) for the configuration description of the models. The file follows this structure:

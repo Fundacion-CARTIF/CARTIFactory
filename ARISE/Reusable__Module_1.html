@@ -70,7 +70,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#defining-the-models-toml">Defining the Models (TOML)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connecting-to-fiware-s-context-broker">Connecting to FIWARE’s Context Broker</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configure-fiware-to-store-the-reusable-module-topic">Configure FIWARE to store the reusable module topic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#grafana-connection-and-visualizing">Grafana connection and visualizing</a><ul>
@@ -256,10 +255,10 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 <li><p>Optionally include mask prototype outputs for instance segmentation</p></li>
 <li><p>Use center-based box representation <code class="docutils literal notranslate"><span class="pre">(cx,</span> <span class="pre">cy,</span> <span class="pre">w,</span> <span class="pre">h)</span></code></p></li>
 </ul>
-<blockquote>
-<div><p>[!WARNING]
-Models that do not follow this structure may require adapting the postprocessing logic.</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Models that do not follow this structure may require adapting the postprocessing logic.</p>
+</div>
 </details>
 </section>
 </section>
@@ -345,10 +344,10 @@ Models that do not follow this structure may require adapting the postprocessing
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p>[!WARNING]
-If infer_ms &gt; 200 ms, a WARN status is published.</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If infer_ms &gt; 200 ms, a WARN status is published.</p>
+</div>
 </section>
 <section id="detection-action">
 <h2>Detection action<a class="headerlink" href="#detection-action" title="Link to this heading"></a></h2>
@@ -427,28 +426,35 @@ If you want to also see the feedback from the action, add <code class="docutils 
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-</section>
-</section>
-<section id="defining-the-models-toml">
-<h1>Defining the Models (TOML)<a class="headerlink" href="#defining-the-models-toml" title="Link to this heading"></a></h1>
-<p>We are using <a class="reference external" href="https://toml.io/en/">Tom’s Obvious Minimal Language</a> for the configuration description of the models. The file follows this structure:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wheels&quot;</span>
-<span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This model can detect wheels&quot;</span>
-<span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/path_to_your_model&quot;</span>
-
-<span class="o">[</span>model<span class="o">]</span>
-<span class="nv">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wheels-seg.onnx&quot;</span>
-
-<span class="o">[</span>parameters<span class="o">]</span>
-<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Segmentation&quot;</span>
-<span class="nv">confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.6
-
-<span class="o">[</span>classes<span class="o">]</span>
-<span class="nv">classes</span><span class="o">=[</span><span class="s2">&quot;Left&quot;</span>,<span class="s2">&quot;Right&quot;</span><span class="o">]</span>
-<span class="nv">colours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">250</span><span class="o">]</span>,<span class="w"> </span><span class="o">[</span><span class="m">250</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]]</span>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to also see the feedback from the action, add <code class="docutils literal notranslate"><span class="pre">--feedback</span></code> at the end.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &lt;&#39;your keyword&#39;&gt;}&quot;</span><span class="w"> </span>--feedback
 </pre></div>
 </div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+# Defining the Models (TOML)
+We are using [Tom&#39;s Obvious Minimal Language](https://toml.io/en/) for the configuration description of the models. The file follows this structure:
+```bash
+title = &quot;Wheels&quot;
+description = &quot;This model can detect wheels&quot;
+path = &quot;/path_to_your_model&quot;
+
+[model]
+weights = &quot;wheels-seg.onnx&quot;
+
+[parameters]
+type = &quot;Segmentation&quot;
+confidence = 0.6
+
+[classes]
+classes=[&quot;Left&quot;,&quot;Right&quot;]
+colours = [[0, 0, 250], [250, 0, 0]]
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="connecting-to-fiware-s-context-broker">
 <h1>Connecting to FIWARE’s Context Broker<a class="headerlink" href="#connecting-to-fiware-s-context-broker" title="Link to this heading"></a></h1>
