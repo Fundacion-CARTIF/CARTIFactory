@@ -1,12 +1,5 @@
 # Reusable Module for Vision and target Matching
 
-<!-- ![ARISE_LOGO](../_static/images/ARISE_logo-light_mode.png) -->
-<!-- <figure markdown="span">
-  ![Image title](../_static/images/ARISE_logo-light_mode.png){ height="50" }
-  <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
-</figure> -->
-
-
 ```{figure} ../_static/images/ARISE_logo-light_mode.png
 :height: 50px
 :align: center
@@ -15,11 +8,8 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 ```
 
 ```{note}
-    Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
-
+  Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
 ```
-
----
 
 [![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
 [![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/)
@@ -36,8 +26,6 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 - Politecnico di Milano: 
 
 These modules hope to present an integration between [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware robotic and industrial applications, alongside [ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.
-
-
 
 
 ## Features
@@ -175,21 +163,6 @@ This node is compatible with ONNX models that:
 This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about FIWARE's Context Broker). 
 
 This node subscribes to statistics topics being published by the other two nodes and publish it into a joined status message, using the interface `custom_interfaces/PipelineStats`.
-
-```mermaid
-flowchart LR
-    kw[Keyword Matcher]
-    onnx[ONNX Detector]
-    pipeline[Pipeline Monitor]
-    CB[(Context Broker)]
-
-
-    kw[Keyword Matcher] --/stats/matcher--> pipeline[Pipeline Monitor]
-    onnx[ONNX Detector] --/stats/detector--> pipeline[Pipeline Monitor]
-    pipeline[Pipeline Monitor] --/stats/pipeline --> CB
-```
-
-
 
 
 # Custom Interfaces
