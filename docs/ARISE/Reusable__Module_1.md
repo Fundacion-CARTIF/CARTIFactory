@@ -2,7 +2,7 @@
 
 
 <figure markdown="span">
-  ![Image title](/images/ARISE_logo-light_mode.png){ height="50" }
+  ![Image title](images/ARISE_logo-light_mode.png){ height="50" }
   <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
 </figure>
 
