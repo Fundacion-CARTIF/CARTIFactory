@@ -1,6 +1,6 @@
 # Reusable Module for Vision and target Matching
 
-```{figure} ../_static/images/ARISE_logo-light_mode.png
+```{figure} ../_static/images/ARISE/ARISE_logo-light_mode.png
 :height: 50px
 :align: center
 
@@ -41,7 +41,7 @@ These modules hope to present an integration between [FIWARE Orion Context Broke
 This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
 
-![Diagram](../_static/images/Diagram_light.png)
+![Diagram](../_static/images/ARISE/Diagram_light.png)
 
 
 ### Dependencies
@@ -414,7 +414,7 @@ Additionally, the repository already includes a JSON file containing the dashboa
 
 Example of reusable module dashboard: 
 
-```{figure} ../_static/images/dashboard_image.png
+```{figure} ../_static/images/ARISE/dashboard_image.png
 :height: 300px
 :align: center
 ```
@@ -489,7 +489,7 @@ Number of frames discarded before processing due to overload or synchronization 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
 
-```{figure} ../_static/images/EN_FundedbytheEU_RGB_POS.png
+```{figure} ../_static/images/ARISE/EN_FundedbytheEU_RGB_POS.png
 :height: 50px
 :align: center
 ```

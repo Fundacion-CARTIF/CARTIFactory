@@ -1,12 +1,11 @@
 # About us
 
+## CARTIFactory
+
 ```{figure} ../_static/images/CARTIFactory/cartifactory-group.jpg
 :height: 300
 :align: center
 ```
-## CARTIFactory
-
-One of CARTIF’s latest initiatives is [CARTIFactory](https://www.cartif.es/en/cartif-joins-fiware-ihubs-network-launch-cartifactory/), a digital innovation pilot and experimental laboratory created to accelerate the adoption of advanced Industry 5.0 technologies. CARTIFactory officially joined the international FIWARE iHubs Network, reinforcing CARTIF’s role as a European reference center for open, interoperable, and human-centered industrial technologies.
 
 CARTIFactory provides companies, researchers, and public organizations with access to cutting-edge technologies such as:
 - Collaborative robotics
@@ -31,6 +30,12 @@ Another important element of CARTIFactory is its commitment to open standards an
 Through CARTIFactory, CARTIF aims to strengthen its position as a major innovation hub in Europe, helping industries transition toward smarter, safer, and more sustainable production systems while promoting collaboration between technology providers, researchers, and industrial stakeholders.
 
 ## CARTIF
+
+```{figure} ../_static/images/Cartif_edificio.jpg
+:height: 300
+:align: center
+```
+
 [CARTIF](https://www.cartif.es/en/about-us/) is an applied, horizontal research centre whose main mission is to offer innovative solutions to companies so that they can improve their processes, systems and products, increasing their competitiveness and creating new business opportunities. Legally it is a private, non-profit foundation, which was founded in 1994 at the University of Valladolid.
 
 CARTIF develops R&D projects financed by private companies or through public funds obtained from competitive calls at national and international level. CARTIF also supports public entities (city councils, regional governments…) on high impact projects planning and development.
