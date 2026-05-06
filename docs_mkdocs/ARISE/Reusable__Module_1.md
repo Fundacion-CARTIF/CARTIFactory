@@ -1,23 +1,29 @@
 # Reusable Module for Vision and target Matching
 
-
-<figure markdown="span">
-  ![Image title](../images/ARISE_logo-light_mode.png){ height="50" }
+<!-- ![ARISE_LOGO](../_static/images/ARISE_logo-light_mode.png) -->
+<!-- <figure markdown="span">
+  ![Image title](../_static/images/ARISE_logo-light_mode.png){ height="50" }
   <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
-</figure>
+</figure> -->
+
+
+```{figure} ../_static/images/ARISE_logo-light_mode.png
+:height: 50px
+:align: center
+
+Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
+```
 
 !!! info
 
     Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
 
 
-<hr>
+---
 
 [![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
-[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu
-)](https://releases.ubuntu.com/24.04/)
-[![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat
-)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)
+[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/)
+[![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)
 
 
 
@@ -25,9 +31,9 @@
 [ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors. 
 Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:
 - CARTIF Technology Centre: [**CARTIFactory**](https://github.com/Fundacion-CARTIF/CARTIFactory) (You are currently here!📍😃)
-- Intellimech: []()
-- PAL Robotics: []()
-- Politecnico di Milano: []()
+- Intellimech: 
+- PAL Robotics: 
+- Politecnico di Milano: 
 
 These modules hope to present an integration between [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware robotic and industrial applications, alongside [ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.
 
@@ -42,34 +48,13 @@ These modules hope to present an integration between [FIWARE Orion Context Broke
 - Industrial metrics (FPS, infer_ms, device, etc.)
 - Configurable `class_id` mode
 
-## Table of Contents
-- [Getting Started](#getting-started)
-  - [Dependencies](#dependencies)
-- [What is Included in the Module](#what-is-included-in-the-module)
-  - [Keyword Matcher](#keyword-matcher)
-  - [ONNX Detector](#onnx-detector)
-  - [Pipeline Monitor](#pipeline-monitor)
-- [Custom Interfaces](#custom-interfaces)
-  - [Pipeline Statistics](#pipeline-statistics)
-  - [Detection Action](#detection-action)
-- [Defining the Models](#defining-the-models)
-- [Connecting to FIWARE's Context Broker](#connecting-to-fiwares-context-broker)
-  - [Grafana Connection](#grafana-connection)
-- [Running the Module](#running-the-module)
-
 # Getting started
 
 This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
-<p align="left">
-  <!-- ---------- REUSABLE MODULE DIAGRAM ---------- -->
-  <!-- Light mode -->
-  <img src="images/Diagram_light.png#gh-light-mode-only" alt="EU Funding for light mode" height="500"/>
 
-  <!-- Dark mode -->
-  <img src="images/Diagram_dark.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="500"/>
+![Diagram](../_static/images/Diagram_light.png)
 
-</p>
 
 ## Dependencies
 
@@ -115,7 +100,7 @@ Overall, this node is designed as a ROS2 perception component for real-time indu
 
 The current implementation expects ONNX models that follow a **dense detection output structure**, with optional instance segmentation support.
 
-#### Outputs
+### Outputs
 
 The model must provide either:
 
@@ -128,7 +113,7 @@ The model must provide either:
 - `output[0]`: tensor containing bounding boxes, class scores, and mask coefficients
 - `output[1]`: tensor containing mask prototypes
 
-#### Expected prediction structure
+### Expected prediction structure
 
 Each prediction row is expected to encode:
 
@@ -138,7 +123,7 @@ Each prediction row is expected to encode:
 
 If segmentation is enabled, masks are reconstructed internally by combining the mask coefficients with the prototype tensor.
 
-#### Internal postprocessing
+### Internal postprocessing
 
 The node assumes a dense prediction tensor where each row represents one detection candidate. Postprocessing is handled internally and includes:
 
@@ -149,7 +134,7 @@ The node assumes a dense prediction tensor where each row represents one detecti
 
 If mask outputs are not present, the node automatically operates in detection-only mode.
 
-#### Input preprocessing
+### Input preprocessing
 
 Before inference, each image is preprocessed using the following steps:
 
@@ -158,7 +143,7 @@ Before inference, each image is preprocessed using the following steps:
 - Normalization to `[0, 1]`
 - Layout conversion to `NCHW`
 
-#### Output
+### Output
 
 The node publishes:
 
@@ -171,7 +156,7 @@ Optionally, it can also publish a debug image including:
 - Oriented bounding boxes (OBB)
 - Class labels and scores
 
-#### Model compatibility
+### Model compatibility
 
 This node is compatible with ONNX models that:
 
@@ -187,7 +172,7 @@ This node is compatible with ONNX models that:
 
 
 ## Pipeline Monitor
-This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about [FIWARE's Context Broker](#connecting-to-fiwares-context-broker)). 
+This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about FIWARE's Context Broker). 
 
 This node subscribes to statistics topics being published by the other two nodes and publish it into a joined status message, using the interface `custom_interfaces/PipelineStats`.
 
@@ -307,7 +292,7 @@ conf/orionld/config-dds.json
 
 Inside this file, add the following block inside:
 
-```json
+```text
 "ngsild": {
   "topics": { 
     ...
@@ -380,11 +365,11 @@ In Grafana, this query can be displayed as a
 
 ### Reusable module dashboard JSON
 
-Additionally, the repository already includes a [JSON file](dashboard_templat.json) containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
+Additionally, the repository already includes a JSON file containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
 
 Example of reusable module dashboard: 
 
-![Reusable module dashboard](images/dashboard_image.png)
+![Reusable module dashboard](../_static/images/dashboard_image.png)
 
 
 [1]: https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md "arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub"
@@ -421,4 +406,5 @@ The following launch arguments configure the behavior of the ONNX detector node 
 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
-![FundedByEU](../images/EN_FundedbytheEU_RGB_POS.png){ align=left }
+![FundedByEU](../_static/images/EN_FundedbytheEU_RGB_POS.png)
+
