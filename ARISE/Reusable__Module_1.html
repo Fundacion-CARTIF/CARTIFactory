@@ -13,7 +13,9 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reusable Module #2" href="Reusable__Module_2.html" />
+    <link rel="prev" title="What is ARISE?" href="ARISE.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,57 +33,59 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Reusable Module for Vision and target Matching</a></li>
-<li><a class="reference internal" href="#general-overview">General Overview</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ARISE.html">What is ARISE?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reusable Module for Vision and target Matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#general-overview">General Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#getting-started">Getting started</a><ul>
-<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-is-included-in-the-module">What is included in the module</a><ul>
-<li><a class="reference internal" href="#keyword-matcher">Keyword Matcher</a></li>
-<li><a class="reference internal" href="#onnx-detector">ONNX Detector</a><ul>
-<li><a class="reference internal" href="#outputs">Outputs</a></li>
-<li><a class="reference internal" href="#expected-prediction-structure">Expected prediction structure</a></li>
-<li><a class="reference internal" href="#internal-postprocessing">Internal postprocessing</a></li>
-<li><a class="reference internal" href="#input-preprocessing">Input preprocessing</a></li>
-<li><a class="reference internal" href="#output">Output</a></li>
-<li><a class="reference internal" href="#model-compatibility">Model compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#what-is-included-in-the-module">What is included in the module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#keyword-matcher">Keyword Matcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onnx-detector">ONNX Detector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outputs">Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-prediction-structure">Expected prediction structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-postprocessing">Internal postprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-preprocessing">Input preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-compatibility">Model compatibility</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pipeline-monitor">Pipeline Monitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipeline-monitor">Pipeline Monitor</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#custom-interfaces">Custom Interfaces</a><ul>
-<li><a class="reference internal" href="#pipeline-statistics">Pipeline Statistics</a></li>
-<li><a class="reference internal" href="#detection-action">Detection action</a><ul>
-<li><a class="reference internal" href="#goal">Goal</a></li>
-<li><a class="reference internal" href="#result">Result</a></li>
-<li><a class="reference internal" href="#feedback">Feedback</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#defining-the-models-toml">Defining the Models (TOML)</a></li>
-<li><a class="reference internal" href="#connecting-to-fiware-s-context-broker">Connecting to FIWARE’s Context Broker</a><ul>
-<li><a class="reference internal" href="#configure-fiware-to-store-the-reusable-module-topic">Configure FIWARE to store the reusable module topic</a></li>
-<li><a class="reference internal" href="#grafana-connection-and-visualizing">Grafana connection and visualizing</a><ul>
-<li><a class="reference internal" href="#reusable-module-dashboard-json">Reusable module dashboard JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#custom-interfaces">Custom Interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pipeline-statistics">Pipeline Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detection-action">Detection action</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feedback">Feedback</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#running-the-module">Running the Module</a><ul>
-<li><a class="reference internal" href="#launch-arguments">Launch Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#defining-the-models-toml">Defining the Models (TOML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#connecting-to-fiware-s-context-broker">Connecting to FIWARE’s Context Broker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configure-fiware-to-store-the-reusable-module-topic">Configure FIWARE to store the reusable module topic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grafana-connection-and-visualizing">Grafana connection and visualizing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reusable-module-dashboard-json">Reusable module dashboard JSON</a></li>
 </ul>
 </li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#running-the-module">Running the Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#launch-arguments">Launch Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Reusable__Module_2.html">Reusable Module #2</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -637,7 +641,10 @@ If you want to also see the feedback from the action, add <code class="docutils 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ARISE.html" class="btn btn-neutral float-left" title="What is ARISE?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reusable__Module_2.html" class="btn btn-neutral float-right" title="Reusable Module #2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

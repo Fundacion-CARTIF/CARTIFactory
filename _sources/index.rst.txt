@@ -21,6 +21,9 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
    :maxdepth: 2
    :caption: Contents:
 
+   ARISE/ARISE
+   ARISE/Reusable__Module_1
+   ARISE/Reusable__Module_2
 
 
 Indices and tables
