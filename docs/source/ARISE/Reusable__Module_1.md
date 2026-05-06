@@ -174,23 +174,59 @@ A `custom_interfaces` package is included, to handle the custom message for the 
 
 For the sending the diagnostics to the Context Broker we use a custom interface `custom_interfaces/PipelineStats` with the followind definition:
 
-| Field                    | Type              | Description                                                                             |
-| ------------------------ | ----------------- | --------------------------------------------------------------------------------------- |
-| `frames_dropped`         | `uint64`          | Number of frames discarded before processing due to overload or synchronization issues. |
-| `action_goals_received`  | `uint64`          | Total number of goals received by the action server.                                    |
-| `action_goals_accepted`  | `uint64`          | Number of goals accepted for execution.                                                 |
-| `action_goals_rejected`  | `uint64`          | Number of goals rejected by the server.                                                 |
-| `action_goals_canceled`  | `uint64`          | Number of goals canceled after acceptance.                                              |
-| `action_goals_succeeded` | `uint64`          | Number of goals successfully completed.                                                 |
-| `action_goals_failed`    | `uint64`          | Number of goals that finished with failure.                                             |
-| `match_requests`         | `uint64`          | Total number of match operations requested.                                             |
-| `match_success`          | `uint64`          | Number of successful match operations.                                                  |
-| `match_fail`             | `uint64`          | Number of match operations that failed.                                                 |
-| `fps_input`              | `float32`         | Frame rate of incoming images.                                                          |
-| `fps_processed`          | `float32`         | Frame rate actually processed by the node.                                              |
-| `avg_inference_ms`       | `float32`         | Average inference time per frame in milliseconds.                                       |
-| `camera_available`       | `bool`            | Indicates whether the camera stream is currently available.                             |
-| `node_name`              | `string`          | Name of the node publishing these metrics.                                              |
+```{list-table} PipelineStats fields
+:header-rows: 1
+:widths: 25 15 60
+
+* - Field
+  - Type
+  - Description
+* - `frames_dropped`
+  - `uint64`
+  - Number of frames discarded before processing due to overload or synchronization issues.
+* - `action_goals_received`
+  - `uint64`
+  - Total number of goals received by the action server.
+* - `action_goals_accepted`
+  - `uint64`
+  - Number of goals accepted for execution.
+* - `action_goals_rejected`
+  - `uint64`
+  - Number of goals rejected by the server.
+* - `action_goals_canceled`
+  - `uint64`
+  - Number of goals canceled after acceptance.
+* - `action_goals_succeeded`
+  - `uint64`
+  - Number of goals successfully completed.
+* - `action_goals_failed`
+  - `uint64`
+  - Number of goals that finished with failure.
+* - `match_requests`
+  - `uint64`
+  - Total number of match operations requested.
+* - `match_success`
+  - `uint64`
+  - Number of successful match operations.
+* - `match_fail`
+  - `uint64`
+  - Number of match operations that failed.
+* - `fps_input`
+  - `float32`
+  - Frame rate of incoming images.
+* - `fps_processed`
+  - `float32`
+  - Frame rate actually processed by the node.
+* - `avg_inference_ms`
+  - `float32`
+  - Average inference time per frame in milliseconds.
+* - `camera_available`
+  - `bool`
+  - Indicates whether the camera stream is currently available.
+* - `node_name`
+  - `string`
+  - Name of the node publishing these metrics.
+```
 
 
 ```{warning}
@@ -202,22 +238,52 @@ This action allows a client to request a visual search operation using a keyword
 The node performs detection and returns the results along with an annotated image.
 
 ### Goal
-| Field | Type     | Description                                                        |
-| ----- | -------- | ------------------------------------------------------------------ |
-| `kw`  | `string` | Keyword describing the object or class to search for in the scene. |
+```{list-table} Goal fields
+:header-rows: 1
+:widths: 25 20 55
+
+* - Field
+  - Type
+  - Description
+* - `kw`
+  - `string`
+  - Keyword describing the object or class to search for in the scene.
+```
 
 ### Result
-| Field            | Type                           | Description                                                                 |
-| ---------------- | ------------------------------ | --------------------------------------------------------------------------- |
-| `action_success` | `bool`                         | Indicates whether the action execution completed successfully.              |
-| `match_success`  | `bool`                         | Indicates whether a matching detection was found for the requested keyword. |
-| `det`            | `vision_msgs/Detection2DArray` | Array containing the detections generated by the model.                     |
-| `img`            | `sensor_msgs/Image`            | Image with the detections annotated for visualization or debugging.         |
+```{list-table} Result fields
+:header-rows: 1
+:widths: 25 30 45
+
+* - Field
+  - Type
+  - Description
+* - `action_success`
+  - `bool`
+  - Indicates whether the action execution completed successfully.
+* - `match_success`
+  - `bool`
+  - Indicates whether a matching detection was found for the requested keyword.
+* - `det`
+  - `vision_msgs/Detection2DArray`
+  - Array containing the detections generated by the model.
+* - `img`
+  - `sensor_msgs/Image`
+  - Image with the detections annotated for visualization or debugging.
+```
 
 ### Feedback
-| Field      | Type     | Description                                                                  |
-| ---------- | -------- | ---------------------------------------------------------------------------- |
-| `feedback` | `string` | Informational message describing the current status of the action execution. |
+```{list-table} Feedback fields
+:header-rows: 1
+:widths: 25 20 55
+
+* - Field
+  - Type
+  - Description
+* - `feedback`
+  - `string`
+  - Informational message describing the current status of the action execution.
+```
 
 To call the action execute:
 ```bash
@@ -371,18 +437,51 @@ The following launch arguments configure the behavior of the ONNX detector node 
 
 ## Launch Arguments
 
-| Argument | Default | Type | Description |
-|--------|--------|--------|--------|
-| `toml_path` | `""` | string | Path to the `model.toml` configuration file used by the `onnx_detector` node. |
-| `image_topic` | `/camera/camera/color/image_raw` | string | Input ROS2 image topic from which the detector subscribes to images. |
-| `detections_topic` | `/detections` | string | Base topic where detection results are published. Annotated images are published on `<detections_topic>/image`. |
-| `publish_debug_image` | `true` | bool | Enables publishing of the annotated debug image showing detections. |
-| `detections_qos` | `sensor_data` | string | QoS profile used when publishing detection messages. |
-| `debug_qos` | `best_effort` | string | QoS profile used when publishing the debug image topic. |
-| `img_h` | `480` | int | Height of the image expected by the ONNX model. |
-| `img_w` | `640` | int | Width of the image expected by the ONNX model. |
-| `class_id_mode` | `name` | string | Determines how the detected class is published: `id` (numeric class id) or `name` (class label). |
+```{list-table} Launch arguments
+:header-rows: 1
+:widths: 20 20 15 45
 
+* - Argument
+  - Default
+  - Type
+  - Description
+* - `toml_path`
+  - `""`
+  - `string`
+  - Path to the `model.toml` configuration file used by the `onnx_detector` node.
+* - `image_topic`
+  - `/camera/camera/color/image_raw`
+  - `string`
+  - Input ROS2 image topic from which the detector subscribes to images.
+* - `detections_topic`
+  - `/detections`
+  - `string`
+  - Base topic where detection results are published. Annotated images are published on `<detections_topic>/image`.
+* - `publish_debug_image`
+  - `true`
+  - `bool`
+  - Enables publishing of the annotated debug image showing detections.
+* - `detections_qos`
+  - `sensor_data`
+  - `string`
+  - QoS profile used when publishing detection messages.
+* - `debug_qos`
+  - `best_effort`
+  - `string`
+  - QoS profile used when publishing the debug image topic.
+* - `img_h`
+  - `480`
+  - `int`
+  - Height of the image expected by the ONNX model.
+* - `img_w`
+  - `640`
+  - `int`
+  - Width of the image expected by the ONNX model.
+* - `class_id_mode`
+  - `name`
+  - `string`
+  - Determines how the detected class is published: `id` (numeric class id) or `name` (class label).
+```
 ---
 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.

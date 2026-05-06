@@ -22,8 +22,7 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
    :caption: Contents:
 
    ARISE/index
-   CARTIFActory/About_us
-
+   CARTIFactory/About_us
 
 Indices and tables
 ==================
