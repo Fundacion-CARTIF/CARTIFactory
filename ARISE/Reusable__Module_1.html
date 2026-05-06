@@ -476,7 +476,6 @@ window.runMermaid = runMermaid;</script>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reusable Module for Vision and target Matching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#general-overview">General Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#features">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a><ul>
@@ -552,15 +551,25 @@ window.runMermaid = runMermaid;</script>
              
   <section id="reusable-module-for-vision-and-target-matching">
 <h1>Reusable Module for Vision and target Matching<a class="headerlink" href="#reusable-module-for-vision-and-target-matching" title="Link to this heading"></a></h1>
-<figure markdown="span">
-  ![Image title](../images/ARISE_logo-light_mode.png){ height="50" }
+<!-- ![ARISE_LOGO](../_static/images/ARISE_logo-light_mode.png) -->
+<!-- <figure markdown="span">
+  ![Image title](../_static/images/ARISE_logo-light_mode.png){ height="50" }
   <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
+</figure> -->
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/ARISE_logo-light_mode.png"><img alt="../_images/ARISE_logo-light_mode.png" src="../_images/ARISE_logo-light_mode.png" style="height: 50px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Modules are part of the <a class="reference external" href="https://arise-middleware.eu/">ARISE Middleware</a></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p>!!! info</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
 </pre></div>
 </div>
-<hr>
+</div>
+<hr class="docutils" />
 <p><a class="reference external" href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
 <a class="reference external" href="https://releases.ubuntu.com/24.04/"><img alt="ubuntu24" src="https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&amp;logo=ubuntu" /></a>
 <a class="reference external" href="https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0"><img alt="OrionCB" src="https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat" /></a></p>
@@ -571,9 +580,9 @@ window.runMermaid = runMermaid;</script>
 Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:</p>
 <ul class="simple">
 <li><p>CARTIF Technology Centre: <a class="reference external" href="https://github.com/Fundacion-CARTIF/CARTIFactory"><strong>CARTIFactory</strong></a> (You are currently here!📍😃)</p></li>
-<li><p>Intellimech: <a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p>PAL Robotics: <a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
-<li><p>Politecnico di Milano: <a class="reference internal" href="#"><code class="xref myst docutils literal notranslate"></code></a></p></li>
+<li><p>Intellimech:</p></li>
+<li><p>PAL Robotics:</p></li>
+<li><p>Politecnico di Milano:</p></li>
 </ul>
 <p>These modules hope to present an integration between <a class="reference external" href="https://fiware-orion.readthedocs.io/en/master/">FIWARE Orion Context Broker</a> and <a class="reference external" href="https://vulcanexus.org/">eProsima Vulcanexus</a> to enable context-aware robotic and industrial applications, alongside <a class="reference external" href="https://ros4hri.github.io/">ROS4HRI</a> as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.</p>
 <section id="features">
@@ -587,47 +596,11 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 <li><p>Configurable <code class="docutils literal notranslate"><span class="pre">class_id</span></code> mode</p></li>
 </ul>
 </section>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="#getting-started">Getting Started</a></p>
-<ul>
-<li><p><a class="reference internal" href="#dependencies">Dependencies</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#what-is-included-in-the-module">What is Included in the Module</a></p>
-<ul>
-<li><p><a class="reference internal" href="#keyword-matcher">Keyword Matcher</a></p></li>
-<li><p><a class="reference internal" href="#onnx-detector">ONNX Detector</a></p></li>
-<li><p><a class="reference internal" href="#pipeline-monitor">Pipeline Monitor</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#custom-interfaces">Custom Interfaces</a></p>
-<ul>
-<li><p><a class="reference internal" href="#pipeline-statistics">Pipeline Statistics</a></p></li>
-<li><p><a class="reference internal" href="#detection-action">Detection Action</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#defining-the-models"><span class="xref myst">Defining the Models</span></a></p></li>
-<li><p><a class="reference internal" href="#connecting-to-fiware-s-context-broker">Connecting to FIWARE’s Context Broker</a></p>
-<ul>
-<li><p><a class="reference internal" href="#grafana-connection"><span class="xref myst">Grafana Connection</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#running-the-module">Running the Module</a></p></li>
-</ul>
-</section>
 </section>
 <section id="getting-started">
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <p>This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the <code class="docutils literal notranslate"><span class="pre">keyword</span></code>, or target object for the module.</p>
-<p align="left">
-  <!-- ---------- REUSABLE MODULE DIAGRAM ---------- -->
-  <!-- Light mode -->
-  <img src="images/Diagram_light.png#gh-light-mode-only" alt="EU Funding for light mode" height="500"/>
-  <!-- Dark mode -->
-  <img src="images/Diagram_dark.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="500"/>
-</p>
+<p><img alt="Diagram" src="../_images/Diagram_light.png" /></p>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
 <p>All Python dependencies are included inside the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. To install, execute on terminal:</p>
@@ -736,7 +709,7 @@ Models that do not follow this structure may require adapting the postprocessing
 </section>
 <section id="pipeline-monitor">
 <h2>Pipeline Monitor<a class="headerlink" href="#pipeline-monitor" title="Link to this heading"></a></h2>
-<p>This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about <a class="reference internal" href="#connecting-to-fiware-s-context-broker">FIWARE’s Context Broker</a>).</p>
+<p>This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about FIWARE’s Context Broker).</p>
 <p>This node subscribes to statistics topics being published by the other two nodes and publish it into a joined status message, using the interface <code class="docutils literal notranslate"><span class="pre">custom_interfaces/PipelineStats</span></code>.</p>
 <pre  class="mermaid">
         flowchart LR
@@ -942,10 +915,10 @@ If you want to also see the feedback from the action, add <code class="docutils 
 </pre></div>
 </div>
 <p>Inside this file, add the following block inside:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ngsild&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="err">...</span>
-<span class="w">  </span><span class="p">}</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;ngsild&quot;: {
+  &quot;topics&quot;: { 
+    ...
+  }
 </pre></div>
 </div>
 <p>Add this entry:</p>
@@ -1000,9 +973,9 @@ If you want to also see the feedback from the action, add <code class="docutils 
 <p>time-series chart to monitor how the action-goal counters evolve over time.</p>
 <section id="reusable-module-dashboard-json">
 <h3>Reusable module dashboard JSON<a class="headerlink" href="#reusable-module-dashboard-json" title="Link to this heading"></a></h3>
-<p>Additionally, the repository already includes a <a class="reference internal" href="#dashboard_templat.json"><span class="xref myst">JSON file</span></a> containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually.</p>
+<p>Additionally, the repository already includes a JSON file containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually.</p>
 <p>Example of reusable module dashboard:</p>
-<p><img alt="Reusable module dashboard" src="ARISE/images/dashboard_image.png" /></p>
+<p><img alt="Reusable module dashboard" src="../_images/dashboard_image.png" /></p>
 </section>
 </section>
 </section>
@@ -1073,7 +1046,7 @@ If you want to also see the feedback from the action, add <code class="docutils 
 </table>
 <hr class="docutils" />
 <p>This project has received funding from the European Union’s <strong>Horizon 2020</strong> research and innovation programme under grant agreement <strong>no. 101135784</strong>.</p>
-<p><img alt="FundedByEU" src="images/EN_FundedbytheEU_RGB_POS.png" />{ align=left }</p>
+<p><img alt="FundedByEU" src="../_images/EN_FundedbytheEU_RGB_POS.png" /></p>
 </section>
 </section>
 
