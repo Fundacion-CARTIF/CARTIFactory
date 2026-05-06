@@ -1,7 +1,7 @@
 # About us
 
 ```{figure} ../_static/images/CARTIFactory/cartifactory-group.jpg
-:height: 50px
+:height: 200
 :align: center
 ```
 ## CARTIFactory
