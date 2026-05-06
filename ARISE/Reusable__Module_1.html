@@ -274,7 +274,13 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 <section id="pipeline-statistics">
 <h2>Pipeline Statistics<a class="headerlink" href="#pipeline-statistics" title="Link to this heading"></a></h2>
 <p>For the sending the diagnostics to the Context Broker we use a custom interface <code class="docutils literal notranslate"><span class="pre">custom_interfaces/PipelineStats</span></code> with the followind definition:</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">PipelineStats fields</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Type</p></th>
@@ -355,7 +361,13 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 The node performs detection and returns the results along with an annotated image.</p>
 <section id="goal">
 <h3>Goal<a class="headerlink" href="#goal" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Goal fields</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Type</p></th>
@@ -372,7 +384,13 @@ The node performs detection and returns the results along with an annotated imag
 </section>
 <section id="result">
 <h3>Result<a class="headerlink" href="#result" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Result fields</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Type</p></th>
@@ -401,7 +419,13 @@ The node performs detection and returns the results along with an annotated imag
 </section>
 <section id="feedback">
 <h3>Feedback<a class="headerlink" href="#feedback" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Feedback fields</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Type</p></th>
@@ -526,7 +550,10 @@ colours = [[0, 0, 250], [250, 0, 0]]
 <h3>Reusable module dashboard JSON<a class="headerlink" href="#reusable-module-dashboard-json" title="Link to this heading"></a></h3>
 <p>Additionally, the repository already includes a JSON file containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually.</p>
 <p>Example of reusable module dashboard:</p>
-<p><img alt="Reusable module dashboard" src="../_images/dashboard_image.png" /></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_static/_static/images/dashboard_image.png"><img alt="_static/_static/images/dashboard_image.png" src="_static/_static/images/dashboard_image.png" style="height: 50px;" />
+</a>
+</figure>
 </section>
 </section>
 </section>
@@ -539,7 +566,14 @@ colours = [[0, 0, 250], [250, 0, 0]]
 <p>The following launch arguments configure the behavior of the ONNX detector node and its ROS2 interfaces.</p>
 <section id="launch-arguments">
 <h2>Launch Arguments<a class="headerlink" href="#launch-arguments" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Launch arguments</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 45.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
 <th class="head"><p>Default</p></th>
@@ -550,47 +584,47 @@ colours = [[0, 0, 250], [250, 0, 0]]
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">toml_path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>Path to the <code class="docutils literal notranslate"><span class="pre">model.toml</span></code> configuration file used by the <code class="docutils literal notranslate"><span class="pre">onnx_detector</span></code> node.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">image_topic</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/camera/camera/color/image_raw</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>Input ROS2 image topic from which the detector subscribes to images.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detections_topic</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/detections</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>Base topic where detection results are published. Annotated images are published on <code class="docutils literal notranslate"><span class="pre">&lt;detections_topic&gt;/image</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">publish_debug_image</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p>Enables publishing of the annotated debug image showing detections.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detections_qos</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">sensor_data</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>QoS profile used when publishing detection messages.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">debug_qos</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">best_effort</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>QoS profile used when publishing the debug image topic.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">img_h</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">480</span></code></p></td>
-<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p>Height of the image expected by the ONNX model.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">img_w</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">640</span></code></p></td>
-<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p>Width of the image expected by the ONNX model.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">class_id_mode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
-<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>Determines how the detected class is published: <code class="docutils literal notranslate"><span class="pre">id</span></code> (numeric class id) or <code class="docutils literal notranslate"><span class="pre">name</span></code> (class label).</p></td>
 </tr>
 </tbody>
