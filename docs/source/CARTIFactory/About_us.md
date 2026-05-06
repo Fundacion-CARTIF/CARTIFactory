@@ -5,7 +5,7 @@ El iHub, ubicado en el Parque Tecnológico de Boecillo (Valladolid), se ha incor
 
 “En CARTIF seguimos apostando por estas tecnologías abiertas para construir un futuro donde la colaboración entre sistemas y plataformas sea la clave del éxito. Como iHub oficial, CARTIFactory no solo fomentará el uso de FIWARE, sino que también actuará como un centro de referencia con su laboratorio de experimentación para fomentar la interoperabilidad en aplicaciones robóticas de nuestra comunidad y el ecosistema industrial”, señala Aníbal Reñones, director del área de Industria 4.0 de CARTIF.
 
-# Un iHub orientado a la Industria 5.0
+## Un iHub orientado a la Industria 5.0
 CARTIFactory iHub está diseñado para promover un modelo de Industria 5.0 donde la tecnología se pone al servicio del bienestar humano, de la sostenibilidad y de la resiliencia combinando la interacción humano-robot (HRI) en contextos de producción y logística industrial. Está diseñado para evaluar algoritmos de comportamiento robótico adaptativo y desarrollo de interfaces para un una interacción natural con los medios productivos y ofrece:
 
 Servicios de formación y asesoramiento en tecnologías FIWARE.
@@ -23,7 +23,7 @@ Montaje y desmontaje de productos de alto valor, mejorando precisión y ergonom�
 Picking de productos complejos de almacenes industriales para tareas de alta variabilidad de producto.
 Ambos casos refuerzan el enfoque humano y seguro que propone la Industria 5.0.
 
-# Un clúster europeo para la innovación industrial
+## Un clúster europeo para la innovación industrial
 El piloto de innovación digital CARTIFactory iHub es también cofundador del Clúster FIWARE iHubs para Manufactura, junto con Faubourg Numérique (Francia) y la Universidad de Ciencias Aplicadas de Tampere (Finlandia). Este clúster busca:
 
 Desarrollar servicios compartidos y metodologías comunes usando tecnologías abiertas como FIWARE.
@@ -32,7 +32,7 @@ Facilitar colaboraciones con EDIHs europeos en programas conjuntos de formación
 FIWARE como pilar tecnológico
 FIWARE proporciona una base tecnológica abierta, ideal para desarrollar soluciones industriales interoperables. Gracias a componentes como FIWARE Orion-LD, CARTIFactory puede ofrecer el desarrollo de tecnologías que permitan:
 
-# Convergencia IT/OT en entornos de producción.
+## Convergencia IT/OT en entornos de producción.
 Monitorización en tiempo real y analítica predictiva.
 Generar soluciones plug-and-play adaptables a distintos sectores.
 Con esta iniciativa, CARTIF refuerza su liderazgo en innovación industrial y posiciona a Castilla y León como un nodo clave de la transformación digital europea.
