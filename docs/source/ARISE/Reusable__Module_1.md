@@ -1,6 +1,6 @@
 # Reusable Module for Vision and target Matching
 
-```{figure} ../_static/images/ARISE_logo-light_mode.png
+```{figure} ../_static/images/ARISE/ARISE_logo-light_mode.png
 :height: 50px
 :align: center
 
@@ -41,7 +41,7 @@ These modules hope to present an integration between [FIWARE Orion Context Broke
 This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
 
-![Diagram](../_static/images/Diagram_light.png)
+![Diagram](../_static/images/ARISE/Diagram_light.png)
 
 
 ### Dependencies
@@ -359,7 +359,7 @@ After adding this configuration, FIWARE will be able to detect the `/stats/pipel
 
 ### Grafana connection and visualizing
 
-To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation. ([GitHub][1])
+To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation.
 
 In particular, the documentation includes:
 
@@ -367,7 +367,7 @@ In particular, the documentation includes:
 * how to create a new dashboard,
 * how to add a panel,
 * how to write a query for the selected datasource,
-* and how to choose the most suitable visualization for the data. ([GitHub][1])
+* and how to choose the most suitable visualization for the data.
 
 
 <details>
@@ -414,16 +414,10 @@ Additionally, the repository already includes a JSON file containing the dashboa
 
 Example of reusable module dashboard: 
 
-```{figure} ../_static/images/dashboard_image.png
-:height: 50px
+```{figure} ../_static/images/ARISE/dashboard_image.png
+:height: 300px
 :align: center
 ```
-
-[1]: https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md "arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub"
-
-
-
-
 
 
 ## Running the Module
@@ -495,7 +489,7 @@ Number of frames discarded before processing due to overload or synchronization 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
 
-```{figure} ../_static/images/EN_FundedbytheEU_RGB_POS.png
+```{figure} ../_static/images/ARISE/EN_FundedbytheEU_RGB_POS.png
 :height: 50px
 :align: center
 ```

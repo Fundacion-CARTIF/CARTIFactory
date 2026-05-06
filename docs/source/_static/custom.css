@@ -1,0 +1,12 @@
+/* Logo */
+.wy-side-nav-search::before {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 80px;
+    margin: 0 auto 10px auto;
+    background-image: url("../_static/images/CARTIF_transparente.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
