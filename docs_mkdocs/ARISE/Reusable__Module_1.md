@@ -14,10 +14,10 @@
 Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 ```
 
-!!! info
-
+```{note}
     Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
 
+```
 
 ---
 
