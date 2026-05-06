@@ -63,7 +63,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="light-green">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -490,20 +490,15 @@
 
 
 <h1 id="reusable-module-for-vision-and-target-matching">Reusable Module for Vision and target Matching</h1>
-<p align="center">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="/images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
-  <!-- Dark mode -->
-  <img src="/images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-</p>
-
-<p align="center">
-  These 
-  Modules are part of the ARISE Middleware<br>
-  <a href="https://arise-middleware.eu/">ARISE Middleware site</a>
-</p>
-
+<figure>
+  <img alt="Image title" height="50" src="/images/ARISE_logo-light_mode.png" />
+<br />
+<figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Access the GitHub repository <a href="https://github.com/Fundacion-CARTIF/cartifactory-vision-matching">here</a>!</p>
+</div>
 <hr>
 
 <p><a href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
@@ -556,13 +551,13 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 
 <h2 id="dependencies">Dependencies</h2>
 <p>All Python dependencies are included inside the <code>requirements.txt</code> file. To install, execute on terminal:</p>
-<pre><code class="language-bash">pip install -r /requirements.txt
-</code></pre>
-<p>This package is dependent on other ROS2 interfaces:</p>
-<pre><code class="language-bash">sudo apt install \
-  ros-${ROS_DISTRO}-vision-msgs \
-  ros-${ROS_DISTRO}-cv-bridge
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/requirements.txt
+</code></pre></div>
+<p>This package is dependent on other ROS2 interfaces:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-vision-msgs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-cv-bridge
+</code></pre></div></p>
 <h1 id="what-is-included-in-the-module">What is included in the module</h1>
 <p>We provide the <strong>CARTIFactory</strong> package, home to several nodes, that together allow you to test this reusable module.</p>
 <h2 id="keyword-matcher">Keyword Matcher</h2>
@@ -654,7 +649,7 @@ This node is compatible with ONNX models that:
 <h2 id="pipeline-monitor">Pipeline Monitor</h2>
 <p>This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about <a href="#connecting-to-fiwares-context-broker">FIWARE's Context Broker</a>). </p>
 <p>This node subscribes to statistics topics being published by the other two nodes and publish it into a joined status message, using the interface <code>custom_interfaces/PipelineStats</code>.</p>
-<pre><code class="language-mermaid">flowchart LR
+<div class="highlight"><pre><span></span><code>flowchart LR
     kw[Keyword Matcher]
     onnx[ONNX Detector]
     pipeline[Pipeline Monitor]
@@ -664,7 +659,7 @@ This node is compatible with ONNX models that:
     kw[Keyword Matcher] --/stats/matcher--&gt; pipeline[Pipeline Monitor]
     onnx[ONNX Detector] --/stats/detector--&gt; pipeline[Pipeline Monitor]
     pipeline[Pipeline Monitor] --/stats/pipeline --&gt; CB
-</code></pre>
+</code></pre></div>
 <h1 id="custom-interfaces">Custom Interfaces</h1>
 <p>A <code>custom_interfaces</code> package is included, to handle the custom message for the pipeline information and the goal</p>
 <h2 id="pipeline-statistics">Pipeline Statistics</h2>
@@ -828,51 +823,51 @@ The node performs detection and returns the results along with an annotated imag
 </tr>
 </tbody>
 </table>
-<p>To call the action execute:</p>
-<pre><code class="language-bash">ros2 action send_goal /detection/match custom_interfaces/action/MatchAction &quot;{kw: '&lt;'your keyword'&gt;}&quot;
-</code></pre>
+<p>To call the action execute:
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &#39;&lt;&#39;your keyword&#39;&gt;}&quot;</span>
+</code></pre></div></p>
 <blockquote>
 <p>[!TIP]
 If you want to also see the feedback from the action, add <code>--feedback</code> at the end.
-<code>bash
-ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: &lt;'your keyword'&gt;}" --feedback</code></p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &lt;&#39;your keyword&#39;&gt;}&quot;</span><span class="w"> </span>--feedback
+</code></pre></div></p>
 </blockquote>
 <h1 id="defining-the-models-toml">Defining the Models (TOML)</h1>
-<p>We are using <a href="https://toml.io/en/">Tom's Obvious Minimal Language</a> for the configuration description of the models. The file follows this structure:</p>
-<pre><code class="language-bash">title = &quot;Wheels&quot;
-description = &quot;This model can detect wheels&quot;
-path = &quot;/path_to_your_model&quot;
+<p>We are using <a href="https://toml.io/en/">Tom's Obvious Minimal Language</a> for the configuration description of the models. The file follows this structure:
+<div class="highlight"><pre><span></span><code><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wheels&quot;</span>
+<span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This model can detect wheels&quot;</span>
+<span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/path_to_your_model&quot;</span>
 
-[model]
-weights = &quot;wheels-seg.onnx&quot;
+<span class="o">[</span>model<span class="o">]</span>
+<span class="nv">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wheels-seg.onnx&quot;</span>
 
-[parameters]
-type = &quot;Segmentation&quot;
-confidence = 0.6
+<span class="o">[</span>parameters<span class="o">]</span>
+<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Segmentation&quot;</span>
+<span class="nv">confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.6
 
-[classes]
-classes=[&quot;Left&quot;,&quot;Right&quot;]
-colours = [[0, 0, 250], [250, 0, 0]]
-</code></pre>
+<span class="o">[</span>classes<span class="o">]</span>
+<span class="nv">classes</span><span class="o">=[</span><span class="s2">&quot;Left&quot;</span>,<span class="s2">&quot;Right&quot;</span><span class="o">]</span>
+<span class="nv">colours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">250</span><span class="o">]</span>,<span class="w"> </span><span class="o">[</span><span class="m">250</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]]</span>
+</code></pre></div></p>
 <h1 id="connecting-to-fiwares-context-broker">Connecting to FIWARE's Context Broker</h1>
 <p>The ecosystem the interaction is running under <a href="https://github.com/Engineering-Research-and-Development/arise-poc/">Engineering Group's PoC</a> ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.</p>
 <h2 id="configure-fiware-to-store-the-reusable-module-topic">Configure FIWARE to store the reusable module topic</h2>
 <p>To make FIWARE store the topic published by the reusable module, you first need to edit the configuration file located at:</p>
-<pre><code class="language-bash">conf/orionld/config-dds.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>conf/orionld/config-dds.json
+</code></pre></div>
 <p>Inside this file, add the following block inside:</p>
-<pre><code class="language-json">&quot;ngsild&quot;: {
-  &quot;topics&quot;: { 
-    ...
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;ngsild&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
 <p>Add this entry:</p>
-<pre><code class="language-json">&quot;rt/stats/pipeline&quot;: {
-  &quot;entityType&quot;: &quot;PipelineDetection&quot;,
-  &quot;entityId&quot;: &quot;urn:ngsi-ld:stats:1&quot;,
-  &quot;attribute&quot;: &quot;stats&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;rt/stats/pipeline&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;entityType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PipelineDetection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ngsi-ld:stats:1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stats&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>After adding this configuration, FIWARE will be able to detect the <code>/stats/pipeline</code> topic and store its data correctly in the TimescaleDB database.</p>
 <h2 id="grafana-connection-and-visualizing">Grafana connection and visualizing</h2>
 <p>To visualize the data stored in TimescaleDB with Grafana, follow the steps described in <strong>Step 4 - Access the Grafana Dashboard</strong> of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at <code>https://localhost/login</code> with the default credentials <code>admin/admin</code>, and the same section also covers datasource configuration and dashboard creation. (<a href="https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md" title="arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub">GitHub</a>)</p>
@@ -891,20 +886,18 @@ colours = [[0, 0, 250], [250, 0, 0]]
 The following query can be used to visualize action-goal statistics for the reusable module:
 
 
-
-<pre><code class="language-sql">SELECT
-  ts AS &quot;time&quot;,
-  (compound -&gt;&gt; 'action_goals_received')::integer AS &quot;Received&quot;,
-  (compound -&gt;&gt; 'action_goals_accepted')::integer AS &quot;Accepted&quot;,
-  (compound -&gt;&gt; 'action_goals_rejected')::integer AS &quot;Rejected&quot;,
-  (compound -&gt;&gt; 'action_goals_canceled')::integer AS &quot;Canceled&quot;,
-  (compound -&gt;&gt; 'action_goals_succeeded')::integer AS &quot;Succeeded&quot;,
-  (compound -&gt;&gt; 'action_goals_failed')::integer AS &quot;Failed&quot;
-FROM public.attributes
-WHERE entityid = 'urn:ngsi-ld:stats:1'
-ORDER BY 1;
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="n">ts</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;time&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_received&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Received&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_accepted&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Accepted&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_rejected&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Rejected&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_canceled&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Canceled&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_succeeded&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Succeeded&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">&#39;action_goals_failed&#39;</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;Failed&quot;</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="n">attributes</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">entityid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;urn:ngsi-ld:stats:1&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 
 This query retrieves time-series data for the entity `urn:ngsi-ld:stats:1` from the `public.attributes` table. For each timestamp (`ts`), it extracts several counters stored inside the `compound` JSON field and converts them to integers.
 
@@ -927,9 +920,9 @@ In Grafana, this query can be displayed as a
 <p>Example of reusable module dashboard: </p>
 <p><img alt="Reusable module dashboard" src="images/dashboard_image.png" /></p>
 <h1 id="running-the-module">Running the Module</h1>
-<p>The launch file <code>cartifactory_pipeline.launch.py</code> provides an easy way to start the module. You only need to define </p>
-<pre><code class="language-bash">ros2 launch cartifactory cartifactory_pipeline.launch.py toml_path:=/path/to/model.toml
-</code></pre>
+<p>The launch file <code>cartifactory_pipeline.launch.py</code> provides an easy way to start the module. You only need to define 
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>cartifactory<span class="w"> </span>cartifactory_pipeline.launch.py<span class="w"> </span>toml_path:<span class="o">=</span>/path/to/model.toml
+</code></pre></div></p>
 <p>The following launch arguments configure the behavior of the ONNX detector node and its ROS2 interfaces.</p>
 <h2 id="launch-arguments">Launch Arguments</h2>
 <table>
@@ -996,24 +989,11 @@ In Grafana, this query can be displayed as a
 <td>string</td>
 <td>Determines how the detected class is published: <code>id</code> (numeric class id) or <code>name</code> (class label).</td>
 </tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
-<p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement no. 101135784.</p>
-<p align="left">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="/images/EN_FundedbytheEU_RGB_POS.png#gh-light-mode-only" alt="EU Funding for light mode" height="100"/>
-
-  <!-- Dark mode -->
-  <img src="/images/EN_FundedbytheEU_RGB_NEG.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="100"/>
-
-</p>
+<hr />
+<p>This project has received funding from the European Union’s <strong>Horizon 2020</strong> research and innovation programme under grant agreement <strong>no. 101135784</strong>.</p>
+<p><img align="left" alt="FundedByEU" src="/images/EN_FundedbytheEU_RGB_POS.png" /></p>
 
 
 
