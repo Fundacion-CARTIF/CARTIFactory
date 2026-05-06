@@ -2,7 +2,7 @@
 
 
 <figure markdown="span">
-  ![Image title](images/ARISE_logo-light_mode.png){ height="50" }
+  ![Image title](../images/ARISE_logo-light_mode.png){ height="50" }
   <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
 </figure>
 
@@ -421,4 +421,4 @@ The following launch arguments configure the behavior of the ONNX detector node 
 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
-![FundedByEU](/images/EN_FundedbytheEU_RGB_POS.png){ align=left }
+![FundedByEU](../images/EN_FundedbytheEU_RGB_POS.png){ align=left }

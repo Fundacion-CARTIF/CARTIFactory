@@ -1,6 +1,6 @@
 # Welcome to CARTIFactory
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<!-- For full documentation visit [mkdocs.org](https://www.mkdocs.org). -->
 
 ## What is CARTIFactory?
 CARTIFactory iHub is a digital innovation pilot developed by the CARTIF Technology Centre to help companies access and adopt advanced technologies such as collaborative robotics, generative AI, digital twins, and industrial IoT. Based in the Boecillo Technology Park (Valladolid), it is part of the international FIWARE iHub network, promoting open, interoperable, and human-centered solutions for industrial digitalization.
