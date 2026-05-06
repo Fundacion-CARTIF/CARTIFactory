@@ -348,8 +348,10 @@ Additionally, the repository already includes a JSON file containing the dashboa
 
 Example of reusable module dashboard: 
 
-![Reusable module dashboard](../_static/images/dashboard_image.png)
-
+```{figure} ../_static/images/../_static/images/dashboard_image.png
+:height: 50px
+:align: center
+```
 
 [1]: https://github.com/Engineering-Research-and-Development/arise-poc/blob/main/docs/ARISE_PoC_Tutorial_Extended.md "arise-poc/docs/ARISE_PoC_Tutorial_Extended.md at main · Engineering-Research-and-Development/arise-poc · GitHub"
 
