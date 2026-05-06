@@ -17,7 +17,7 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 
 
 
-# General Overview
+## General Overview
 [ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors. 
 Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:
 - CARTIF Technology Centre: [**CARTIFactory**](https://github.com/Fundacion-CARTIF/CARTIFactory) (You are currently here!📍😃)
@@ -28,7 +28,7 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 These modules hope to present an integration between [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware robotic and industrial applications, alongside [ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.
 
 
-## Features
+### Features
 - Automatic CPU / CUDA support
 - Segmentation support (OBB from mask)
 - Optional annotated image publishing
@@ -36,7 +36,7 @@ These modules hope to present an integration between [FIWARE Orion Context Broke
 - Industrial metrics (FPS, infer_ms, device, etc.)
 - Configurable `class_id` mode
 
-# Getting started
+## Getting started
 
 This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
@@ -44,7 +44,7 @@ This module represents par an AI assitant detection system. The user is expected
 ![Diagram](../_static/images/Diagram_light.png)
 
 
-## Dependencies
+### Dependencies
 
 All Python dependencies are included inside the `requirements.txt` file. To install, execute on terminal:
 
@@ -59,10 +59,10 @@ sudo apt install \
   ros-${ROS_DISTRO}-cv-bridge
 ```
 
-# What is included in the module
+## What is included in the module
 We provide the **CARTIFactory** package, home to several nodes, that together allow you to test this reusable module.
 
-## Keyword Matcher
+### Keyword Matcher
 
 
 The keyword_matcher downstream of the detector node. Its main purpose is to determine whether a requested object class is present in the latest detections.
@@ -71,7 +71,7 @@ The node subscribes to the latest detection results and stores them internally. 
 
 The node additionally monitors the availability of the camera stream by tracking incoming `CameraInfo` messages. If no camera information is received for a configurable timeout period, the node marks the camera as unavailable and rejects incoming match action goals. This allows the node to prevent match requests from being accepted when the perception pipeline is not receiving live input.
 
-## ONNX Detector
+### ONNX Detector
 The `detector_onnx` node performs image-based object detection and segmentation inference in ROS2 using an ONNX model executed with ONNX Runtime. It subscribes to a camera image topic, preprocesses each frame to the network input size, runs inference, post-processes the model outputs, and publishes the results as `vision_msgs/Detection2DArray`.
 
 The node also supports optional publication of a debug image where masks, bounding boxes, labels, and oriented boxes are drawn on top of the original image. It publishes a latched class map topic so that downstream nodes can resolve class IDs to human-readable labels, either from a TOML configuration file or from fallback numeric IDs.
@@ -88,7 +88,7 @@ Overall, this node is designed as a ROS2 perception component for real-time indu
 
 The current implementation expects ONNX models that follow a **dense detection output structure**, with optional instance segmentation support.
 
-### Outputs
+#### Outputs
 
 The model must provide either:
 
@@ -101,7 +101,7 @@ The model must provide either:
 - `output[0]`: tensor containing bounding boxes, class scores, and mask coefficients
 - `output[1]`: tensor containing mask prototypes
 
-### Expected prediction structure
+#### Expected prediction structure
 
 Each prediction row is expected to encode:
 
@@ -111,7 +111,7 @@ Each prediction row is expected to encode:
 
 If segmentation is enabled, masks are reconstructed internally by combining the mask coefficients with the prototype tensor.
 
-### Internal postprocessing
+#### Internal postprocessing
 
 The node assumes a dense prediction tensor where each row represents one detection candidate. Postprocessing is handled internally and includes:
 
@@ -122,7 +122,7 @@ The node assumes a dense prediction tensor where each row represents one detecti
 
 If mask outputs are not present, the node automatically operates in detection-only mode.
 
-### Input preprocessing
+#### Input preprocessing
 
 Before inference, each image is preprocessed using the following steps:
 
@@ -131,7 +131,7 @@ Before inference, each image is preprocessed using the following steps:
 - Normalization to `[0, 1]`
 - Layout conversion to `NCHW`
 
-### Output
+#### Output
 
 The node publishes:
 
@@ -144,7 +144,7 @@ Optionally, it can also publish a debug image including:
 - Oriented bounding boxes (OBB)
 - Class labels and scores
 
-### Model compatibility
+#### Model compatibility
 
 This node is compatible with ONNX models that:
 
@@ -159,18 +159,18 @@ Models that do not follow this structure may require adapting the postprocessing
 </details>
 
 
-## Pipeline Monitor
+### Pipeline Monitor
 This node is used for relaying different statistics of the workspace to the Context Broker (see the latest section about FIWARE's Context Broker). 
 
 This node subscribes to statistics topics being published by the other two nodes and publish it into a joined status message, using the interface `custom_interfaces/PipelineStats`.
 
 
-# Custom Interfaces
+## Custom Interfaces
 
 A `custom_interfaces` package is included, to handle the custom message for the pipeline information and the goal
 
 
-## Pipeline Statistics
+### Pipeline Statistics
 
 For the sending the diagnostics to the Context Broker we use a custom interface `custom_interfaces/PipelineStats` with the followind definition:
 
@@ -233,11 +233,11 @@ For the sending the diagnostics to the Context Broker we use a custom interface 
 If infer_ms > 200 ms, a WARN status is published.
 ```
 
-## Detection action
+### Detection action
 This action allows a client to request a visual search operation using a keyword.
 The node performs detection and returns the results along with an annotated image.
 
-### Goal
+#### Goal
 ```{list-table} Goal fields
 :header-rows: 1
 :widths: 25 20 55
@@ -250,7 +250,7 @@ The node performs detection and returns the results along with an annotated imag
   - Keyword describing the object or class to search for in the scene.
 ```
 
-### Result
+#### Result
 ```{list-table} Result fields
 :header-rows: 1
 :widths: 25 30 45
@@ -272,7 +272,7 @@ The node performs detection and returns the results along with an annotated imag
   - Image with the detections annotated for visualization or debugging.
 ```
 
-### Feedback
+#### Feedback
 ```{list-table} Feedback fields
 :header-rows: 1
 :widths: 25 20 55
@@ -323,11 +323,11 @@ colours = [[0, 0, 250], [250, 0, 0]]
 
 
 
-# Connecting to FIWARE's Context Broker
+## Connecting to FIWARE's Context Broker
 
 The ecosystem the interaction is running under [Engineering Group's PoC](https://github.com/Engineering-Research-and-Development/arise-poc/) ecosystem. This is necessary for the Context Broker to be able to see the ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its implementation is optional.
 
-## Configure FIWARE to store the reusable module topic
+### Configure FIWARE to store the reusable module topic
 
 To make FIWARE store the topic published by the reusable module, you first need to edit the configuration file located at:
 
@@ -357,7 +357,7 @@ Add this entry:
 After adding this configuration, FIWARE will be able to detect the `/stats/pipeline` topic and store its data correctly in the TimescaleDB database.
 
 
-## Grafana connection and visualizing
+### Grafana connection and visualizing
 
 To visualize the data stored in TimescaleDB with Grafana, follow the steps described in **Step 4 - Access the Grafana Dashboard** of the official ARISE PoC Engineering documentation. That section explains how to access Grafana, connect to the TimescaleDB data source, create a new dashboard, add panels, build queries, and select the appropriate visualization type. In the ARISE PoC guide, Grafana is available at `https://localhost/login` with the default credentials `admin/admin`, and the same section also covers datasource configuration and dashboard creation. ([GitHub][1])
 
@@ -408,7 +408,7 @@ In Grafana, this query can be displayed as a
 
  time-series chart to monitor how the action-goal counters evolve over time.
 
-### Reusable module dashboard JSON
+#### Reusable module dashboard JSON
 
 Additionally, the repository already includes a JSON file containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually. 
 
@@ -426,7 +426,7 @@ Example of reusable module dashboard:
 
 
 
-# Running the Module
+## Running the Module
 The launch file `cartifactory_pipeline.launch.py` provides an easy way to start the module. You only need to define 
 ```bash
 ros2 launch cartifactory cartifactory_pipeline.launch.py toml_path:=/path/to/model.toml
@@ -435,7 +435,7 @@ ros2 launch cartifactory cartifactory_pipeline.launch.py toml_path:=/path/to/mod
 
 The following launch arguments configure the behavior of the ONNX detector node and its ROS2 interfaces.
 
-## Launch Arguments
+### Launch Arguments
 
 ```{list-table} Launch arguments
 :header-rows: 1
@@ -482,6 +482,14 @@ The following launch arguments configure the behavior of the ONNX detector node 
   - `string`
   - Determines how the detected class is published: `id` (numeric class id) or `name` (class label).
 ```
+
+
+```{card} `frames_dropped`
+**Type:** `uint64`
+
+Number of frames discarded before processing due to overload or synchronization issues.
+```
+
 ---
 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
