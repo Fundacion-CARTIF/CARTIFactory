@@ -414,7 +414,7 @@ Additionally, the repository already includes a JSON file containing the dashboa
 
 Example of reusable module dashboard: 
 
-```{figure} ../_static/images/../_static/images/dashboard_image.png
+```{figure} ../_static/images/dashboard_image.png
 :height: 50px
 :align: center
 ```
