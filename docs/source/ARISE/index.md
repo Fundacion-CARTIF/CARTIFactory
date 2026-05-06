@@ -3,7 +3,7 @@
 Welcome to the ARISE documentation.
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :caption: ARISE modules:
 
 ARISE
