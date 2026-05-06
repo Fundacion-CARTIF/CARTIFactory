@@ -1,19 +1,15 @@
 # Reusable Module for Vision and target Matching
 
-<p align="center">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="/images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
-  <!-- Dark mode -->
-  <img src="/images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-</p>
 
+<figure markdown="span">
+  ![Image title](/images/ARISE_logo-light_mode.png){ height="50" }
+  <figcaption>Modules are part of the <a href="https://arise-middleware.eu/">ARISE Middleware</a></figcaption>
+</figure>
 
-<p align="center">
-  These 
-  Modules are part of the ARISE Middleware<br>
-  <a href="https://arise-middleware.eu/">ARISE Middleware site</a>
-</p>
+!!! info
+
+    Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
+
 
 <hr>
 
@@ -420,15 +416,9 @@ The following launch arguments configure the behavior of the ONNX detector node 
 | `img_h` | `480` | int | Height of the image expected by the ONNX model. |
 | `img_w` | `640` | int | Width of the image expected by the ONNX model. |
 | `class_id_mode` | `name` | string | Determines how the detected class is published: `id` (numeric class id) or `name` (class label). |
+
 ---
 
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement no. 101135784.
-<p align="left">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="/images/EN_FundedbytheEU_RGB_POS.png#gh-light-mode-only" alt="EU Funding for light mode" height="100"/>
+This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
-  <!-- Dark mode -->
-  <img src="/images/EN_FundedbytheEU_RGB_NEG.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="100"/>
-
-</p>
+![FundedByEU](/images/EN_FundedbytheEU_RGB_POS.png){ align=left }

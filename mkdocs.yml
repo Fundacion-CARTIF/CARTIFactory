@@ -3,5 +3,12 @@ theme:
   name: material
   logo: images/CARTIF_transparente.png
   palette:
-    primary: blue
-    accent: orange
+    primary: teal
+    accent: light-green
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
