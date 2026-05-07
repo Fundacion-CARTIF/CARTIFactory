@@ -1,11 +1,6 @@
 # ARISE
+Agile, human-centric, and Real-tIme enabled open SourcE technologies advancing industrial HRI in Europe
+ What is ARISE?
 
-Welcome to the ARISE documentation.
+ARISE aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors.
 
-```{toctree}
-:maxdepth: 2
-:caption: ARISE modules:
-
-ARISE
-Reusable__Module_1
-Reusable__Module_2

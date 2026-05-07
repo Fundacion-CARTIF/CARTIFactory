@@ -15,10 +15,10 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
-   ARISE/index
+   ARISE/ARISE
    CARTIFactory/FIWARE_ihub
    CARTIFactory/About_us
 

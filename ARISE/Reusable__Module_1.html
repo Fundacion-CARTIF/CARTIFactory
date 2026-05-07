@@ -7,6 +7,7 @@
   <title>Reusable Module for Vision and target Matching &mdash; CARTIFactory 2026 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
         <script src="../_static/documentation_options.js?v=fc6fd62b"></script>
         <script src="../_static/doctools.js?v=9bcbadda"></script>
@@ -15,7 +16,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Reusable Module #2" href="Reusable__Module_2.html" />
-    <link rel="prev" title="What is ARISE?" href="ARISE.html" /> 
+    <link rel="prev" title="TEF1: Experimental Robotic cell for Complex Picking and Dismantling Applications" href="TEF.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,13 +36,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ARISE</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ARISE.html">What is ARISE?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ARISE.html">ARISE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TEF.html">TEF1: Experimental Robotic cell for Complex Picking and Dismantling Applications</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reusable Module for Vision and target Matching</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#general-overview">General Overview</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#features">Features</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
@@ -89,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">ARISE</a> &raquo;</li>
+          <li><a href="ARISE.html">ARISE</a> &raquo;</li>
       <li>Reusable Module for Vision and target Matching</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/ARISE/Reusable__Module_1.md.txt" rel="nofollow"> View page source</a>
@@ -109,26 +107,15 @@
 <p><span class="caption-text">Modules are part of the <a class="reference external" href="https://arise-middleware.eu/">ARISE Middleware</a></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Access the GitHub repository <a class="reference external" href="https://github.com/Fundacion-CARTIF/cartifactory-vision-matching">here</a>!</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Access the GitHub repository <a class="reference external" href="https://github.com/Fundacion-CARTIF/cartifactory-vision-matching">here</a>!</strong></p>
 </div>
 <p><a class="reference external" href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
 <a class="reference external" href="https://releases.ubuntu.com/24.04/"><img alt="ubuntu24" src="https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&amp;logo=ubuntu" /></a>
 <a class="reference external" href="https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0"><img alt="OrionCB" src="https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat" /></a></p>
-<section id="general-overview">
-<h2>General Overview<a class="headerlink" href="#general-overview" title="Link to this heading"></a></h2>
-<p><a class="reference external" href="https://arise-middleware.eu/">ARISE</a> aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors.
-Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:</p>
-<ul class="simple">
-<li><p>CARTIF Technology Centre: <a class="reference external" href="https://github.com/Fundacion-CARTIF/CARTIFactory"><strong>CARTIFactory</strong></a> (You are currently here!📍😃)</p></li>
-<li><p>Intellimech:</p></li>
-<li><p>PAL Robotics:</p></li>
-<li><p>Politecnico di Milano:</p></li>
-</ul>
-<p>These modules hope to present an integration between <a class="reference external" href="https://fiware-orion.readthedocs.io/en/master/">FIWARE Orion Context Broker</a> and <a class="reference external" href="https://vulcanexus.org/">eProsima Vulcanexus</a> to enable context-aware robotic and industrial applications, alongside <a class="reference external" href="https://ros4hri.github.io/">ROS4HRI</a> as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.</p>
 <section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Automatic CPU / CUDA support</p></li>
 <li><p>Segmentation support (OBB from mask)</p></li>
@@ -137,7 +124,6 @@ Each of the 4 Testing and Experimental Facilities that are part of the project g
 <li><p>Industrial metrics (FPS, infer_ms, device, etc.)</p></li>
 <li><p>Configurable <code class="docutils literal notranslate"><span class="pre">class_id</span></code> mode</p></li>
 </ul>
-</section>
 </section>
 <section id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
@@ -430,13 +416,6 @@ The node performs detection and returns the results along with an annotated imag
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &#39;&lt;&#39;your keyword&#39;&gt;}&quot;</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>[!TIP]
-If you want to also see the feedback from the action, add <code class="docutils literal notranslate"><span class="pre">--feedback</span></code> at the end.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &lt;&#39;your keyword&#39;&gt;}&quot;</span><span class="w"> </span>--feedback
-</pre></div>
-</div>
-</div></blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you want to also see the feedback from the action, add <code class="docutils literal notranslate"><span class="pre">--feedback</span></code> at the end.</p>
@@ -616,20 +595,12 @@ colours = [[0, 0, 250], [250, 0, 0]]
 </tr>
 </tbody>
 </table>
-<p>```{card} <code class="docutils literal notranslate"><span class="pre">frames_dropped</span></code>
-<strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p>
-<p>Number of frames discarded before processing due to overload or synchronization issues.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
----
-
-This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
-
-
-```{figure} ../_static/images/ARISE/EN_FundedbytheEU_RGB_POS.png
-:height: 50px
-:align: center
-</pre></div>
-</div>
+<hr class="docutils" />
+<p>This project has received funding from the European Union’s <strong>Horizon 2020</strong> research and innovation programme under grant agreement <strong>no. 101135784</strong>.</p>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../_images/EN_FundedbytheEU_RGB_POS.png"><img alt="../_images/EN_FundedbytheEU_RGB_POS.png" src="../_images/EN_FundedbytheEU_RGB_POS.png" style="height: 100px;" />
+</a>
+</figure>
 </section>
 </section>
 </section>
@@ -638,7 +609,7 @@ This project has received funding from the European Union’s **Horizon 2020** r
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ARISE.html" class="btn btn-neutral float-left" title="What is ARISE?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TEF.html" class="btn btn-neutral float-left" title="TEF1: Experimental Robotic cell for Complex Picking and Dismantling Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="Reusable__Module_2.html" class="btn btn-neutral float-right" title="Reusable Module #2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

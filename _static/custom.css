@@ -10,3 +10,54 @@
     background-position: center;
     background-size: contain;
 }
+/* Entire left sidebar */
+.wy-side-nav-search {
+    background-color: #2a9d9a !important;
+}
+
+/* Sidebar below search/logo */
+/* .wy-nav-side {
+    background: #c7ebe7 !important;
+} */
+
+
+/* ---- ADMONITIONS ---- */
+.admonition.quote-card {
+  background: #f5f7fa;
+  border-left: 6px solid #2a9d9a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+/* Title */
+.admonition.quote-card .admonition-title {
+  background: transparent;
+  color: #000;
+  font-size: 1.0rem;
+  font-weight: 700;
+  padding-left: 3rem;
+  position: relative;
+}
+
+/* Remove default icon */
+.admonition.quote-card .admonition-title::before {
+  content: "";
+}
+
+/* Add custom icon */
+.admonition.quote-card .admonition-title::after {
+  content: "❝";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 2rem;
+  color: #2a9d9a;
+}
+
+/* Body text */
+.admonition.quote-card p {
+  font-size: 1.0rem;
+  line-height: 1.7;
+  color: #222;
+}
