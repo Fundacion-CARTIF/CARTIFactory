@@ -64,11 +64,23 @@ html_css_files = [
 ]
 html_logo = "_static/images/CARTIFactory/cartifactory-group.jpg"
 
+# html_context = {
+#     # For the GitHub link on the top right
+#     "display_github": True,
+#     "github_user": "Fundacion-CARTIF",
+#     "github_repo": "CARTIFactory",
+#     "github_version": "main",
+#     "conf_py_path": "/docs/",
+# }
+
+
+html_show_sourcelink = False
+
 html_theme_options = {
     "logo_only": False,
     "display_version": False,
     "collapse_navigation": True,
-     "navigation_depth": 4,
+    "navigation_depth": 4,
 }
 
 
