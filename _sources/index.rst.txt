@@ -22,9 +22,9 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
    CARTIFactory/FIWARE_ihub
    CARTIFactory/About_us
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
