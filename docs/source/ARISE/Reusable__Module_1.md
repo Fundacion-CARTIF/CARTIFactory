@@ -7,28 +7,15 @@
 Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 ```
 
-```{note}
-  Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!
+```{important}
+  **Access the GitHub repository [here](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!**
 ```
 
 [![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
 [![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/)
 [![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)
 
-
-
-## General Overview
-[ARISE](https://arise-middleware.eu/) aims towards making industrial HRI more accessible and cost-effective, in particular in healthcare, intra-logistics and manufacturing sectors. 
-Each of the 4 Testing and Experimental Facilities that are part of the project gives reusable modules to serve as examples of implementations of the ARISE Middleware:
-- CARTIF Technology Centre: [**CARTIFactory**](https://github.com/Fundacion-CARTIF/CARTIFactory) (You are currently here!📍😃)
-- Intellimech: 
-- PAL Robotics: 
-- Politecnico di Milano: 
-
-These modules hope to present an integration between [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware robotic and industrial applications, alongside [ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and a set of ROS packages to facilitate the development of Human-Robot Interaction (HRI) capabilities on robots.
-
-
-### Features
+## Features
 - Automatic CPU / CUDA support
 - Segmentation support (OBB from mask)
 - Optional annotated image publishing
@@ -290,11 +277,6 @@ To call the action execute:
 ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: '<'your keyword'>}"
 ```
 
->[!TIP]
-> If you want to also see the feedback from the action, add `--feedback` at the end.
-> ```bash
-> ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: <'your keyword'>}" --feedback
-> ```
 ```{tip}
 If you want to also see the feedback from the action, add `--feedback` at the end.
   ```bash
@@ -476,20 +458,11 @@ The following launch arguments configure the behavior of the ONNX detector node 
   - `string`
   - Determines how the detected class is published: `id` (numeric class id) or `name` (class label).
 ```
-
-
-```{card} `frames_dropped`
-**Type:** `uint64`
-
-Number of frames discarded before processing due to overload or synchronization issues.
-```
-
 ---
 
 This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
 
-
-```{figure} ../_static/images/ARISE/EN_FundedbytheEU_RGB_POS.png
-:height: 50px
-:align: center
+```{figure} ../_static/images/EU/EN_FundedbytheEU_RGB_POS.png
+:height: 100px
+:align: left
 ```

@@ -5,8 +5,93 @@
     width: 180px;
     height: 80px;
     margin: 0 auto 10px auto;
-    background-image: url("../_static/images/CARTIF_transparente.png");
+    background-image: url("../_static/images/logo_circular_blanco_CARTIF.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+/* Entire left sidebar */
+.wy-side-nav-search {
+    background-color: #739a89 !important;
+}
+
+/* Sidebar below search/logo */
+/* .wy-nav-side {
+    background: #c7ebe7 !important;
+} */
+
+
+
+/* "Contents" title in sidebar */
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+    color: #739a89 !important;
+}
+
+/* Sidebar links */
+/* .wy-menu-vertical a {
+    color: #222 !important;
+} */
+
+/* Hover color */
+/* .wy-menu-vertical a:hover {
+    background-color: #d9f5f2 !important;
+    color: #000 !important;
+} */
+
+/* Active/current page */
+/* .wy-menu-vertical li.current > a {
+    background: #2a9d9a !important;
+    color: white !important;
+} */
+
+/* Flash/highlight when clicking */
+.wy-menu-vertical a:active {
+    background-color: #739a89 !important;
+}
+
+/* Selected/open section */
+/* .wy-menu-vertical li.toctree-l1.current > a {
+    border-left: 4px solid #2a9d9a;
+} */
+
+/* ---- ADMONITIONS ---- */
+.admonition.quote-card {
+  background: #f5f7fa;
+  border-left: 6px solid #739a89;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+/* Title */
+.admonition.quote-card .admonition-title {
+  background: transparent;
+  color: #000;
+  font-size: 1.0rem;
+  font-weight: 700;
+  padding-left: 3rem;
+  position: relative;
+}
+
+/* Remove default icon */
+.admonition.quote-card .admonition-title::before {
+  content: "";
+}
+
+/* Add custom icon */
+.admonition.quote-card .admonition-title::after {
+  content: "❝";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 2rem;
+  color: #739a89;
+}
+
+/* Body text */
+.admonition.quote-card p {
+  font-size: 1.0rem;
+  line-height: 1.7;
+  color: #222;
 }

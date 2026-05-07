@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to CARTIFactory's documentation!
+Welcome to CARTIFactory!
 ========================================
 
 CARTIFactory iHub is a digital innovation pilot developed by the CARTIF Technology Centre to help companies access and adopt advanced technologies such as collaborative robotics, generative AI, digital twins, and industrial IoT. Based in the Boecillo Technology Park (Valladolid), it is part of the international FIWARE iHub network, promoting open, interoperable, and human-centered solutions for industrial digitalization.
@@ -15,16 +15,16 @@ Through this initiative, CARTIF strengthens its role as a key player in industri
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
-   ARISE/index
+   ARISE/ARISE
    CARTIFactory/FIWARE_ihub
    CARTIFactory/About_us
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
