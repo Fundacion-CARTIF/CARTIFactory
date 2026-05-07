@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'CARTIFactory'
-copyright = '2026, CARTIF'
+copyright = 'Copyright © Fundación CARTIF. All rights reserved.'
 author = 'CARTIF'
 
 # The full version, including alpha/beta/rc tags
