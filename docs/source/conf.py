@@ -22,7 +22,7 @@ copyright = 'Fundación CARTIF. All rights reserved'
 author = 'CARTIF'
 
 # The full version, including alpha/beta/rc tags
-release = '2026'
+# release = '2026'
 
 
 # -- General configuration ---------------------------------------------------
