@@ -18,8 +18,15 @@ In TEF1 we offer a diverse range of experimental opportunities aimed at advancin
 
 ## Addressing real-world challenges of our industries. 
 In ARISE a particular focus is on:
-1) Dismantling and Assembly of High-Value Products: Developing precise and reliable methods for handling  items.
-2) Complex Picking in Warehouse Environments: Enhancing robots’ ability to navigate and perform tasks in dynamic warehouse settings.
+
+### Dismantling and Assembly of High-Value Products: Developing precise and reliable methods for handling  items.
+
+![DiagramCH1](../_static/images/ARISE/Challenge1_Diagram.png)
+
+### Complex Picking in Warehouse Environments: Enhancing robots’ ability to navigate and perform tasks in dynamic warehouse settings.
+
+![DiagramCH2](../_static/images/ARISE/Challenge2_Diagram.png)
+
 
 ## Driving Innovation and Collaboration
 Our overarching goal  in TEF1 is to enhance HRI and collaboration in industrial settings, driving improvements in productivity, efficiency, and safety across various industries. By fostering collaborative research and development, we aim to seamlessly integrate robotic systems into existing workflows, augmenting human capabilities and driving transformative changes in industrial production and logistics. Ultimately, TEF1 serves as a catalyst for innovation, empowering users to unlock the full potential of collaborative robotics in industrial environments.
