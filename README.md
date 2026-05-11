@@ -1,15 +1,14 @@
 <p align="center">
   <!-- ---------- iHUB logo ---------- -->
   <a href="https://www.cartif.es/en/human-robot-collaboration-pilot-plant-cartifactory/">
-    <img src="images/cartifactory-transparent.png" height="100">
+    <img src="docs/source/_static/images/CARTIFactory/cartifactory-transparent.png" height="100">
   </a>
 </p>
-
 
 <p align="center">
   <!-- ---------- CARTIF logo ---------- -->
   <a href="https://www.cartif.es/en/home/">
-    <img src="images/CARTIF_transparente.png" height="200">
+    <img src="docs/source/_static/images/CARTIF_transparente.png" height="200">
   </a>
 </p>
 
