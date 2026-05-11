@@ -24,38 +24,34 @@ In ARISE a particular focus is on:
 <!-- ![DiagramCH1](../_static/images/ARISE/Challenge1_Diagram.png) -->
 
 
-<div style="display: flex; align-items: center; gap: 20px;">
-
-<div style="flex: 1;">
-<img src="../_static/images/ARISE/Challenge1_Diagram.png" width="100%">
+<div align="center">
+    <a href="https://arise-middleware.eu/">
+        <img src="../_static/images/ARISE/Challenge1_Diagram.png" height="100px">
+    </a>
 </div>
 
-<div style="flex: 1;">
+
 
 Additional explanatory text can go here.
 
-</div>
 
-</div>
 
 
 ### Complex Picking in Warehouse Environments: Enhancing robots’ ability to navigate and perform tasks in dynamic warehouse settings.
 
 <!-- ![DiagramCH2](../_static/images/ARISE/Challenge2_Diagram.png) -->
 
-<div style="display: flex; align-items: center; gap: 20px;">
-
-<div style="flex: 1;">
-<img src="../_static/images/ARISE/Challenge2_Diagram.png" width="100%">
+<div align="center">
+    <a href="https://arise-middleware.eu/">
+        <img src="../_static/images/ARISE/Challenge2_Diagram.png" height="100px">
+    </a>
 </div>
 
-<div style="flex: 1;">
+
 
 Additional explanatory text can go here.
 
-</div>
 
-</div>
 
 ## Driving Innovation and Collaboration
 Our overarching goal  in TEF1 is to enhance HRI and collaboration in industrial settings, driving improvements in productivity, efficiency, and safety across various industries. By fostering collaborative research and development, we aim to seamlessly integrate robotic systems into existing workflows, augmenting human capabilities and driving transformative changes in industrial production and logistics. Ultimately, TEF1 serves as a catalyst for innovation, empowering users to unlock the full potential of collaborative robotics in industrial environments.

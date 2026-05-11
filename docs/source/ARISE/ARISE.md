@@ -1,5 +1,13 @@
+<div align="center">
+    <a href="https://arise-middleware.eu/">
+        <img src="../_static/images/ARISE/ARISE_logo-light_mode.png" height="150px">
+    </a>
+</div>
+
+
+
 # ARISE
-Agile, human-centric, and Real-tIme enabled open SourcE technologies advancing industrial HRI in Europe
+**A**gile, human-centric, and **R**eal-t**I**me enabled open **S**ourc**E** technologies advancing industrial HRI in Europe
 
 **What is ARISE?**
 
