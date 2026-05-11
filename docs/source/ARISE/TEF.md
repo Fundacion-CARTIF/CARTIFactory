@@ -21,12 +21,41 @@ In ARISE a particular focus is on:
 
 ### Dismantling and Assembly of High-Value Products: Developing precise and reliable methods for handling  items.
 
-![DiagramCH1](../_static/images/ARISE/Challenge1_Diagram.png)
+<!-- ![DiagramCH1](../_static/images/ARISE/Challenge1_Diagram.png) -->
+
+
+<div style="display: flex; align-items: center; gap: 20px;">
+
+<div style="flex: 1;">
+<img src="../_static/images/ARISE/Challenge1_Diagram.png" width="100%">
+</div>
+
+<div style="flex: 1;">
+
+Additional explanatory text can go here.
+
+</div>
+
+</div>
+
 
 ### Complex Picking in Warehouse Environments: Enhancing robots’ ability to navigate and perform tasks in dynamic warehouse settings.
 
-![DiagramCH2](../_static/images/ARISE/Challenge2_Diagram.png)
+<!-- ![DiagramCH2](../_static/images/ARISE/Challenge2_Diagram.png) -->
 
+<div style="display: flex; align-items: center; gap: 20px;">
+
+<div style="flex: 1;">
+<img src="../_static/images/ARISE/Challenge2_Diagram.png" width="100%">
+</div>
+
+<div style="flex: 1;">
+
+Additional explanatory text can go here.
+
+</div>
+
+</div>
 
 ## Driving Innovation and Collaboration
 Our overarching goal  in TEF1 is to enhance HRI and collaboration in industrial settings, driving improvements in productivity, efficiency, and safety across various industries. By fostering collaborative research and development, we aim to seamlessly integrate robotic systems into existing workflows, augmenting human capabilities and driving transformative changes in industrial production and logistics. Ultimately, TEF1 serves as a catalyst for innovation, empowering users to unlock the full potential of collaborative robotics in industrial environments.
@@ -37,3 +66,4 @@ Please make a visit to our partners' Testing and Experimental Facilities:
 - **TEF2** (Intellimec): Re-programmable Co-bots for Flexible Manufacturing
 - **TEF3** (PAL Robotics): Revolutionizing Healthcare with Human-Centered Robotics
 - **TEF4** *(POLIMI)*: Leading the way towards human-centric zero-defect manufacturing
+    - [ROS 2 RULA Ergonomic Monitor](https://github.com/Industry40Lab/ARISE-CH8-TEF4-REUSABLE-MODULE)
