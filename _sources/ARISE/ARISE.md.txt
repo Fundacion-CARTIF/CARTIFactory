@@ -1,5 +1,5 @@
 # ARISE
-Agile, human-centric, and Real-tIme enabled open SourcE technologies advancing industrial HRI in Europe
+**A**gile, human-centric, and **R**eal-t**I**me enabled open **S**ourc**E** technologies advancing industrial HRI in Europe
 
 **What is ARISE?**
 
