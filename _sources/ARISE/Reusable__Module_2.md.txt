@@ -19,7 +19,7 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 
 ---
 
-This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
+This project has received funding from **Horizon Europe** research and innovation programme under grant agreement **no. 101135784**.
 
 ```{figure} ../_static/images/EU/EN_FundedbytheEU_RGB_POS.png
 :height: 100px

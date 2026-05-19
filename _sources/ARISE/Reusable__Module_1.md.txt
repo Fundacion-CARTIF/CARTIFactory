@@ -460,7 +460,7 @@ The following launch arguments configure the behavior of the ONNX detector node 
 ```
 ---
 
-This project has received funding from the European Union’s **Horizon 2020** research and innovation programme under grant agreement **no. 101135784**.
+This project has received funding from **Horizon Europe** research and innovation programme under grant agreement **no. 101135784**.
 
 ```{figure} ../_static/images/EU/EN_FundedbytheEU_RGB_POS.png
 :height: 100px
