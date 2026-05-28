@@ -158,9 +158,12 @@
 <p>Configuration can be provided through ROS2 parameters and optionally complemented with a <code class="docutils literal notranslate"><span class="pre">.toml</span></code> file, which may define metadata such as model type, class names, default confidence threshold, and model path. The node supports execution on CPU or CUDA, depending on the selected device and available ONNX Runtime providers.</p>
 <p>For monitoring and integration into production pipelines, the node can also publish pipeline statistics such as dropped frames and node identity. It includes an optional <code class="docutils literal notranslate"><span class="pre">drop_if_busy</span></code> mode to avoid queue buildup by discarding incoming frames when inference is still running on the previous one.</p>
 <p>Overall, this node is designed as a ROS2 perception component for real-time industrial vision pipelines, combining ONNX inference, mask-based oriented detections, debug visualization, class mapping, and runtime statistics in a single detector node.</p>
-<details>
-<summary>Supported ONNX model format</summary>
+<!-- <details> -->
+<!-- <summary>Supported ONNX model format</summary> -->
+<section id="supported-onnx-model-format">
+<h4>Supported ONNX model format<a class="headerlink" href="#supported-onnx-model-format" title="Link to this heading"></a></h4>
 <p>The current implementation expects ONNX models that follow a <strong>dense detection output structure</strong>, with optional instance segmentation support.</p>
+</section>
 <section id="outputs">
 <h4>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h4>
 <p>The model must provide either:</p>
@@ -231,7 +234,7 @@
 <p class="admonition-title">Warning</p>
 <p>Models that do not follow this structure may require adapting the postprocessing logic.</p>
 </div>
-</details>
+<!-- </details> -->
 </section>
 </section>
 <section id="pipeline-monitor">
@@ -418,7 +421,7 @@ The node performs detection and returns the results along with an annotated imag
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you want to also see the feedback from the action, add <code class="docutils literal notranslate"><span class="pre">--feedback</span></code> at the end.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &lt;&#39;your keyword&#39;&gt;}&quot;</span><span class="w"> </span>--feedback
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">&quot;{kw: &#39;&lt;your keyword&gt;&#39;}&quot;</span><span class="w"> </span>--feedback
 </pre></div>
 </div>
 </div>
@@ -482,8 +485,10 @@ colours = [[0, 0, 250], [250, 0, 0]]
 <li><p>how to write a query for the selected datasource,</p></li>
 <li><p>and how to choose the most suitable visualization for the data.</p></li>
 </ul>
-<details>
-<summary>Example query</summary>
+<!-- <details> -->
+<!-- <summary>Example query</summary> -->
+<section id="example-query">
+<h4>Example query<a class="headerlink" href="#example-query" title="Link to this heading"></a></h4>
 <p>The following query can be used to visualize action-goal statistics for the reusable module:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">  </span><span class="n">ts</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">&quot;time&quot;</span><span class="p">,</span>
@@ -508,9 +513,9 @@ colours = [[0, 0, 250], [250, 0, 0]]
 <li><p><strong>Succeeded</strong>: number of action goals successfully completed,</p></li>
 <li><p><strong>Failed</strong>: number of action goals that failed.</p></li>
 </ul>
-<p>In Grafana, this query can be displayed as a</p>
-</details>
-<p>time-series chart to monitor how the action-goal counters evolve over time.</p>
+<p>In Grafana, this query can be displayed as a time-series chart to monitor how the action-goal counters evolve over time.</p>
+<!-- </details> -->
+</section>
 <section id="reusable-module-dashboard-json">
 <h4>Reusable module dashboard JSON<a class="headerlink" href="#reusable-module-dashboard-json" title="Link to this heading"></a></h4>
 <p>Additionally, the repository already includes a JSON file containing the dashboard template for the reusable module. This means users can simply import that dashboard into Grafana and immediately access the predefined visualizations, without having to create the panels manually.</p>
@@ -596,7 +601,7 @@ colours = [[0, 0, 250], [250, 0, 0]]
 </table>
 <hr class="docutils" />
 <p>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them</p>
-<figure class="align-left">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png"><img alt="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" src="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" style="height: 100px;" />
 </a>
 </figure>

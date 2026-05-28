@@ -30,3 +30,11 @@ TEF
 Reusable__Module_1
 Reusable__Module_2
 ```
+
+---
+Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them
+
+```{figure} ../_static/images/EU/EN_Co_fundedbytheEU_RGB_Monochrome.png
+:height: 100px
+:align: left
+```

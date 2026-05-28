@@ -60,6 +60,16 @@ Our overarching goal  in TEF1 is to enhance HRI and collaboration in industrial 
 
 Please make a visit to our partners' Testing and Experimental Facilities:
 - **TEF2** (Intellimec): Re-programmable Co-bots for Flexible Manufacturing
+    - [ARISE Ergo - ROS2 Ergonomic Analysis Pipeline](https://github.com/JOiiNT-LAB/arise_ergo_dckr/tree/main_integration)
 - **TEF3** (PAL Robotics): Revolutionizing Healthcare with Human-Centered Robotics
 - **TEF4** *(POLIMI)*: Leading the way towards human-centric zero-defect manufacturing
     - [ROS 2 RULA Ergonomic Monitor](https://github.com/Industry40Lab/ARISE-CH8-TEF4-REUSABLE-MODULE)
+    - [PCB component Detection Module](https://github.com/Industry40Lab/ARISE-CH7-TEF4-REUSABLE-MODULE)
+
+---
+Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them
+
+```{figure} ../_static/images/EU/EN_Co_fundedbytheEU_RGB_Monochrome.png
+:height: 100px
+:align: left
+```

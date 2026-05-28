@@ -69,9 +69,10 @@ For monitoring and integration into production pipelines, the node can also publ
 
 Overall, this node is designed as a ROS2 perception component for real-time industrial vision pipelines, combining ONNX inference, mask-based oriented detections, debug visualization, class mapping, and runtime statistics in a single detector node.
 
-<details>
+<!-- <details> -->
 
-<summary>Supported ONNX model format</summary>
+<!-- <summary>Supported ONNX model format</summary> -->
+#### Supported ONNX model format
 
 The current implementation expects ONNX models that follow a **dense detection output structure**, with optional instance segmentation support.
 
@@ -143,7 +144,7 @@ This node is compatible with ONNX models that:
 Models that do not follow this structure may require adapting the postprocessing logic.
 ```
 
-</details>
+<!-- </details> -->
 
 
 ### Pipeline Monitor
@@ -279,9 +280,10 @@ ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw
 
 ```{tip}
 If you want to also see the feedback from the action, add `--feedback` at the end.
-  ```bash
-  ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: <'your keyword'>}" --feedback
-  ```
+
+```bash
+ros2 action send_goal /detection/match custom_interfaces/action/MatchAction "{kw: '<your keyword>'}" --feedback
+```
 ```
 
 # Defining the Models (TOML)
@@ -352,10 +354,10 @@ In particular, the documentation includes:
 * and how to choose the most suitable visualization for the data.
 
 
-<details>
+<!-- <details> -->
 
-<summary>Example query</summary>
-
+<!-- <summary>Example query</summary> -->
+#### Example query
 The following query can be used to visualize action-goal statistics for the reusable module:
 
 
@@ -384,11 +386,11 @@ The resulting series represent:
 * **Succeeded**: number of action goals successfully completed,
 * **Failed**: number of action goals that failed.
 
-In Grafana, this query can be displayed as a
+In Grafana, this query can be displayed as a time-series chart to monitor how the action-goal counters evolve over time.
 
-</details>
 
- time-series chart to monitor how the action-goal counters evolve over time.
+<!-- </details> -->
+
 
 #### Reusable module dashboard JSON
 
@@ -463,5 +465,5 @@ Funded by the European Union. Views and opinions expressed are however those of 
 
 ```{figure} ../_static/images/EU/EN_Co_fundedbytheEU_RGB_Monochrome.png
 :height: 100px
-:align: left
+:align: center
 ```
