@@ -25,4 +25,15 @@ CARTIFactory provides the following reusable modules to serve as examples of imp
 - The second module will be releasing soon
 
 
+---
+Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them
+<p align="left">
+  <!-- ---------- ARISE logo ---------- -->
+  <!-- Light mode -->
+  <img src="docs/source/_static/images/EU/EN_Co_fundedbytheEU_RGB_Monochrome.png#gh-light-mode-only" alt="EU Funding for light mode" height="100"/>
+
+  <!-- Dark mode -->
+  <img src="docs/source/_static/images/EU/EN_Co_fundedbytheEU_RGB_NEG.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="100"/>
+
+</p>
 

@@ -18,10 +18,9 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 
 
 ---
+Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them
 
-This project has received funding from **Horizon Europe** research and innovation programme under grant agreement **no. 101135784**.
-
-```{figure} ../_static/images/EU/EN_FundedbytheEU_RGB_POS.png
+```{figure} ../_static/images/EU/EN_Co_fundedbytheEU_RGB_Monochrome.png
 :height: 100px
 :align: left
 ```
