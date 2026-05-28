@@ -37,7 +37,9 @@ extensions = [
 
 myst_heading_anchors = 4
 myst_fence_as_directive = ["mermaid"] # So mermaid works also inside md files
-
+# myst_enable_extensions = [
+#     "colon_fence",
+# ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
