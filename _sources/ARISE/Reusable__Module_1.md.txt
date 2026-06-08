@@ -28,7 +28,7 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 This module represents par an AI assitant detection system. The user is expected to input a request and through Natural Language Processing, detect the task and object it is refering too. The object will become the `keyword`, or target object for the module.
 
 
-![Diagram](../_static/images/ARISE/Diagram_light.png)
+![Diagram](../_static/images/ARISE/CH1/Diagram_light.png)
 
 
 ### Dependencies
