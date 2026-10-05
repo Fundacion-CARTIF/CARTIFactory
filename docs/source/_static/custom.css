@@ -99,32 +99,51 @@
 
 /* Language switcher */
 .language-switcher {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    z-index: 2147483647;
+
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 8px;
 
-    margin-bottom: 12px;
+    padding: 8px 12px;
+
+    background: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
 
     font-size: 14px;
-    white-space: nowrap;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+    pointer-events: auto;
 }
 
-.language-switcher a {
+.language-switcher .language-link {
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: none;
+
     color: #555;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    font: inherit;
+
+    cursor: pointer;
+    pointer-events: auto;
 }
 
-.language-switcher a:hover {
+.language-switcher .language-link:hover {
     color: #2980b9;
 }
 
-.language-switcher a.active {
+.language-switcher .language-link.active {
+    color: #2980b9;
     font-weight: 600;
-    color: #2980b9;
 }
 
-.language-switcher span {
+.language-switcher .language-separator {
     color: #aaa;
 }

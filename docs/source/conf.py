@@ -33,6 +33,7 @@ author = 'CARTIF'
 extensions = [
     "myst_parser",
     "sphinxcontrib.mermaid",
+    "sphinx_rtd_theme",
 ]
 
 myst_heading_anchors = 4
@@ -62,7 +63,7 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_js_files = [
-    "language-switcher.js",
+    ("language-switcher.js", {"defer": "defer"}),
 ]
 html_css_files = [
     "custom.css",
