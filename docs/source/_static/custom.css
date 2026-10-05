@@ -14,12 +14,16 @@
 .wy-side-nav-search {
     background-color: #739a89 !important;
 }
-
 /* Sidebar below search/logo */
-/* .wy-nav-side {
-    background: #c7ebe7 !important;
-} */
+.wy-side-nav-search > a img.logo {
+    max-height: 120px;
+    width: auto;
+}
 
+
+.wy-nav-top {
+    background: #739a89;
+}
 
 
 /* "Contents" title in sidebar */
@@ -117,11 +121,13 @@
     font-size: 14px;
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-
-    pointer-events: auto;
 }
 
-.language-switcher .language-link {
+.language-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
     margin: 0;
     padding: 0;
 
@@ -132,18 +138,27 @@
     font: inherit;
 
     cursor: pointer;
-    pointer-events: auto;
 }
 
-.language-switcher .language-link:hover {
+.language-link:hover {
     color: #2980b9;
 }
 
-.language-switcher .language-link.active {
+.language-link.active {
     color: #2980b9;
     font-weight: 600;
 }
 
-.language-switcher .language-separator {
+.language-flag {
+    width: 20px;
+    height: 14px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 2px;
+}
+
+.language-separator {
     color: #aaa;
 }

@@ -62,7 +62,7 @@ msgid ""
 "The initiative is designed especially to help SMEs and industrial "
 "organizations experiment with digital transformation technologies in "
 "realistic environments."
-msgstr "La iniciativa está diseñada especialmente para ayudar a las pymes y a las organizaciones industriales a experimentar con tecnologías de transformación digital en entornos realistas."
+msgstr "La iniciativa está diseñada especialmente para ayudar a las PYMES y a las organizaciones industriales a experimentar con tecnologías de transformación digital en entornos realistas."
 
 #: ../../source/CARTIFactory/About_us.md:20
 msgid ""
@@ -97,19 +97,14 @@ msgstr "Evaluación de la productividad y la seguridad en entornos industriales"
 #: ../../source/CARTIFactory/About_us.md:26
 msgid ""
 "These applications originate from European innovation projects such as "
-"**ARISE** and **5R**, which focus on collaborative robotics, AI, and "
+"**ARISE**, which focus on collaborative robotics, AI, and "
 "digital twins for manufacturing and remanufacturing scenarios."
-msgstr "Estas aplicaciones surgen de proyectos europeos de innovación como **ARISE** y **5R**, centrados en la robótica colaborativa, la IA y los gemelos digitales para escenarios de fabricación y refabricación."
+msgstr "Estas aplicaciones surgen de proyectos europeos de innovación como **ARISE**, centrados en la robótica colaborativa, la IA y los gemelos digitales para escenarios de fabricación y refabricación."
 
 #: ../../source/CARTIFactory/About_us.md:28
 msgid ""
-"Another important element of CARTIFactory is its commitment to open "
-"standards and interoperability through technologies such as FIWARE, Fast "
-"DDS, Vulcanexus, and ROS4HRI. FIWARE provides the technological "
-"foundation for building modular and interoperable industrial solutions "
-"capable of real-time monitoring, IT/OT integration, predictive analytics,"
-" and plug-and-play deployment across different industrial sectors."
-msgstr "Otro elemento importante de CARTIFactory es su compromiso con los estándares abiertos y la interoperabilidad mediante tecnologías como FIWARE, Fast DDS, Vulcanexus y ROS4HRI. FIWARE proporciona la base tecnológica para crear soluciones industriales modulares e interoperables con capacidades de supervisión en tiempo real, integración IT/OT, análisis predictivo y despliegue plug-and-play en distintos sectores industriales."
+"Another important element of CARTIFactory is its commitment to open standards and interoperability through technologies such as **FIWARE**, **Vulcanexus**, and **ROS4HRI**. FIWARE provides the technological foundation for building modular and interoperable industrial solutions capable of real-time monitoring, IT/OT integration, predictive analytics, and plug-and-play deployment across different industrial sectors."
+msgstr "Otro elemento importante de CARTIFactory es su compromiso con los estándares abiertos y la interoperabilidad mediante tecnologías como **FIWARE**, **Vulcanexus** y **ROS4HRI**. FIWARE proporciona la base tecnológica para crear soluciones industriales modulares e interoperables con capacidades de supervisión en tiempo real, integración IT/OT, análisis predictivo y despliegue plug-and-play en distintos sectores industriales."
 
 #: ../../source/CARTIFactory/About_us.md:30
 msgid ""

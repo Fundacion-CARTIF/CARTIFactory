@@ -23,9 +23,9 @@ A key aspect of CARTIFactory is its alignment with the **Industry 5.0** vision, 
 - Human–robot collaborative tasks
 - Productivity and safety evaluation in industrial environments
 
-These applications originate from European innovation projects such as **ARISE** and **5R**, which focus on collaborative robotics, AI, and digital twins for manufacturing and remanufacturing scenarios.
+These applications originate from European innovation projects such as **ARISE**, which focus on collaborative robotics, AI, and digital twins for manufacturing and remanufacturing scenarios.
 
-Another important element of CARTIFactory is its commitment to open standards and interoperability through technologies such as FIWARE, Fast DDS, Vulcanexus, and ROS4HRI. FIWARE provides the technological foundation for building modular and interoperable industrial solutions capable of real-time monitoring, IT/OT integration, predictive analytics, and plug-and-play deployment across different industrial sectors.
+Another important element of CARTIFactory is its commitment to open standards and interoperability through technologies such as **FIWARE**, **Vulcanexus**, and **ROS4HRI**. FIWARE provides the technological foundation for building modular and interoperable industrial solutions capable of real-time monitoring, IT/OT integration, predictive analytics, and plug-and-play deployment across different industrial sectors.
 
 Through CARTIFactory, CARTIF aims to strengthen its position as a major innovation hub in Europe, helping industries transition toward smarter, safer, and more sustainable production systems while promoting collaboration between technology providers, researchers, and industrial stakeholders.
 

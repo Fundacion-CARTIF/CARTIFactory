@@ -68,7 +68,7 @@ html_js_files = [
 html_css_files = [
     "custom.css",
 ]
-html_logo = "_static/images/CARTIFactory/cartifactory-group.jpg"
+html_logo = "_static/images/CARTIFactory/CARTIFactory_robot_transparent.png"
 
 # html_context = {
 #     # For the GitHub link on the top right
