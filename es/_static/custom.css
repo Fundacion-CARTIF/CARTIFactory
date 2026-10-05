@@ -141,11 +141,11 @@
 }
 
 .language-link:hover {
-    color: #2980b9;
+    color: #739a89;
 }
 
 .language-link.active {
-    color: #2980b9;
+    color: #739a89;
     font-weight: 600;
 }
 
