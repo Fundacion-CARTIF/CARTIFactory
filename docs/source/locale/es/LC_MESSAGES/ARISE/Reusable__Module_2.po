@@ -1,0 +1,569 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 16:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/ARISE/Reusable__Module_2.md:1
+msgid "Reusable Module for Operator tracking and gesture recognition"
+msgstr "Módulo reutilizable de seguimiento del operario y reconocimiento de gestos"
+
+#: ../../source/ARISE/Reusable__Module_2.md:7
+msgid "Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)"
+msgstr "Los módulos forman parte del [middleware de ARISE](https://arise-middleware.eu/)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:11
+msgid ""
+"**Access the GitHub repository [here](https://github.com/Fundacion-CARTIF"
+"/cartifactory-operator-tracking)!**"
+msgstr "**¡Acceda al repositorio de GitHub [aquí](https://github.com/Fundacion-CARTIF/cartifactory-operator-tracking)!**"
+
+#: ../../source/ARISE/Reusable__Module_2.md:14
+#, python-format
+msgid ""
+"[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-"
+"Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus) "
+"[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/)"
+" "
+"[![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context"
+".Orion-LD/releases/tag/1.10.0)"
+msgstr "[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus) [![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/) [![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:14
+msgid "vulcanexus"
+msgstr "vulcanexus"
+
+#: ../../source/ARISE/Reusable__Module_2.md:14
+msgid "ubuntu24"
+msgstr "ubuntu24"
+
+#: ../../source/ARISE/Reusable__Module_2.md:14
+msgid "OrionCB"
+msgstr "OrionCB"
+
+#: ../../source/ARISE/Reusable__Module_2.md:18
+msgid "Features"
+msgstr "Características"
+
+#: ../../source/ARISE/Reusable__Module_2.md:19
+msgid "Real-time hand detection using MediaPipe Hands"
+msgstr "Detección de manos en tiempo real mediante MediaPipe Hands"
+
+#: ../../source/ARISE/Reusable__Module_2.md:20
+msgid "2D and 3D hand landmark estimation"
+msgstr "Estimación de puntos de referencia de las manos en 2D y 3D"
+
+#: ../../source/ARISE/Reusable__Module_2.md:21
+msgid "Dynamic multi-hand tracking pipeline"
+msgstr "Cadena de procesamiento dinámica para el seguimiento de varias manos"
+
+#: ../../source/ARISE/Reusable__Module_2.md:22
+msgid "Palm plane estimation and normal computation"
+msgstr "Estimación del plano de la palma y cálculo de su normal"
+
+#: ../../source/ARISE/Reusable__Module_2.md:23
+msgid "Camera-to-robot base frame transformation"
+msgstr "Transformación del sistema de referencia de la cámara al de la base del robot"
+
+#: ../../source/ARISE/Reusable__Module_2.md:24
+msgid "ROS2 Lifecycle Node architecture"
+msgstr "Arquitectura de nodos con ciclo de vida de ROS2"
+
+#: ../../source/ARISE/Reusable__Module_2.md:25
+msgid "Runtime hand selection (left, right, both)"
+msgstr "Selección de manos durante la ejecución (left, right, both)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:26
+msgid "Custom ROS2 interfaces and actions"
+msgstr "Interfaces y acciones personalizadas de ROS2"
+
+#: ../../source/ARISE/Reusable__Module_2.md:27
+msgid "Built-in monitoring and diagnostics interface"
+msgstr "Interfaz integrada de supervisión y diagnóstico"
+
+#: ../../source/ARISE/Reusable__Module_2.md:29
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../source/ARISE/Reusable__Module_2.md:30
+msgid ""
+"This module provides a complete hand-tracking pipeline, including 2D hand"
+" detection, 3D landmark reconstruction, palm plane estimation and "
+"transformation into the robot reference frame."
+msgstr "Este módulo proporciona una cadena de procesamiento completa para el seguimiento de manos, que incluye detección de manos en 2D, reconstrucción de puntos de referencia en 3D, estimación del plano de la palma y transformación al sistema de referencia del robot."
+
+#: ../../source/ARISE/Reusable__Module_2.md:32
+msgid "![Diagram](../_static/images/ARISE/CH2/Diagram_light.png)"
+msgstr "![Diagrama](../_static/images/ARISE/CH2/Diagram_light.png)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:32
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: ../../source/ARISE/Reusable__Module_2.md:34
+msgid "Dependencies"
+msgstr "Dependencias"
+
+#: ../../source/ARISE/Reusable__Module_2.md:36
+msgid ""
+"All Python dependencies are included inside the `requirements.txt` file. "
+"To install, execute on terminal:"
+msgstr "Todas las dependencias de Python se incluyen en el archivo `requirements.txt`. Para instalarlas, ejecute en la terminal:"
+
+#: ../../source/ARISE/Reusable__Module_2.md:42
+msgid "This package is dependent on other ROS2 interfaces:"
+msgstr "Este paquete depende de otras interfaces de ROS2:"
+
+#: ../../source/ARISE/Reusable__Module_2.md:50
+msgid "What is included in the module"
+msgstr "Qué incluye el módulo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:51
+msgid ""
+"We provide the **CARTIFactory** package, home to several nodes, that "
+"together allow you to test this reusable module."
+msgstr "Proporcionamos el paquete **CARTIFactory**, que contiene varios nodos que, en conjunto, permiten probar este módulo reutilizable."
+
+#: ../../source/ARISE/Reusable__Module_2.md:53
+msgid "2D Hand detection"
+msgstr "Detección de manos en 2D"
+
+#: ../../source/ARISE/Reusable__Module_2.md:54
+msgid ""
+"This node is the entry point of the hand-processing pipeline. It receives"
+" RGB images, performs hand landmark inference, identifies left and right "
+"hands, and publishes normalized 2D hand landmarks. The node also supports"
+" runtime hand selection (left, right, or both) through the orchestrator "
+"action interface."
+msgstr "Este nodo es el punto de entrada de la cadena de procesamiento de manos. Recibe imágenes RGB, realiza inferencias de los puntos de referencia de las manos, identifica las manos izquierda y derecha y publica sus puntos de referencia 2D normalizados. El nodo también permite seleccionar las manos durante la ejecución (izquierda, derecha o ambas) mediante la interfaz de acciones del orquestador."
+
+#: ../../source/ARISE/Reusable__Module_2.md:56
+msgid "Hand landmarks 3D node"
+msgstr "Nodo de puntos de referencia de las manos en 3D"
+
+#: ../../source/ARISE/Reusable__Module_2.md:57
+msgid ""
+"The node synchronizes 2D hand detections with depth images and camera "
+"intrinsic parameters to estimate the 3D position of each MediaPipe "
+"landmark in the camera reference frame. Processing pipelines are created "
+"dynamically for every tracked hand."
+msgstr "El nodo sincroniza las detecciones de manos en 2D con las imágenes de profundidad y los parámetros intrínsecos de la cámara para estimar la posición 3D de cada punto de referencia de MediaPipe en el sistema de referencia de la cámara. Las cadenas de procesamiento se crean dinámicamente para cada mano en seguimiento."
+
+#: ../../source/ARISE/Reusable__Module_2.md:59
+msgid "Hand palm plane node"
+msgstr "Nodo del plano de la palma de la mano"
+
+#: ../../source/ARISE/Reusable__Module_2.md:60
+msgid ""
+"The node fits a plane using a configurable subset of hand landmarks and "
+"provides a stable estimation of palm orientation. This information can be"
+" used for gesture analysis, human-robot interaction, pointing estimation,"
+" or grasp intention inference."
+msgstr "El nodo ajusta un plano utilizando un subconjunto configurable de puntos de referencia de la mano y proporciona una estimación estable de la orientación de la palma. Esta información puede utilizarse para el análisis de gestos, la interacción persona-robot, la estimación de la dirección de señalamiento o la inferencia de la intención de agarre."
+
+#: ../../source/ARISE/Reusable__Module_2.md:61
+msgid "Camera to robot frame hand transformation"
+msgstr "Transformación de las manos del sistema de referencia de la cámara al del robot"
+
+#: ../../source/ARISE/Reusable__Module_2.md:62
+msgid ""
+"Using the current robot TCP pose and a calibrated camera-to-TCP "
+"transformation, the node computes hand landmarks and palm planes "
+"expressed in robot coordinates. This enables downstream robotic "
+"applications to reason directly in the robot workspace."
+msgstr "A partir de la pose actual del TCP del robot y de una transformación calibrada de la cámara al TCP, el nodo calcula los puntos de referencia de las manos y los planos de las palmas expresados en coordenadas del robot. Esto permite a las aplicaciones robóticas posteriores operar directamente en el espacio de trabajo del robot."
+
+#: ../../source/ARISE/Reusable__Module_2.md:64
+msgid "Custom Interfaces"
+msgstr "Interfaces personalizadas"
+
+#: ../../source/ARISE/Reusable__Module_2.md:65
+msgid ""
+"A custom_interfaces package is included, to handle the custom message for"
+" the pipeline information and the goal"
+msgstr "Se incluye un paquete custom_interfaces para gestionar el mensaje personalizado con la información de la cadena de procesamiento y el objetivo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:67
+msgid "Hand Tracking Message"
+msgstr "Mensaje de seguimiento de manos"
+
+#: ../../source/ARISE/Reusable__Module_2.md:68
+msgid ""
+"Message definition for representing a tracked hand using MediaPipe "
+"landmarks: ![Hand](../_static/images/ARISE/CH2/hand_landmarks.png)"
+msgstr "Definición del mensaje para representar una mano en seguimiento mediante puntos de referencia de MediaPipe: ![Mano](../_static/images/ARISE/CH2/hand_landmarks.png)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:68
+msgid "Hand"
+msgstr "Mano"
+
+#: ../../source/ARISE/Reusable__Module_2.md:71
+msgid "HandDetection fields"
+msgstr "Campos de HandDetection"
+
+#: ../../source/ARISE/Reusable__Module_2.md:75
+#: ../../source/ARISE/Reusable__Module_2.md:100
+#: ../../source/ARISE/Reusable__Module_2.md:141
+#: ../../source/ARISE/Reusable__Module_2.md:154
+#: ../../source/ARISE/Reusable__Module_2.md:170
+#: ../../source/ARISE/Reusable__Module_2.md:188
+#: ../../source/ARISE/Reusable__Module_2.md:201
+#: ../../source/ARISE/Reusable__Module_2.md:217
+msgid "Field"
+msgstr "Campo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:76
+#: ../../source/ARISE/Reusable__Module_2.md:101
+#: ../../source/ARISE/Reusable__Module_2.md:142
+#: ../../source/ARISE/Reusable__Module_2.md:155
+#: ../../source/ARISE/Reusable__Module_2.md:171
+#: ../../source/ARISE/Reusable__Module_2.md:189
+#: ../../source/ARISE/Reusable__Module_2.md:202
+#: ../../source/ARISE/Reusable__Module_2.md:218
+#: ../../source/ARISE/Reusable__Module_2.md:240
+msgid "Type"
+msgstr "Tipo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:77
+#: ../../source/ARISE/Reusable__Module_2.md:102
+#: ../../source/ARISE/Reusable__Module_2.md:143
+#: ../../source/ARISE/Reusable__Module_2.md:156
+#: ../../source/ARISE/Reusable__Module_2.md:172
+#: ../../source/ARISE/Reusable__Module_2.md:190
+#: ../../source/ARISE/Reusable__Module_2.md:203
+#: ../../source/ARISE/Reusable__Module_2.md:219
+#: ../../source/ARISE/Reusable__Module_2.md:241
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../source/ARISE/Reusable__Module_2.md:78
+#: ../../source/ARISE/Reusable__Module_2.md:103
+msgid "`id`"
+msgstr "`id`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:79
+#: ../../source/ARISE/Reusable__Module_2.md:104
+#: ../../source/ARISE/Reusable__Module_2.md:145
+#: ../../source/ARISE/Reusable__Module_2.md:161
+#: ../../source/ARISE/Reusable__Module_2.md:174
+#: ../../source/ARISE/Reusable__Module_2.md:192
+#: ../../source/ARISE/Reusable__Module_2.md:208
+#: ../../source/ARISE/Reusable__Module_2.md:221
+#: ../../source/ARISE/Reusable__Module_2.md:244
+msgid "`string`"
+msgstr "`string`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:80
+#: ../../source/ARISE/Reusable__Module_2.md:105
+msgid "Unique identifier for the detected hand or tracked person."
+msgstr "Identificador único de la mano detectada o de la persona en seguimiento."
+
+#: ../../source/ARISE/Reusable__Module_2.md:81
+#: ../../source/ARISE/Reusable__Module_2.md:106
+msgid "`handedness`"
+msgstr "`handedness`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:82
+#: ../../source/ARISE/Reusable__Module_2.md:107
+msgid "`uint8`"
+msgstr "`uint8`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:83
+#: ../../source/ARISE/Reusable__Module_2.md:108
+msgid "Indicates whether the detected hand is left or right."
+msgstr "Indica si la mano detectada es la izquierda o la derecha."
+
+#: ../../source/ARISE/Reusable__Module_2.md:84
+#: ../../source/ARISE/Reusable__Module_2.md:112
+msgid "`landmarks`"
+msgstr "`landmarks`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:85
+msgid "`hri_msgs/NormalizedPointOfInterest2D[21]`"
+msgstr "`hri_msgs/NormalizedPointOfInterest2D[21]`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:86
+#: ../../source/ARISE/Reusable__Module_2.md:114
+msgid ""
+"Array containing the 21 MediaPipe hand landmarks in normalized image "
+"coordinates."
+msgstr "Array que contiene los 21 puntos de referencia de la mano de MediaPipe en coordenadas de imagen normalizadas."
+
+#: ../../source/ARISE/Reusable__Module_2.md:87
+#: ../../source/ARISE/Reusable__Module_2.md:109
+msgid "`confidence`"
+msgstr "`confidence`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:88
+#: ../../source/ARISE/Reusable__Module_2.md:110
+msgid "`float32`"
+msgstr "`float32`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:89
+msgid "Confidence score of the hand detection/tracking."
+msgstr "Puntuación de confianza de la detección o el seguimiento de la mano."
+
+#: ../../source/ARISE/Reusable__Module_2.md:93
+msgid "Hand Tracking 3D Message"
+msgstr "Mensaje de seguimiento de manos en 3D"
+
+#: ../../source/ARISE/Reusable__Module_2.md:94
+msgid ""
+"Message definition for representing a tracked hand in 3D space using "
+"MediaPipe landmarks."
+msgstr "Definición del mensaje para representar una mano en seguimiento en el espacio 3D mediante puntos de referencia de MediaPipe."
+
+#: ../../source/ARISE/Reusable__Module_2.md:96
+msgid "HandDetection3D fields"
+msgstr "Campos de HandDetection3D"
+
+#: ../../source/ARISE/Reusable__Module_2.md:111
+msgid ""
+"Confidence score of the handedness classifier. If unavailable, use `NaN` "
+"or `0`."
+msgstr "Puntuación de confianza del clasificador que distingue entre la mano izquierda y la derecha. Si no está disponible, utilice `NaN` o `0`."
+
+#: ../../source/ARISE/Reusable__Module_2.md:113
+msgid "`geometry_msgs/Point[21]`"
+msgstr "`geometry_msgs/Point[21]`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:115
+msgid "`valid`"
+msgstr "`valid`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:116
+msgid "`bool[21]`"
+msgstr "`bool[21]`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:117
+msgid "Indicates whether each landmark is valid/tracked."
+msgstr "Indica si cada punto de referencia es válido o está en seguimiento."
+
+#: ../../source/ARISE/Reusable__Module_2.md:120
+msgid "Lifecycle Architecture"
+msgstr "Arquitectura del ciclo de vida"
+
+#: ../../source/ARISE/Reusable__Module_2.md:121
+msgid ""
+"At startup, all nodes remain in the unconfigured state. The module "
+"includes an orchestrator node that exposes ROS2 Actions for managing the "
+"lifecycle of the complete pipeline."
+msgstr "Al iniciar, todos los nodos permanecen en el estado sin configurar. El módulo incluye un nodo orquestador que expone acciones de ROS2 para gestionar el ciclo de vida de toda la cadena de procesamiento."
+
+#: ../../source/ARISE/Reusable__Module_2.md:123
+msgid "Supported lifecycle transitions:"
+msgstr "Transiciones del ciclo de vida admitidas:"
+
+#: ../../source/ARISE/Reusable__Module_2.md:124
+msgid "configure"
+msgstr "configure (configurar)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:125
+msgid "activate"
+msgstr "activate (activar)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:126
+msgid "deactivate"
+msgstr "deactivate (desactivar)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:127
+msgid "cleanup"
+msgstr "cleanup (limpiar)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:128
+msgid ""
+"shutdown This architecture allows external applications to start, stop "
+"and reconfigure the entire hand-tracking pipeline without restarting the "
+"system."
+msgstr "shutdown (finalizar). Esta arquitectura permite a las aplicaciones externas iniciar, detener y reconfigurar toda la cadena de seguimiento de manos sin reiniciar el sistema."
+
+#: ../../source/ARISE/Reusable__Module_2.md:133
+msgid "Lifecycle action"
+msgstr "Acción del ciclo de vida"
+
+#: ../../source/ARISE/Reusable__Module_2.md:134
+msgid ""
+"All nodes will start as `unconfigured` upon launching the module. To "
+"unify the initialization of the system, we have created an `orchestrator`"
+" that hosts two actions, the first one being an action to change state to"
+" all the nodes in the correct order."
+msgstr "Todos los nodos se inician en el estado `unconfigured` al lanzar el módulo. Para unificar la inicialización del sistema, hemos creado un `orchestrator` que ofrece dos acciones. La primera cambia el estado de todos los nodos en el orden correcto."
+
+#: ../../source/ARISE/Reusable__Module_2.md:136
+#: ../../source/ARISE/Reusable__Module_2.md:183
+msgid "Goal"
+msgstr "Objetivo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:137
+#: ../../source/ARISE/Reusable__Module_2.md:184
+msgid "Goal fields"
+msgstr "Campos del objetivo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:144
+msgid "`target_state`"
+msgstr "`target_state`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:146
+msgid "State we want to change the system to."
+msgstr "Estado al que se desea cambiar el sistema."
+
+#: ../../source/ARISE/Reusable__Module_2.md:149
+#: ../../source/ARISE/Reusable__Module_2.md:196
+msgid "Result"
+msgstr "Resultado"
+
+#: ../../source/ARISE/Reusable__Module_2.md:150
+#: ../../source/ARISE/Reusable__Module_2.md:197
+msgid "Result fields"
+msgstr "Campos del resultado"
+
+#: ../../source/ARISE/Reusable__Module_2.md:157
+#: ../../source/ARISE/Reusable__Module_2.md:204
+msgid "`success`"
+msgstr "`success`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:158
+#: ../../source/ARISE/Reusable__Module_2.md:205
+msgid "`bool`"
+msgstr "`bool`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:159
+#: ../../source/ARISE/Reusable__Module_2.md:206
+msgid "Indicates whether the action execution completed successfully."
+msgstr "Indica si la ejecución de la acción se completó correctamente."
+
+#: ../../source/ARISE/Reusable__Module_2.md:160
+#: ../../source/ARISE/Reusable__Module_2.md:207
+msgid "`result_msg`"
+msgstr "`result_msg`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:162
+#: ../../source/ARISE/Reusable__Module_2.md:209
+msgid "Final message resulting from the execution of the action."
+msgstr "Mensaje final resultante de la ejecución de la acción."
+
+#: ../../source/ARISE/Reusable__Module_2.md:165
+#: ../../source/ARISE/Reusable__Module_2.md:212
+msgid "Feedback"
+msgstr "Información de progreso"
+
+#: ../../source/ARISE/Reusable__Module_2.md:166
+#: ../../source/ARISE/Reusable__Module_2.md:213
+msgid "Feedback fields"
+msgstr "Campos de la información de progreso"
+
+#: ../../source/ARISE/Reusable__Module_2.md:173
+#: ../../source/ARISE/Reusable__Module_2.md:220
+msgid "`feedback`"
+msgstr "`feedback`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:175
+#: ../../source/ARISE/Reusable__Module_2.md:222
+msgid ""
+"Informational message describing the current status of the action "
+"execution."
+msgstr "Mensaje informativo que describe el estado actual de la ejecución de la acción."
+
+#: ../../source/ARISE/Reusable__Module_2.md:180
+msgid "Hand Change Action"
+msgstr "Acción de cambio de mano"
+
+#: ../../source/ARISE/Reusable__Module_2.md:181
+msgid ""
+"The second action from the `orchestrator` is created for changing which "
+"hand is going to be tracked. Options are **left**, **right** or **both**."
+msgstr "La segunda acción del `orchestrator` permite cambiar la mano que se va a seguir. Las opciones son **left** (izquierda), **right** (derecha) o **both** (ambas)."
+
+#: ../../source/ARISE/Reusable__Module_2.md:191
+msgid "`hand`"
+msgstr "`hand`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:193
+msgid "Hand we want to track. Options: (left, right, both)."
+msgstr "Mano que se desea seguir. Opciones: left (izquierda), right (derecha), both (ambas)."
+
+#: ../../source/ARISE/Reusable__Module_2.md:226
+msgid "Running the Module"
+msgstr "Ejecución del módulo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:227
+msgid "The launch file starts the full hand-tracking pipeline:"
+msgstr "El archivo de lanzamiento inicia toda la cadena de seguimiento de manos:"
+
+#: ../../source/ARISE/Reusable__Module_2.md:232
+msgid "Launch arguments are the following:"
+msgstr "Los argumentos de lanzamiento son los siguientes:"
+
+#: ../../source/ARISE/Reusable__Module_2.md:234
+msgid "Node parameters"
+msgstr "Parámetros del nodo"
+
+#: ../../source/ARISE/Reusable__Module_2.md:238
+msgid "Argument"
+msgstr "Argumento"
+
+#: ../../source/ARISE/Reusable__Module_2.md:239
+msgid "Default"
+msgstr "Valor predeterminado"
+
+#: ../../source/ARISE/Reusable__Module_2.md:242
+msgid "`camera_name`"
+msgstr "`camera_name`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:243
+msgid "`cameraD455`"
+msgstr "`cameraD455`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:245
+msgid "Camera namespace used to build the color, depth, and camera info topics."
+msgstr "Espacio de nombres de la cámara utilizado para construir los tópicos de color, profundidad e información de la cámara."
+
+#: ../../source/ARISE/Reusable__Module_2.md:246
+msgid "`T_tcp_cam`"
+msgstr "`T_tcp_cam`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:247
+msgid "`identity/calibrated default`"
+msgstr "`identity/calibrated default` (identidad/valor calibrado predeterminado)"
+
+#: ../../source/ARISE/Reusable__Module_2.md:248
+msgid "`float[16]`"
+msgstr "`float[16]`"
+
+#: ../../source/ARISE/Reusable__Module_2.md:249
+msgid ""
+"Homogeneous transformation matrix from the robot TCP frame to the camera "
+"frame, used to transform hand landmarks and palm planes into the robot "
+"base frame."
+msgstr "Matriz de transformación homogénea del sistema de referencia del TCP del robot al de la cámara, utilizada para transformar los puntos de referencia de las manos y los planos de las palmas al sistema de referencia de la base del robot."
+
+#: ../../source/ARISE/Reusable__Module_2.md:252
+msgid ""
+"The T_tcp_cam matrix must be adapted to the real camera-to-robot "
+"calibration of the setup. An incorrect calibration will produce incorrect"
+" hand landmark and palm plane positions in the robot base frame."
+msgstr "La matriz T_tcp_cam debe adaptarse a la calibración real entre la cámara y el robot de la instalación. Una calibración incorrecta producirá posiciones incorrectas de los puntos de referencia de las manos y de los planos de las palmas en el sistema de referencia de la base del robot."
+
+#: ../../source/ARISE/Reusable__Module_2.md:259
+msgid ""
+"Funded by the European Union. Views and opinions expressed are however "
+"those of the author(s) only and do not necessarily reflect those of the "
+"European Union or HADEA. Neither the European Union nor the granting "
+"authority can be held responsible for them"
+msgstr "Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos"
+

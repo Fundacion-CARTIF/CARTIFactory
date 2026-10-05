@@ -1,0 +1,1026 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 16:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/ARISE/Reusable__Module_1.md:1
+msgid "Reusable Module for Vision and target Matching"
+msgstr "Módulo reutilizable de visión y búsqueda de objetos objetivo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:7
+msgid "Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)"
+msgstr "Los módulos forman parte del [middleware de ARISE](https://arise-middleware.eu/)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:11
+msgid ""
+"**Access the GitHub repository [here](https://github.com/Fundacion-CARTIF"
+"/cartifactory-vision-matching)!**"
+msgstr "**¡Acceda al repositorio de GitHub [aquí](https://github.com/Fundacion-CARTIF/cartifactory-vision-matching)!**"
+
+#: ../../source/ARISE/Reusable__Module_1.md:14
+#, python-format
+msgid ""
+"[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-"
+"Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus) "
+"[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/)"
+" "
+"[![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context"
+".Orion-LD/releases/tag/1.10.0)"
+msgstr "[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus) [![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu)](https://releases.ubuntu.com/24.04/) [![OrionCB](https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat)](https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:14
+msgid "vulcanexus"
+msgstr "vulcanexus"
+
+#: ../../source/ARISE/Reusable__Module_1.md:14
+msgid "ubuntu24"
+msgstr "ubuntu24"
+
+#: ../../source/ARISE/Reusable__Module_1.md:14
+msgid "OrionCB"
+msgstr "OrionCB"
+
+#: ../../source/ARISE/Reusable__Module_1.md:18
+msgid "Features"
+msgstr "Características"
+
+#: ../../source/ARISE/Reusable__Module_1.md:19
+msgid "Automatic CPU / CUDA support"
+msgstr "Compatibilidad automática con CPU / CUDA"
+
+#: ../../source/ARISE/Reusable__Module_1.md:20
+msgid "Segmentation support (OBB from mask)"
+msgstr "Compatibilidad con segmentación (OBB a partir de la máscara)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:21
+msgid "Optional annotated image publishing"
+msgstr "Publicación opcional de imágenes anotadas"
+
+#: ../../source/ARISE/Reusable__Module_1.md:22
+msgid "Latched `class_map` publishing"
+msgstr "Publicación de `class_map` con retención del último mensaje"
+
+#: ../../source/ARISE/Reusable__Module_1.md:23
+msgid "Industrial metrics (FPS, infer_ms, device, etc.)"
+msgstr "Métricas industriales (FPS, infer_ms, device, etc.)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:24
+msgid "Configurable `class_id` mode"
+msgstr "Modo `class_id` configurable"
+
+#: ../../source/ARISE/Reusable__Module_1.md:26
+msgid "Getting started"
+msgstr "Primeros pasos"
+
+#: ../../source/ARISE/Reusable__Module_1.md:28
+msgid ""
+"This module represents par an AI assitant detection system. The user is "
+"expected to input a request and through Natural Language Processing, "
+"detect the task and object it is refering too. The object will become the"
+" `keyword`, or target object for the module."
+msgstr "Este módulo forma parte de un sistema de detección para un asistente de IA. El usuario introduce una solicitud y, mediante procesamiento del lenguaje natural, se identifican la tarea y el objeto al que hace referencia. El objeto pasa a ser la `keyword`, o el objeto objetivo del módulo."
+
+#: ../../source/ARISE/Reusable__Module_1.md:31
+msgid "![Diagram](../_static/images/ARISE/CH1/Diagram_light.png)"
+msgstr "![Diagrama](../_static/images/ARISE/CH1/Diagram_light.png)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:31
+msgid "Diagram"
+msgstr "Diagrama"
+
+#: ../../source/ARISE/Reusable__Module_1.md:34
+msgid "Dependencies"
+msgstr "Dependencias"
+
+#: ../../source/ARISE/Reusable__Module_1.md:36
+msgid ""
+"All Python dependencies are included inside the `requirements.txt` file. "
+"To install, execute on terminal:"
+msgstr "Todas las dependencias de Python se incluyen en el archivo `requirements.txt`. Para instalarlas, ejecute en la terminal:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:42
+msgid "This package is dependent on other ROS2 interfaces:"
+msgstr "Este paquete depende de otras interfaces de ROS2:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:49
+msgid "What is included in the module"
+msgstr "Qué incluye el módulo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:50
+msgid ""
+"We provide the **CARTIFactory** package, home to several nodes, that "
+"together allow you to test this reusable module."
+msgstr "Proporcionamos el paquete **CARTIFactory**, que contiene varios nodos que, en conjunto, permiten probar este módulo reutilizable."
+
+#: ../../source/ARISE/Reusable__Module_1.md:52
+msgid "Keyword Matcher"
+msgstr "Comparador de palabras clave"
+
+#: ../../source/ARISE/Reusable__Module_1.md:55
+msgid ""
+"The keyword_matcher downstream of the detector node. Its main purpose is "
+"to determine whether a requested object class is present in the latest "
+"detections."
+msgstr "El nodo keyword_matcher recibe los resultados del nodo detector. Su finalidad principal es determinar si una clase de objeto solicitada está presente en las detecciones más recientes."
+
+#: ../../source/ARISE/Reusable__Module_1.md:57
+msgid ""
+"The node subscribes to the latest detection results and stores them "
+"internally. When a match request is received through the "
+"`custom_interfaces/MatchAction` action server, it compares the requested "
+"keyword against the detected class labels and returns only the detections"
+" that match that keyword. Matching can be configured to be case-"
+"insensitive, to stop at the first valid match, and to ignore detections "
+"below a configurable confidence threshold."
+msgstr "El nodo se suscribe a los resultados de detección más recientes y los almacena internamente. Cuando recibe una solicitud de coincidencia a través del servidor de acciones `custom_interfaces/MatchAction`, compara la palabra clave solicitada con las etiquetas de las clases detectadas y devuelve únicamente las detecciones que coinciden con ella. La comparación se puede configurar para no distinguir entre mayúsculas y minúsculas, detenerse en la primera coincidencia válida e ignorar las detecciones por debajo de un umbral de confianza configurable."
+
+#: ../../source/ARISE/Reusable__Module_1.md:59
+msgid ""
+"The node additionally monitors the availability of the camera stream by "
+"tracking incoming `CameraInfo` messages. If no camera information is "
+"received for a configurable timeout period, the node marks the camera as "
+"unavailable and rejects incoming match action goals. This allows the node"
+" to prevent match requests from being accepted when the perception "
+"pipeline is not receiving live input."
+msgstr "Además, el nodo supervisa la disponibilidad del flujo de la cámara mediante los mensajes `CameraInfo` recibidos. Si no recibe información de la cámara durante un tiempo de espera configurable, la marca como no disponible y rechaza los objetivos entrantes de la acción de búsqueda de coincidencias. Así se evita aceptar solicitudes de coincidencia cuando la cadena de percepción no recibe datos en directo."
+
+#: ../../source/ARISE/Reusable__Module_1.md:61
+msgid "ONNX Detector"
+msgstr "Detector ONNX"
+
+#: ../../source/ARISE/Reusable__Module_1.md:62
+msgid ""
+"The `detector_onnx` node performs image-based object detection and "
+"segmentation inference in ROS2 using an ONNX model executed with ONNX "
+"Runtime. It subscribes to a camera image topic, preprocesses each frame "
+"to the network input size, runs inference, post-processes the model "
+"outputs, and publishes the results as `vision_msgs/Detection2DArray`."
+msgstr "El nodo `detector_onnx` realiza inferencias de detección y segmentación de objetos en imágenes en ROS2 mediante un modelo ONNX ejecutado con ONNX Runtime. Se suscribe a un tópico de imágenes de cámara, preprocesa cada fotograma para adaptarlo al tamaño de entrada de la red, ejecuta la inferencia, posprocesa las salidas del modelo y publica los resultados como `vision_msgs/Detection2DArray`."
+
+#: ../../source/ARISE/Reusable__Module_1.md:64
+msgid ""
+"The node also supports optional publication of a debug image where masks,"
+" bounding boxes, labels, and oriented boxes are drawn on top of the "
+"original image. It publishes a latched class map topic so that downstream"
+" nodes can resolve class IDs to human-readable labels, either from a TOML"
+" configuration file or from fallback numeric IDs."
+msgstr "El nodo también permite publicar opcionalmente una imagen de depuración en la que se dibujan máscaras, cuadros delimitadores, etiquetas y cuadros orientados sobre la imagen original. Publica un tópico con el mapa de clases y retención del último mensaje para que los nodos posteriores puedan convertir los identificadores de clase en etiquetas legibles, a partir de un archivo de configuración TOML o, en su defecto, de identificadores numéricos."
+
+#: ../../source/ARISE/Reusable__Module_1.md:66
+msgid ""
+"Configuration can be provided through ROS2 parameters and optionally "
+"complemented with a `.toml` file, which may define metadata such as model"
+" type, class names, default confidence threshold, and model path. The "
+"node supports execution on CPU or CUDA, depending on the selected device "
+"and available ONNX Runtime providers."
+msgstr "La configuración se puede proporcionar mediante parámetros de ROS2 y complementar opcionalmente con un archivo `.toml`, que puede definir metadatos como el tipo de modelo, los nombres de las clases, el umbral de confianza predeterminado y la ruta del modelo. El nodo permite la ejecución en CPU o CUDA, según el dispositivo seleccionado y los proveedores de ONNX Runtime disponibles."
+
+#: ../../source/ARISE/Reusable__Module_1.md:68
+msgid ""
+"For monitoring and integration into production pipelines, the node can "
+"also publish pipeline statistics such as dropped frames and node "
+"identity. It includes an optional `drop_if_busy` mode to avoid queue "
+"buildup by discarding incoming frames when inference is still running on "
+"the previous one."
+msgstr "Para la supervisión y la integración en cadenas de procesamiento de producción, el nodo también puede publicar estadísticas como los fotogramas descartados y la identidad del nodo. Incluye un modo opcional `drop_if_busy` que evita la acumulación en la cola descartando los fotogramas entrantes mientras se sigue ejecutando la inferencia del anterior."
+
+#: ../../source/ARISE/Reusable__Module_1.md:70
+msgid ""
+"Overall, this node is designed as a ROS2 perception component for real-"
+"time industrial vision pipelines, combining ONNX inference, mask-based "
+"oriented detections, debug visualization, class mapping, and runtime "
+"statistics in a single detector node."
+msgstr "En conjunto, este nodo está diseñado como un componente de percepción de ROS2 para cadenas de visión industrial en tiempo real. Combina inferencia ONNX, detecciones orientadas basadas en máscaras, visualización de depuración, correspondencia de clases y estadísticas de ejecución en un único nodo detector."
+
+#: ../../source/ARISE/Reusable__Module_1.md:75
+msgid "Supported ONNX model format"
+msgstr "Formato de modelo ONNX compatible"
+
+#: ../../source/ARISE/Reusable__Module_1.md:77
+msgid ""
+"The current implementation expects ONNX models that follow a **dense "
+"detection output structure**, with optional instance segmentation "
+"support."
+msgstr "La implementación actual espera modelos ONNX que sigan una **estructura de salida de detecciones densas**, con compatibilidad opcional con la segmentación de instancias."
+
+#: ../../source/ARISE/Reusable__Module_1.md:79
+msgid "Outputs"
+msgstr "Salidas"
+
+#: ../../source/ARISE/Reusable__Module_1.md:81
+msgid "The model must provide either:"
+msgstr "El modelo debe proporcionar una de las siguientes opciones:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:83
+msgid "**Detection only**"
+msgstr "**Solo detección**"
+
+#: ../../source/ARISE/Reusable__Module_1.md:85
+msgid "`output[0]`: tensor containing bounding boxes and class scores"
+msgstr "`output[0]`: tensor que contiene los cuadros delimitadores y las puntuaciones de las clases"
+
+#: ../../source/ARISE/Reusable__Module_1.md:87
+msgid "**Detection + segmentation**"
+msgstr "**Detección + segmentación**"
+
+#: ../../source/ARISE/Reusable__Module_1.md:89
+msgid ""
+"`output[0]`: tensor containing bounding boxes, class scores, and mask "
+"coefficients"
+msgstr "`output[0]`: tensor que contiene los cuadros delimitadores, las puntuaciones de las clases y los coeficientes de las máscaras"
+
+#: ../../source/ARISE/Reusable__Module_1.md:90
+msgid "`output[1]`: tensor containing mask prototypes"
+msgstr "`output[1]`: tensor que contiene los prototipos de las máscaras"
+
+#: ../../source/ARISE/Reusable__Module_1.md:92
+msgid "Expected prediction structure"
+msgstr "Estructura esperada de las predicciones"
+
+#: ../../source/ARISE/Reusable__Module_1.md:94
+msgid "Each prediction row is expected to encode:"
+msgstr "Se espera que cada fila de predicción codifique:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:96
+msgid "Bounding boxes in **center-based format**: `(cx, cy, w, h)`"
+msgstr "Cuadros delimitadores en **formato basado en el centro**: `(cx, cy, w, h)`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:97
+msgid "Per-class confidence scores"
+msgstr "Puntuaciones de confianza por clase"
+
+#: ../../source/ARISE/Reusable__Module_1.md:98
+msgid "Optional mask coefficients for instance mask reconstruction"
+msgstr "Coeficientes de máscara opcionales para reconstruir las máscaras de instancia"
+
+#: ../../source/ARISE/Reusable__Module_1.md:100
+msgid ""
+"If segmentation is enabled, masks are reconstructed internally by "
+"combining the mask coefficients with the prototype tensor."
+msgstr "Si la segmentación está habilitada, las máscaras se reconstruyen internamente combinando sus coeficientes con el tensor de prototipos."
+
+#: ../../source/ARISE/Reusable__Module_1.md:102
+msgid "Internal postprocessing"
+msgstr "Posprocesamiento interno"
+
+#: ../../source/ARISE/Reusable__Module_1.md:104
+msgid ""
+"The node assumes a dense prediction tensor where each row represents one "
+"detection candidate. Postprocessing is handled internally and includes:"
+msgstr "El nodo presupone un tensor de predicciones densas en el que cada fila representa una detección candidata. El posprocesamiento se realiza internamente e incluye:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:106
+msgid "Confidence filtering"
+msgstr "Filtrado por confianza"
+
+#: ../../source/ARISE/Reusable__Module_1.md:107
+msgid "Non-maximum suppression (NMS)"
+msgstr "Supresión de no máximos (NMS)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:108
+msgid "Optional mask reconstruction"
+msgstr "Reconstrucción opcional de máscaras"
+
+#: ../../source/ARISE/Reusable__Module_1.md:109
+msgid "Optional oriented bounding box (OBB) extraction from masks"
+msgstr "Extracción opcional de cuadros delimitadores orientados (OBB) a partir de las máscaras"
+
+#: ../../source/ARISE/Reusable__Module_1.md:111
+msgid ""
+"If mask outputs are not present, the node automatically operates in "
+"detection-only mode."
+msgstr "Si no hay salidas de máscaras, el nodo funciona automáticamente en modo de solo detección."
+
+#: ../../source/ARISE/Reusable__Module_1.md:113
+msgid "Input preprocessing"
+msgstr "Preprocesamiento de la entrada"
+
+#: ../../source/ARISE/Reusable__Module_1.md:115
+msgid "Before inference, each image is preprocessed using the following steps:"
+msgstr "Antes de la inferencia, cada imagen se preprocesa mediante los siguientes pasos:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:117
+msgid "Color conversion (`BGR → RGB`)"
+msgstr "Conversión de color (`BGR → RGB`)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:118
+msgid "Resize or letterbox to match model input size"
+msgstr "Redimensionado o ajuste con relleno (letterbox) para adaptarse al tamaño de entrada del modelo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:119
+msgid "Normalization to `[0, 1]`"
+msgstr "Normalización a `[0, 1]`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:120
+msgid "Layout conversion to `NCHW`"
+msgstr "Conversión de la disposición de los datos a `NCHW`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:122
+msgid "Output"
+msgstr "Salida"
+
+#: ../../source/ARISE/Reusable__Module_1.md:124
+msgid "The node publishes:"
+msgstr "El nodo publica:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:126
+#: ../../source/ARISE/Reusable__Module_1.md:256
+msgid "`vision_msgs/Detection2DArray`"
+msgstr "`vision_msgs/Detection2DArray`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:128
+msgid "Optionally, it can also publish a debug image including:"
+msgstr "Opcionalmente, también puede publicar una imagen de depuración que incluya:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:130
+msgid "Bounding boxes"
+msgstr "Cuadros delimitadores"
+
+#: ../../source/ARISE/Reusable__Module_1.md:131
+msgid "Segmentation masks"
+msgstr "Máscaras de segmentación"
+
+#: ../../source/ARISE/Reusable__Module_1.md:132
+msgid "Oriented bounding boxes (OBB)"
+msgstr "Cuadros delimitadores orientados (OBB)"
+
+#: ../../source/ARISE/Reusable__Module_1.md:133
+msgid "Class labels and scores"
+msgstr "Etiquetas y puntuaciones de las clases"
+
+#: ../../source/ARISE/Reusable__Module_1.md:135
+msgid "Model compatibility"
+msgstr "Compatibilidad de modelos"
+
+#: ../../source/ARISE/Reusable__Module_1.md:137
+msgid "This node is compatible with ONNX models that:"
+msgstr "Este nodo es compatible con modelos ONNX que:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:139
+msgid "Output bounding boxes and class scores in a unified tensor"
+msgstr "Proporcionen cuadros delimitadores y puntuaciones de las clases en un tensor unificado"
+
+#: ../../source/ARISE/Reusable__Module_1.md:140
+msgid "Optionally include mask prototype outputs for instance segmentation"
+msgstr "Incluyan opcionalmente salidas de prototipos de máscaras para la segmentación de instancias"
+
+#: ../../source/ARISE/Reusable__Module_1.md:141
+msgid "Use center-based box representation `(cx, cy, w, h)`"
+msgstr "Utilicen una representación de los cuadros basada en el centro `(cx, cy, w, h)`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:144
+msgid ""
+"Models that do not follow this structure may require adapting the "
+"postprocessing logic."
+msgstr "Los modelos que no sigan esta estructura pueden requerir una adaptación de la lógica de posprocesamiento."
+
+#: ../../source/ARISE/Reusable__Module_1.md:150
+msgid "Pipeline Monitor"
+msgstr "Monitor de la cadena de procesamiento"
+
+#: ../../source/ARISE/Reusable__Module_1.md:151
+msgid ""
+"This node is used for relaying different statistics of the workspace to "
+"the Context Broker (see the latest section about FIWARE's Context "
+"Broker)."
+msgstr "Este nodo se utiliza para transmitir distintas estadísticas del entorno de trabajo al Context Broker (véase la sección final sobre el Context Broker de FIWARE)."
+
+#: ../../source/ARISE/Reusable__Module_1.md:153
+msgid ""
+"This node subscribes to statistics topics being published by the other "
+"two nodes and publish it into a joined status message, using the "
+"interface `custom_interfaces/PipelineStats`."
+msgstr "Este nodo se suscribe a los tópicos de estadísticas publicados por los otros dos nodos y publica sus datos en un mensaje de estado conjunto mediante la interfaz `custom_interfaces/PipelineStats`."
+
+#: ../../source/ARISE/Reusable__Module_1.md:156
+msgid "Custom Interfaces"
+msgstr "Interfaces personalizadas"
+
+#: ../../source/ARISE/Reusable__Module_1.md:158
+msgid ""
+"A `custom_interfaces` package is included, to handle the custom message "
+"for the pipeline information and the goal"
+msgstr "Se incluye un paquete `custom_interfaces` para gestionar el mensaje personalizado con la información de la cadena de procesamiento y el objetivo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:161
+msgid "Pipeline Statistics"
+msgstr "Estadísticas de la cadena de procesamiento"
+
+#: ../../source/ARISE/Reusable__Module_1.md:163
+msgid ""
+"For the sending the diagnostics to the Context Broker we use a custom "
+"interface `custom_interfaces/PipelineStats` with the followind "
+"definition:"
+msgstr "Para enviar los diagnósticos al Context Broker utilizamos una interfaz personalizada `custom_interfaces/PipelineStats` con la siguiente definición:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:165
+msgid "PipelineStats fields"
+msgstr "Campos de PipelineStats"
+
+#: ../../source/ARISE/Reusable__Module_1.md:169
+#: ../../source/ARISE/Reusable__Module_1.md:233
+#: ../../source/ARISE/Reusable__Module_1.md:246
+#: ../../source/ARISE/Reusable__Module_1.md:268
+msgid "Field"
+msgstr "Campo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:170
+#: ../../source/ARISE/Reusable__Module_1.md:234
+#: ../../source/ARISE/Reusable__Module_1.md:247
+#: ../../source/ARISE/Reusable__Module_1.md:269
+#: ../../source/ARISE/Reusable__Module_1.md:424
+msgid "Type"
+msgstr "Tipo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:171
+#: ../../source/ARISE/Reusable__Module_1.md:235
+#: ../../source/ARISE/Reusable__Module_1.md:248
+#: ../../source/ARISE/Reusable__Module_1.md:270
+#: ../../source/ARISE/Reusable__Module_1.md:425
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../source/ARISE/Reusable__Module_1.md:172
+msgid "`frames_dropped`"
+msgstr "`frames_dropped`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:173
+#: ../../source/ARISE/Reusable__Module_1.md:176
+#: ../../source/ARISE/Reusable__Module_1.md:179
+#: ../../source/ARISE/Reusable__Module_1.md:182
+#: ../../source/ARISE/Reusable__Module_1.md:185
+#: ../../source/ARISE/Reusable__Module_1.md:188
+#: ../../source/ARISE/Reusable__Module_1.md:191
+#: ../../source/ARISE/Reusable__Module_1.md:194
+#: ../../source/ARISE/Reusable__Module_1.md:197
+#: ../../source/ARISE/Reusable__Module_1.md:200
+msgid "`uint64`"
+msgstr "`uint64`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:174
+msgid ""
+"Number of frames discarded before processing due to overload or "
+"synchronization issues."
+msgstr "Número de fotogramas descartados antes del procesamiento debido a sobrecarga o problemas de sincronización."
+
+#: ../../source/ARISE/Reusable__Module_1.md:175
+msgid "`action_goals_received`"
+msgstr "`action_goals_received`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:177
+msgid "Total number of goals received by the action server."
+msgstr "Número total de objetivos recibidos por el servidor de acciones."
+
+#: ../../source/ARISE/Reusable__Module_1.md:178
+msgid "`action_goals_accepted`"
+msgstr "`action_goals_accepted`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:180
+msgid "Number of goals accepted for execution."
+msgstr "Número de objetivos aceptados para su ejecución."
+
+#: ../../source/ARISE/Reusable__Module_1.md:181
+msgid "`action_goals_rejected`"
+msgstr "`action_goals_rejected`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:183
+msgid "Number of goals rejected by the server."
+msgstr "Número de objetivos rechazados por el servidor."
+
+#: ../../source/ARISE/Reusable__Module_1.md:184
+msgid "`action_goals_canceled`"
+msgstr "`action_goals_canceled`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:186
+msgid "Number of goals canceled after acceptance."
+msgstr "Número de objetivos cancelados tras su aceptación."
+
+#: ../../source/ARISE/Reusable__Module_1.md:187
+msgid "`action_goals_succeeded`"
+msgstr "`action_goals_succeeded`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:189
+msgid "Number of goals successfully completed."
+msgstr "Número de objetivos completados correctamente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:190
+msgid "`action_goals_failed`"
+msgstr "`action_goals_failed`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:192
+msgid "Number of goals that finished with failure."
+msgstr "Número de objetivos que finalizaron con un fallo."
+
+#: ../../source/ARISE/Reusable__Module_1.md:193
+msgid "`match_requests`"
+msgstr "`match_requests`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:195
+msgid "Total number of match operations requested."
+msgstr "Número total de operaciones de búsqueda de coincidencias solicitadas."
+
+#: ../../source/ARISE/Reusable__Module_1.md:196
+#: ../../source/ARISE/Reusable__Module_1.md:252
+msgid "`match_success`"
+msgstr "`match_success`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:198
+msgid "Number of successful match operations."
+msgstr "Número de operaciones de búsqueda de coincidencias completadas correctamente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:199
+msgid "`match_fail`"
+msgstr "`match_fail`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:201
+msgid "Number of match operations that failed."
+msgstr "Número de operaciones de búsqueda de coincidencias que fallaron."
+
+#: ../../source/ARISE/Reusable__Module_1.md:202
+msgid "`fps_input`"
+msgstr "`fps_input`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:203
+#: ../../source/ARISE/Reusable__Module_1.md:206
+#: ../../source/ARISE/Reusable__Module_1.md:209
+msgid "`float32`"
+msgstr "`float32`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:204
+msgid "Frame rate of incoming images."
+msgstr "Tasa de fotogramas de las imágenes entrantes."
+
+#: ../../source/ARISE/Reusable__Module_1.md:205
+msgid "`fps_processed`"
+msgstr "`fps_processed`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:207
+msgid "Frame rate actually processed by the node."
+msgstr "Tasa de fotogramas que el nodo procesa realmente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:208
+msgid "`avg_inference_ms`"
+msgstr "`avg_inference_ms`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:210
+msgid "Average inference time per frame in milliseconds."
+msgstr "Tiempo medio de inferencia por fotograma en milisegundos."
+
+#: ../../source/ARISE/Reusable__Module_1.md:211
+msgid "`camera_available`"
+msgstr "`camera_available`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:212
+#: ../../source/ARISE/Reusable__Module_1.md:250
+#: ../../source/ARISE/Reusable__Module_1.md:253
+#: ../../source/ARISE/Reusable__Module_1.md:440
+msgid "`bool`"
+msgstr "`bool`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:213
+msgid "Indicates whether the camera stream is currently available."
+msgstr "Indica si el flujo de la cámara está disponible actualmente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:214
+msgid "`node_name`"
+msgstr "`node_name`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:215
+#: ../../source/ARISE/Reusable__Module_1.md:237
+#: ../../source/ARISE/Reusable__Module_1.md:272
+#: ../../source/ARISE/Reusable__Module_1.md:428
+#: ../../source/ARISE/Reusable__Module_1.md:432
+#: ../../source/ARISE/Reusable__Module_1.md:436
+#: ../../source/ARISE/Reusable__Module_1.md:444
+#: ../../source/ARISE/Reusable__Module_1.md:448
+#: ../../source/ARISE/Reusable__Module_1.md:460
+msgid "`string`"
+msgstr "`string`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:216
+msgid "Name of the node publishing these metrics."
+msgstr "Nombre del nodo que publica estas métricas."
+
+#: ../../source/ARISE/Reusable__Module_1.md:221
+msgid "If infer_ms > 200 ms, a WARN status is published."
+msgstr "Si infer_ms > 200 ms, se publica un estado WARN."
+
+#: ../../source/ARISE/Reusable__Module_1.md:224
+msgid "Detection action"
+msgstr "Acción de detección"
+
+#: ../../source/ARISE/Reusable__Module_1.md:225
+msgid ""
+"This action allows a client to request a visual search operation using a "
+"keyword. The node performs detection and returns the results along with "
+"an annotated image."
+msgstr "Esta acción permite a un cliente solicitar una operación de búsqueda visual mediante una palabra clave. El nodo realiza la detección y devuelve los resultados junto con una imagen anotada."
+
+#: ../../source/ARISE/Reusable__Module_1.md:228
+msgid "Goal"
+msgstr "Objetivo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:229
+msgid "Goal fields"
+msgstr "Campos del objetivo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:236
+msgid "`kw`"
+msgstr "`kw`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:238
+msgid "Keyword describing the object or class to search for in the scene."
+msgstr "Palabra clave que describe el objeto o la clase que se debe buscar en la escena."
+
+#: ../../source/ARISE/Reusable__Module_1.md:241
+msgid "Result"
+msgstr "Resultado"
+
+#: ../../source/ARISE/Reusable__Module_1.md:242
+msgid "Result fields"
+msgstr "Campos del resultado"
+
+#: ../../source/ARISE/Reusable__Module_1.md:249
+msgid "`action_success`"
+msgstr "`action_success`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:251
+msgid "Indicates whether the action execution completed successfully."
+msgstr "Indica si la ejecución de la acción se completó correctamente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:254
+msgid ""
+"Indicates whether a matching detection was found for the requested "
+"keyword."
+msgstr "Indica si se encontró una detección que coincidiera con la palabra clave solicitada."
+
+#: ../../source/ARISE/Reusable__Module_1.md:255
+msgid "`det`"
+msgstr "`det`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:257
+msgid "Array containing the detections generated by the model."
+msgstr "Array que contiene las detecciones generadas por el modelo."
+
+#: ../../source/ARISE/Reusable__Module_1.md:258
+msgid "`img`"
+msgstr "`img`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:259
+msgid "`sensor_msgs/Image`"
+msgstr "`sensor_msgs/Image`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:260
+msgid "Image with the detections annotated for visualization or debugging."
+msgstr "Imagen con las detecciones anotadas para su visualización o depuración."
+
+#: ../../source/ARISE/Reusable__Module_1.md:263
+msgid "Feedback"
+msgstr "Información de progreso"
+
+#: ../../source/ARISE/Reusable__Module_1.md:264
+msgid "Feedback fields"
+msgstr "Campos de la información de progreso"
+
+#: ../../source/ARISE/Reusable__Module_1.md:271
+msgid "`feedback`"
+msgstr "`feedback`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:273
+msgid ""
+"Informational message describing the current status of the action "
+"execution."
+msgstr "Mensaje informativo que describe el estado actual de la ejecución de la acción."
+
+#: ../../source/ARISE/Reusable__Module_1.md:276
+msgid "To call the action execute:"
+msgstr "Para invocar la acción, ejecute:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:282
+msgid ""
+"If you want to also see the feedback from the action, add `--feedback` at"
+" the end."
+msgstr "Si también desea ver la información de progreso de la acción, añada `--feedback` al final."
+
+#: ../../source/ARISE/Reusable__Module_1.md:310
+msgid "Connecting to FIWARE's Context Broker"
+msgstr "Conexión con el Context Broker de FIWARE"
+
+#: ../../source/ARISE/Reusable__Module_1.md:312
+msgid ""
+"The ecosystem the interaction is running under [Engineering Group's "
+"PoC](https://github.com/Engineering-Research-and-Development/arise-poc/) "
+"ecosystem. This is necessary for the Context Broker to be able to see the"
+" ROS2 topics. For this module, the IoT Agent OPCUA is not used, so its "
+"implementation is optional."
+msgstr "La interacción se ejecuta en el ecosistema de la [PoC de Engineering Group](https://github.com/Engineering-Research-and-Development/arise-poc/). Esto es necesario para que el Context Broker pueda acceder a los tópicos de ROS2. En este módulo no se utiliza el IoT Agent OPCUA, por lo que su implementación es opcional."
+
+#: ../../source/ARISE/Reusable__Module_1.md:314
+msgid "Configure FIWARE to store the reusable module topic"
+msgstr "Configuración de FIWARE para almacenar el tópico del módulo reutilizable"
+
+#: ../../source/ARISE/Reusable__Module_1.md:316
+msgid ""
+"To make FIWARE store the topic published by the reusable module, you "
+"first need to edit the configuration file located at:"
+msgstr "Para que FIWARE almacene el tópico publicado por el módulo reutilizable, primero debe editar el archivo de configuración ubicado en:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:322
+msgid "Inside this file, add the following block inside:"
+msgstr "En este archivo, añada el siguiente bloque dentro de:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:331
+msgid "Add this entry:"
+msgstr "Añada esta entrada:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:341
+msgid ""
+"After adding this configuration, FIWARE will be able to detect the "
+"`/stats/pipeline` topic and store its data correctly in the TimescaleDB "
+"database."
+msgstr "Una vez añadida esta configuración, FIWARE podrá detectar el tópico `/stats/pipeline` y almacenar sus datos correctamente en la base de datos TimescaleDB."
+
+#: ../../source/ARISE/Reusable__Module_1.md:344
+msgid "Grafana connection and visualizing"
+msgstr "Conexión y visualización con Grafana"
+
+#: ../../source/ARISE/Reusable__Module_1.md:346
+msgid ""
+"To visualize the data stored in TimescaleDB with Grafana, follow the "
+"steps described in **Step 4 - Access the Grafana Dashboard** of the "
+"official ARISE PoC Engineering documentation. That section explains how "
+"to access Grafana, connect to the TimescaleDB data source, create a new "
+"dashboard, add panels, build queries, and select the appropriate "
+"visualization type. In the ARISE PoC guide, Grafana is available at "
+"`https://localhost/login` with the default credentials `admin/admin`, and"
+" the same section also covers datasource configuration and dashboard "
+"creation."
+msgstr "Para visualizar con Grafana los datos almacenados en TimescaleDB, siga los pasos descritos en **Step 4 - Access the Grafana Dashboard** (Paso 4: Acceso al panel de Grafana) de la documentación oficial de la PoC de ARISE de Engineering. Esa sección explica cómo acceder a Grafana, conectarse a la fuente de datos TimescaleDB, crear un nuevo panel de control, añadir paneles, crear consultas y seleccionar el tipo de visualización adecuado. En la guía de la PoC de ARISE, Grafana está disponible en `https://localhost/login` con las credenciales predeterminadas `admin/admin`, y esa misma sección también aborda la configuración de la fuente de datos y la creación de paneles de control."
+
+#: ../../source/ARISE/Reusable__Module_1.md:348
+msgid "In particular, the documentation includes:"
+msgstr "En concreto, la documentación incluye:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:350
+msgid "how to configure the TimescaleDB datasource in Grafana,"
+msgstr "cómo configurar la fuente de datos TimescaleDB en Grafana,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:351
+msgid "how to create a new dashboard,"
+msgstr "cómo crear un nuevo panel de control,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:352
+msgid "how to add a panel,"
+msgstr "cómo añadir un panel,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:353
+msgid "how to write a query for the selected datasource,"
+msgstr "cómo escribir una consulta para la fuente de datos seleccionada,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:354
+msgid "and how to choose the most suitable visualization for the data."
+msgstr "y cómo elegir la visualización más adecuada para los datos."
+
+#: ../../source/ARISE/Reusable__Module_1.md:360
+msgid "Example query"
+msgstr "Consulta de ejemplo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:361
+msgid ""
+"The following query can be used to visualize action-goal statistics for "
+"the reusable module:"
+msgstr "La siguiente consulta se puede utilizar para visualizar las estadísticas de los objetivos de las acciones del módulo reutilizable:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:378
+msgid ""
+"This query retrieves time-series data for the entity `urn:ngsi-"
+"ld:stats:1` from the `public.attributes` table. For each timestamp "
+"(`ts`), it extracts several counters stored inside the `compound` JSON "
+"field and converts them to integers."
+msgstr "Esta consulta recupera datos de series temporales de la entidad `urn:ngsi-ld:stats:1` de la tabla `public.attributes`. Para cada marca de tiempo (`ts`), extrae varios contadores almacenados en el campo JSON `compound` y los convierte en números enteros."
+
+#: ../../source/ARISE/Reusable__Module_1.md:380
+msgid "The resulting series represent:"
+msgstr "Las series resultantes representan:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:382
+msgid "**Received**: number of action goals received by the module,"
+msgstr "**Received** (recibidos): número de objetivos de acciones recibidos por el módulo,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:383
+msgid "**Accepted**: number of action goals accepted,"
+msgstr "**Accepted** (aceptados): número de objetivos de acciones aceptados,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:384
+msgid "**Rejected**: number of action goals rejected,"
+msgstr "**Rejected** (rechazados): número de objetivos de acciones rechazados,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:385
+msgid "**Canceled**: number of action goals canceled,"
+msgstr "**Canceled** (cancelados): número de objetivos de acciones cancelados,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:386
+msgid "**Succeeded**: number of action goals successfully completed,"
+msgstr "**Succeeded** (completados): número de objetivos de acciones completados correctamente,"
+
+#: ../../source/ARISE/Reusable__Module_1.md:387
+msgid "**Failed**: number of action goals that failed."
+msgstr "**Failed** (fallidos): número de objetivos de acciones que fallaron."
+
+#: ../../source/ARISE/Reusable__Module_1.md:389
+msgid ""
+"In Grafana, this query can be displayed as a time-series chart to monitor"
+" how the action-goal counters evolve over time."
+msgstr "En Grafana, esta consulta se puede mostrar como un gráfico de series temporales para supervisar la evolución de los contadores de objetivos de acciones a lo largo del tiempo."
+
+#: ../../source/ARISE/Reusable__Module_1.md:395
+msgid "Reusable module dashboard JSON"
+msgstr "JSON del panel de control del módulo reutilizable"
+
+#: ../../source/ARISE/Reusable__Module_1.md:397
+msgid ""
+"Additionally, the repository already includes a JSON file containing the "
+"dashboard template for the reusable module. This means users can simply "
+"import that dashboard into Grafana and immediately access the predefined "
+"visualizations, without having to create the panels manually."
+msgstr "Además, el repositorio ya incluye un archivo JSON con la plantilla del panel de control del módulo reutilizable. Esto permite a los usuarios importar directamente ese panel de control en Grafana y acceder de inmediato a las visualizaciones predefinidas, sin tener que crear los paneles manualmente."
+
+#: ../../source/ARISE/Reusable__Module_1.md:399
+msgid "Example of reusable module dashboard:"
+msgstr "Ejemplo de panel de control del módulo reutilizable:"
+
+#: ../../source/ARISE/Reusable__Module_1.md:407
+msgid "Running the Module"
+msgstr "Ejecución del módulo"
+
+#: ../../source/ARISE/Reusable__Module_1.md:408
+msgid ""
+"The launch file `cartifactory_pipeline.launch.py` provides an easy way to"
+" start the module. You only need to define"
+msgstr "El archivo de lanzamiento `cartifactory_pipeline.launch.py` permite iniciar el módulo fácilmente. Solo es necesario definir"
+
+#: ../../source/ARISE/Reusable__Module_1.md:414
+msgid ""
+"The following launch arguments configure the behavior of the ONNX "
+"detector node and its ROS2 interfaces."
+msgstr "Los siguientes argumentos de lanzamiento configuran el comportamiento del nodo detector ONNX y sus interfaces de ROS2."
+
+#: ../../source/ARISE/Reusable__Module_1.md:416
+msgid "Launch Arguments"
+msgstr "Argumentos de lanzamiento"
+
+#: ../../source/ARISE/Reusable__Module_1.md:418
+msgid "Launch arguments"
+msgstr "Argumentos de lanzamiento"
+
+#: ../../source/ARISE/Reusable__Module_1.md:422
+msgid "Argument"
+msgstr "Argumento"
+
+#: ../../source/ARISE/Reusable__Module_1.md:423
+msgid "Default"
+msgstr "Valor predeterminado"
+
+#: ../../source/ARISE/Reusable__Module_1.md:426
+msgid "`toml_path`"
+msgstr "`toml_path`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:427
+msgid "`\"\"`"
+msgstr "`\"\"`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:429
+msgid ""
+"Path to the `model.toml` configuration file used by the `onnx_detector` "
+"node."
+msgstr "Ruta al archivo de configuración `model.toml` utilizado por el nodo `onnx_detector`."
+
+#: ../../source/ARISE/Reusable__Module_1.md:430
+msgid "`image_topic`"
+msgstr "`image_topic`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:431
+msgid "`/camera/camera/color/image_raw`"
+msgstr "`/camera/camera/color/image_raw`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:433
+msgid "Input ROS2 image topic from which the detector subscribes to images."
+msgstr "Tópico de imágenes de entrada de ROS2 al que se suscribe el detector."
+
+#: ../../source/ARISE/Reusable__Module_1.md:434
+msgid "`detections_topic`"
+msgstr "`detections_topic`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:435
+msgid "`/detections`"
+msgstr "`/detections`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:437
+msgid ""
+"Base topic where detection results are published. Annotated images are "
+"published on `<detections_topic>/image`."
+msgstr "Tópico base en el que se publican los resultados de detección. Las imágenes anotadas se publican en `<detections_topic>/image`."
+
+#: ../../source/ARISE/Reusable__Module_1.md:438
+msgid "`publish_debug_image`"
+msgstr "`publish_debug_image`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:439
+msgid "`true`"
+msgstr "`true`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:441
+msgid "Enables publishing of the annotated debug image showing detections."
+msgstr "Habilita la publicación de la imagen de depuración anotada que muestra las detecciones."
+
+#: ../../source/ARISE/Reusable__Module_1.md:442
+msgid "`detections_qos`"
+msgstr "`detections_qos`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:443
+msgid "`sensor_data`"
+msgstr "`sensor_data`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:445
+msgid "QoS profile used when publishing detection messages."
+msgstr "Perfil QoS utilizado al publicar los mensajes de detección."
+
+#: ../../source/ARISE/Reusable__Module_1.md:446
+msgid "`debug_qos`"
+msgstr "`debug_qos`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:447
+msgid "`best_effort`"
+msgstr "`best_effort`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:449
+msgid "QoS profile used when publishing the debug image topic."
+msgstr "Perfil QoS utilizado al publicar el tópico de imágenes de depuración."
+
+#: ../../source/ARISE/Reusable__Module_1.md:450
+msgid "`img_h`"
+msgstr "`img_h`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:451
+msgid "`480`"
+msgstr "`480`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:452
+#: ../../source/ARISE/Reusable__Module_1.md:456
+msgid "`int`"
+msgstr "`int`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:453
+msgid "Height of the image expected by the ONNX model."
+msgstr "Altura de la imagen esperada por el modelo ONNX."
+
+#: ../../source/ARISE/Reusable__Module_1.md:454
+msgid "`img_w`"
+msgstr "`img_w`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:455
+msgid "`640`"
+msgstr "`640`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:457
+msgid "Width of the image expected by the ONNX model."
+msgstr "Anchura de la imagen esperada por el modelo ONNX."
+
+#: ../../source/ARISE/Reusable__Module_1.md:458
+msgid "`class_id_mode`"
+msgstr "`class_id_mode`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:459
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/ARISE/Reusable__Module_1.md:461
+msgid ""
+"Determines how the detected class is published: `id` (numeric class id) "
+"or `name` (class label)."
+msgstr "Determina cómo se publica la clase detectada: `id` (identificador numérico de la clase) o `name` (etiqueta de la clase)."
+
+#: ../../source/ARISE/Reusable__Module_1.md:464
+msgid ""
+"Funded by the European Union. Views and opinions expressed are however "
+"those of the author(s) only and do not necessarily reflect those of the "
+"European Union or HADEA. Neither the European Union nor the granting "
+"authority can be held responsible for them"
+msgstr "Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos"
+

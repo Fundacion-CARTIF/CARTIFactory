@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 10:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/CARTIFactory/About_us.md:1
+msgid "About us"
+msgstr "Sobre nosotros"
+
+#: ../../source/CARTIFactory/About_us.md:3
+msgid "CARTIFactory"
+msgstr "CARTIFactory"
+
+#: ../../source/CARTIFactory/About_us.md:10
+msgid ""
+"CARTIFactory provides companies, researchers, and public organizations "
+"with access to cutting-edge technologies such as:"
+msgstr "CARTIFactory ofrece a empresas, investigadores y organismos públicos acceso a tecnologías de vanguardia como:"
+
+#: ../../source/CARTIFactory/About_us.md:11
+msgid "Collaborative robotics"
+msgstr "Robótica colaborativa"
+
+#: ../../source/CARTIFactory/About_us.md:12
+msgid "Generative Artificial Intelligence (GenAI)"
+msgstr "Inteligencia artificial generativa (GenAI)"
+
+#: ../../source/CARTIFactory/About_us.md:13
+msgid "Digital twins"
+msgstr "Gemelos digitales"
+
+#: ../../source/CARTIFactory/About_us.md:14
+msgid "Industrial Internet of Things (IIoT)"
+msgstr "Internet industrial de las cosas (IIoT)"
+
+#: ../../source/CARTIFactory/About_us.md:15
+msgid "Computer vision systems"
+msgstr "Sistemas de visión artificial"
+
+#: ../../source/CARTIFactory/About_us.md:16
+msgid "Extended and mixed reality interfaces"
+msgstr "Interfaces de realidad extendida y mixta"
+
+#: ../../source/CARTIFactory/About_us.md:18
+msgid ""
+"The initiative is designed especially to help SMEs and industrial "
+"organizations experiment with digital transformation technologies in "
+"realistic environments."
+msgstr "La iniciativa está diseñada especialmente para ayudar a las pymes y a las organizaciones industriales a experimentar con tecnologías de transformación digital en entornos realistas."
+
+#: ../../source/CARTIFactory/About_us.md:20
+msgid ""
+"A key aspect of CARTIFactory is its alignment with the **Industry 5.0** "
+"vision, where technology is not only focused on productivity, but also on"
+" human well-being, sustainability, resilience, and safe human–robot "
+"collaboration. The laboratory supports the development and validation of "
+"adaptive robotic behaviors, natural interaction interfaces, and "
+"interoperable industrial systems. The infrastructure includes "
+"collaborative robotic platforms, camera-based vision systems, mixed "
+"reality devices, interchangeable robotic tools, and industrial "
+"workstations. These technologies are currently being validated in "
+"practical use cases such as:"
+msgstr "Un aspecto clave de CARTIFactory es su alineación con la visión de la **Industria 5.0**, en la que la tecnología no solo se centra en la productividad, sino también en el bienestar de las personas, la sostenibilidad, la resiliencia y la colaboración segura entre personas y robots. El laboratorio apoya el desarrollo y la validación de comportamientos robóticos adaptativos, interfaces de interacción natural y sistemas industriales interoperables. La infraestructura incluye plataformas robóticas colaborativas, sistemas de visión basados en cámaras, dispositivos de realidad mixta, herramientas robóticas intercambiables y estaciones de trabajo industriales. Estas tecnologías se están validando actualmente en casos de uso prácticos como:"
+
+#: ../../source/CARTIFactory/About_us.md:21
+msgid "Assembly and disassembly of high-value products"
+msgstr "Montaje y desmontaje de productos de alto valor"
+
+#: ../../source/CARTIFactory/About_us.md:22
+msgid "Intelligent warehouse picking and logistics operations"
+msgstr "Recogida inteligente de objetos en almacenes y operaciones logísticas"
+
+#: ../../source/CARTIFactory/About_us.md:23
+msgid "Human–robot collaborative tasks"
+msgstr "Tareas colaborativas entre personas y robots"
+
+#: ../../source/CARTIFactory/About_us.md:24
+msgid "Productivity and safety evaluation in industrial environments"
+msgstr "Evaluación de la productividad y la seguridad en entornos industriales"
+
+#: ../../source/CARTIFactory/About_us.md:26
+msgid ""
+"These applications originate from European innovation projects such as "
+"**ARISE** and **5R**, which focus on collaborative robotics, AI, and "
+"digital twins for manufacturing and remanufacturing scenarios."
+msgstr "Estas aplicaciones surgen de proyectos europeos de innovación como **ARISE** y **5R**, centrados en la robótica colaborativa, la IA y los gemelos digitales para escenarios de fabricación y refabricación."
+
+#: ../../source/CARTIFactory/About_us.md:28
+msgid ""
+"Another important element of CARTIFactory is its commitment to open "
+"standards and interoperability through technologies such as FIWARE, Fast "
+"DDS, Vulcanexus, and ROS4HRI. FIWARE provides the technological "
+"foundation for building modular and interoperable industrial solutions "
+"capable of real-time monitoring, IT/OT integration, predictive analytics,"
+" and plug-and-play deployment across different industrial sectors."
+msgstr "Otro elemento importante de CARTIFactory es su compromiso con los estándares abiertos y la interoperabilidad mediante tecnologías como FIWARE, Fast DDS, Vulcanexus y ROS4HRI. FIWARE proporciona la base tecnológica para crear soluciones industriales modulares e interoperables con capacidades de supervisión en tiempo real, integración IT/OT, análisis predictivo y despliegue plug-and-play en distintos sectores industriales."
+
+#: ../../source/CARTIFactory/About_us.md:30
+msgid ""
+"Through CARTIFactory, CARTIF aims to strengthen its position as a major "
+"innovation hub in Europe, helping industries transition toward smarter, "
+"safer, and more sustainable production systems while promoting "
+"collaboration between technology providers, researchers, and industrial "
+"stakeholders."
+msgstr "A través de CARTIFactory, CARTIF aspira a reforzar su posición como centro de referencia para la innovación en Europa, ayudando a las industrias a avanzar hacia sistemas de producción más inteligentes, seguros y sostenibles, al tiempo que promueve la colaboración entre proveedores de tecnología, investigadores y agentes del sector industrial."
+
+#: ../../source/CARTIFactory/About_us.md:32
+msgid "CARTIF"
+msgstr "CARTIF"
+
+#: ../../source/CARTIFactory/About_us.md:39
+msgid ""
+"[CARTIF](https://www.cartif.es/en/about-us/) is an applied, horizontal "
+"research centre whose main mission is to offer innovative solutions to "
+"companies so that they can improve their processes, systems and products,"
+" increasing their competitiveness and creating new business "
+"opportunities. Legally it is a private, non-profit foundation, which was "
+"founded in 1994 at the University of Valladolid."
+msgstr "[CARTIF](https://www.cartif.es/en/about-us/) es un centro de investigación aplicada y de carácter horizontal cuya misión principal es ofrecer soluciones innovadoras a las empresas para que puedan mejorar sus procesos, sistemas y productos, aumentar su competitividad y crear nuevas oportunidades de negocio. Su forma jurídica es la de una fundación privada sin ánimo de lucro, constituida en 1994 en la Universidad de Valladolid."
+
+#: ../../source/CARTIFactory/About_us.md:41
+msgid ""
+"CARTIF develops R&D projects financed by private companies or through "
+"public funds obtained from competitive calls at national and "
+"international level. CARTIF also supports public entities (city councils,"
+" regional governments…) on high impact projects planning and development."
+msgstr "CARTIF desarrolla proyectos de I+D financiados por empresas privadas o mediante fondos públicos obtenidos en convocatorias competitivas nacionales e internacionales. CARTIF también apoya a las entidades públicas (ayuntamientos, gobiernos regionales…) en la planificación y el desarrollo de proyectos de gran impacto."
+
+#: ../../source/CARTIFactory/About_us.md:43
+msgid ""
+"CARTIF is a multidisciplinary centre that works in multiple knowledge "
+"fields focused to many economic sectors: energy, food, industry, "
+"construction and infrastructures, health and environment, addressing "
+"research lines oriented to the main societal challenges, as industry 4.0,"
+" smart grids, smart cities, energy efficiency, cultural heritage, quality"
+" of life, circular economy, natural resources and biotechnology."
+msgstr "CARTIF es un centro multidisciplinar que trabaja en múltiples áreas de conocimiento orientadas a numerosos sectores económicos: energía, alimentación, industria, construcción e infraestructuras, salud y medio ambiente. Sus líneas de investigación abordan los principales retos de la sociedad, como la industria 4.0, las redes inteligentes, las ciudades inteligentes, la eficiencia energética, el patrimonio cultural, la calidad de vida, la economía circular, los recursos naturales y la biotecnología."
+
+#: ../../source/CARTIFactory/About_us.md:45
+msgid ""
+"CARTIF has an analytical testing laboratory the offers analysis services "
+"to the centre and to other companies by means of a wide offer that "
+"includes 3D digitalization, biomass characterization, food biotechnology "
+"and material nanotechnology"
+msgstr "CARTIF dispone de un laboratorio de ensayos analíticos que ofrece servicios de análisis al propio centro y a otras empresas mediante una amplia oferta que incluye digitalización 3D, caracterización de biomasa, biotecnología alimentaria y nanotecnología de materiales"
+
+#: ../../source/CARTIFactory/FIWARE_ihub.md:1
+msgid "FIWARE iHub"
+msgstr "FIWARE iHub"
+
+#: ../../source/CARTIFactory/FIWARE_ihub.md:9
+msgid ""
+"CARTIF presentes CARTIFactory as it's own [FIWARE "
+"iHub](https://www.fiware.org/community/fiware-ihubs/)"
+msgstr "CARTIF presenta CARTIFactory como su propio [FIWARE iHub](https://www.fiware.org/community/fiware-ihubs/)"
+

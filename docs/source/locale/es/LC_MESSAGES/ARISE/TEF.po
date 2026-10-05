@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 16:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/ARISE/TEF.md:1
+msgid ""
+"TEF1: Experimental Robotic cell for Complex Picking and Dismantling "
+"Applications"
+msgstr "TEF1: Celda robótica experimental para aplicaciones de recogida compleja de objetos y desmontaje"
+
+#: ../../source/ARISE/TEF.md:8
+msgid ""
+"Innovation is at the forefront of our TEF1, providing unparalleled "
+"support in experimental design and human-robot interaction research "
+"innovation. It is a hub for designing and conducting experiments related "
+"to human-robot interaction, evaluating robot behaviour adaptation "
+"algorithms, testing, or assessing the impact of collaborative tasks on "
+"productivity."
+msgstr "La innovación ocupa un lugar central en nuestra TEF1, que ofrece un apoyo excepcional al diseño experimental y a la innovación en la investigación sobre interacción persona-robot. Es un centro para diseñar y realizar experimentos relacionados con la interacción persona-robot, evaluar algoritmos de adaptación del comportamiento de los robots, realizar pruebas y valorar el impacto de las tareas colaborativas en la productividad."
+
+#: ../../source/ARISE/TEF.md:10
+msgid ""
+"This TEF is for manufacturers, assembly lines, and logistics operators "
+"utilising our facilities to test and refine robotic systems designed to "
+"streamline production processes. Here, you can develop new algorithms and"
+" control strategies that make robots more intuitive, adaptable, and "
+"collaborative. This not only boosts efficiency but also enhances "
+"workplace safety, making TEF1 a critical supportive player in the future "
+"of your industrial operations."
+msgstr "Esta TEF está dirigida a fabricantes, líneas de montaje y operadores logísticos que utilizan nuestras instalaciones para probar y perfeccionar sistemas robóticos diseñados para agilizar los procesos de producción. Aquí se pueden desarrollar nuevos algoritmos y estrategias de control que hagan que los robots sean más intuitivos, adaptables y colaborativos. Esto no solo aumenta la eficiencia, sino que también mejora la seguridad en el trabajo, convirtiendo a TEF1 en un apoyo fundamental para el futuro de sus operaciones industriales."
+
+#: ../../source/ARISE/TEF.md:12
+msgid "Pushing the boundaries of human-robot interaction"
+msgstr "Ampliando los límites de la interacción persona-robot"
+
+#: ../../source/ARISE/TEF.md:13
+msgid ""
+"In TEF1 we offer a diverse range of experimental opportunities aimed at "
+"advancing human-robot interaction (HRI) in industrial settings. Some of "
+"our key projects include:"
+msgstr "En TEF1 ofrecemos una amplia variedad de oportunidades experimentales destinadas a impulsar la interacción persona-robot (HRI) en entornos industriales. Algunos de nuestros proyectos principales incluyen:"
+
+#: ../../source/ARISE/TEF.md:14
+msgid ""
+"Adapting Robot Behavior to Operator Conditions: We focus on creating "
+"algorithms that allow robots to modify their behavior based on the "
+"operator’s condition and preferences, making interactions more seamless "
+"and efficient."
+msgstr "Adaptación del comportamiento del robot a las condiciones del operario: Nos centramos en crear algoritmos que permitan a los robots modificar su comportamiento en función del estado y las preferencias del operario, para lograr interacciones más fluidas y eficientes."
+
+#: ../../source/ARISE/TEF.md:15
+msgid ""
+"Identification of Complex Objects: Together we develop sophisticated "
+"computer vision and machine learning techniques that enable robots to "
+"identify and handle complex objects within their environments."
+msgstr "Identificación de objetos complejos: Desarrollamos conjuntamente técnicas avanzadas de visión artificial y aprendizaje automático que permiten a los robots identificar y manipular objetos complejos en su entorno."
+
+#: ../../source/ARISE/TEF.md:16
+msgid ""
+"Human-Robot Interfaces Using XR (Extended Reality): By leveraging XR "
+"technologies, we create intuitive and immersive interfaces that allow "
+"users to interact with robots naturally. These interfaces overlay digital"
+" information onto the physical world, enhancing the user experience."
+msgstr "Interfaces persona-robot mediante XR (realidad extendida): Mediante tecnologías XR, creamos interfaces intuitivas e inmersivas que permiten a los usuarios interactuar con los robots de forma natural. Estas interfaces superponen información digital sobre el mundo físico y mejoran la experiencia del usuario."
+
+#: ../../source/ARISE/TEF.md:17
+msgid ""
+"Human-Robot Interfaces Using Natural Language: We develop natural "
+"language tools that enable humans to interact with robots through spoken "
+"commands. This allows robots to understand and respond to verbal "
+"instructions in real-time, making interactions more fluid and human-like."
+msgstr "Interfaces persona-robot mediante lenguaje natural: Desarrollamos herramientas de lenguaje natural que permiten a las personas interactuar con los robots mediante órdenes de voz. Esto permite que los robots comprendan las instrucciones verbales y respondan a ellas en tiempo real, haciendo que las interacciones sean más fluidas y naturales."
+
+#: ../../source/ARISE/TEF.md:19
+msgid "Addressing real-world challenges of our industries."
+msgstr "Abordando los retos reales de nuestras industrias."
+
+#: ../../source/ARISE/TEF.md:20
+msgid "In ARISE a particular focus is on:"
+msgstr "En ARISE se presta especial atención a:"
+
+#: ../../source/ARISE/TEF.md:22
+msgid ""
+"Dismantling and Assembly of High-Value Products: Developing precise and "
+"reliable methods for handling  items."
+msgstr "Desmontaje y montaje de productos de alto valor: Desarrollo de métodos precisos y fiables para la manipulación de elementos."
+
+#: ../../source/ARISE/TEF.md:35 ../../source/ARISE/TEF.md:52
+msgid "Additional explanatory text can go here."
+msgstr "Aquí puede incluirse texto explicativo adicional."
+
+#: ../../source/ARISE/TEF.md:40
+msgid ""
+"Complex Picking in Warehouse Environments: Enhancing robots’ ability to "
+"navigate and perform tasks in dynamic warehouse settings."
+msgstr "Recogida compleja de objetos en almacenes: Mejora de la capacidad de los robots para desplazarse y realizar tareas en entornos de almacén dinámicos."
+
+#: ../../source/ARISE/TEF.md:56
+msgid "Driving Innovation and Collaboration"
+msgstr "Impulsando la innovación y la colaboración"
+
+#: ../../source/ARISE/TEF.md:57
+msgid ""
+"Our overarching goal  in TEF1 is to enhance HRI and collaboration in "
+"industrial settings, driving improvements in productivity, efficiency, "
+"and safety across various industries. By fostering collaborative research"
+" and development, we aim to seamlessly integrate robotic systems into "
+"existing workflows, augmenting human capabilities and driving "
+"transformative changes in industrial production and logistics. "
+"Ultimately, TEF1 serves as a catalyst for innovation, empowering users to"
+" unlock the full potential of collaborative robotics in industrial "
+"environments."
+msgstr "Nuestro objetivo general en TEF1 es mejorar la interacción persona-robot y la colaboración en entornos industriales, impulsando mejoras de productividad, eficiencia y seguridad en diversos sectores. Mediante el fomento de la investigación y el desarrollo colaborativos, buscamos integrar los sistemas robóticos de forma fluida en los flujos de trabajo existentes, ampliar las capacidades humanas e impulsar cambios transformadores en la producción industrial y la logística. En definitiva, TEF1 actúa como catalizador de la innovación y permite a los usuarios aprovechar todo el potencial de la robótica colaborativa en entornos industriales."
+
+#: ../../source/ARISE/TEF.md:59
+msgid "Visit our colleage's TEFs"
+msgstr "Visite las TEF de nuestros colaboradores"
+
+#: ../../source/ARISE/TEF.md:61
+msgid "Please make a visit to our partners' Testing and Experimental Facilities:"
+msgstr "Le invitamos a visitar las instalaciones de ensayo y experimentación de nuestros socios:"
+
+#: ../../source/ARISE/TEF.md:62
+msgid "**TEF2** (Intellimec): Re-programmable Co-bots for Flexible Manufacturing"
+msgstr "**TEF2** (Intellimec): Robots colaborativos reprogramables para una fabricación flexible"
+
+#: ../../source/ARISE/TEF.md:63
+msgid ""
+"[ARISE Ergo - ROS2 Ergonomic Analysis Pipeline](https://github.com"
+"/JOiiNT-LAB/arise_ergo_dckr/tree/main_integration)"
+msgstr "[ARISE Ergo - Cadena de análisis ergonómico en ROS2](https://github.com/JOiiNT-LAB/arise_ergo_dckr/tree/main_integration)"
+
+#: ../../source/ARISE/TEF.md:64
+msgid ""
+"**TEF3** (PAL Robotics): Revolutionizing Healthcare with Human-Centered "
+"Robotics"
+msgstr "**TEF3** (PAL Robotics): Revolucionando la atención sanitaria con robótica centrada en las personas"
+
+#: ../../source/ARISE/TEF.md:65
+msgid ""
+"**TEF4** *(POLIMI)*: Leading the way towards human-centric zero-defect "
+"manufacturing"
+msgstr "**TEF4** *(POLIMI)*: Liderando el camino hacia una fabricación sin defectos centrada en las personas"
+
+#: ../../source/ARISE/TEF.md:66
+msgid ""
+"[ROS 2 RULA Ergonomic Monitor](https://github.com/Industry40Lab/ARISE-"
+"CH8-TEF4-REUSABLE-MODULE)"
+msgstr "[Monitor ergonómico RULA en ROS 2](https://github.com/Industry40Lab/ARISE-CH8-TEF4-REUSABLE-MODULE)"
+
+#: ../../source/ARISE/TEF.md:67
+msgid ""
+"[PCB component Detection Module](https://github.com/Industry40Lab/ARISE-"
+"CH7-TEF4-REUSABLE-MODULE)"
+msgstr "[Módulo de detección de componentes de PCB](https://github.com/Industry40Lab/ARISE-CH7-TEF4-REUSABLE-MODULE)"
+
+#: ../../source/ARISE/TEF.md:70
+msgid ""
+"Funded by the European Union. Views and opinions expressed are however "
+"those of the author(s) only and do not necessarily reflect those of the "
+"European Union or HADEA. Neither the European Union nor the granting "
+"authority can be held responsible for them"
+msgstr "Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos"
+

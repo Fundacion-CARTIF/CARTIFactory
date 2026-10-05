@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 16:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/ARISE/ARISE.md:25
+msgid "ARISE facilities and modules:"
+msgstr "Instalaciones y módulos de ARISE:"
+
+#: ../../source/ARISE/ARISE.md:9
+msgid "ARISE"
+msgstr "ARISE"
+
+#: ../../source/ARISE/ARISE.md:10
+msgid ""
+"**A**gile, human-centric, and **R**eal-t**I**me enabled open "
+"**S**ourc**E** technologies advancing industrial HRI in Europe"
+msgstr "Tecnologías ágiles de código abierto, centradas en las personas y con capacidades en tiempo real, que impulsan la interacción persona-robot industrial en Europa"
+
+#: ../../source/ARISE/ARISE.md:12
+msgid "**What is ARISE?**"
+msgstr "**¿Qué es ARISE?**"
+
+#: ../../source/ARISE/ARISE.md:14
+msgid ""
+"ARISE aims towards making industrial HRI more accessible and cost-"
+"effective, in particular in healthcare, intra-logistics and manufacturing"
+" sectors."
+msgstr "ARISE tiene como objetivo hacer que la interacción persona-robot (HRI) industrial sea más accesible y rentable, especialmente en los sectores sanitario, intralogístico y manufacturero."
+
+#: ../../source/ARISE/ARISE.md:16
+msgid "Mireya de Diego (Project Coordinator)"
+msgstr "Mireya de Diego (coordinadora del proyecto)"
+
+#: ../../source/ARISE/ARISE.md:19
+msgid ""
+"“We want to develop a new open middleware that helps European companies "
+"to generate robotic applications in an agile and robust way respecting "
+"ethical and security standards to contribute to competitiveness of "
+"European companies.”"
+msgstr "«Queremos desarrollar un nuevo middleware abierto que ayude a las empresas europeas a generar aplicaciones robóticas de forma ágil y robusta, respetando las normas éticas y de seguridad, para contribuir a su competitividad»."
+
+#: ../../source/ARISE/ARISE.md:22
+msgid ""
+"In this page you will have access to the description of our Testing and "
+"Exèrimental Facility (aka TEF), and all our released reusable ROS2 "
+"modules. These modules hope to present an integration between [FIWARE "
+"Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) and"
+" [eProsima Vulcanexus](https://vulcanexus.org/) to enable context-aware "
+"robotic and industrial applications, alongside "
+"[ROS4HRI](https://ros4hri.github.io/) as an open-source ROS standard and "
+"a set of ROS packages to facilitate the development of Human-Robot "
+"Interaction (HRI) capabilities on robots."
+msgstr "En esta página encontrará la descripción de nuestras instalaciones de ensayo y experimentación (TEF, por sus siglas en inglés) y todos los módulos reutilizables de ROS2 que hemos publicado. Estos módulos tienen como objetivo integrar [FIWARE Orion Context Broker](https://fiware-orion.readthedocs.io/en/master/) y [eProsima Vulcanexus](https://vulcanexus.org/) para permitir el desarrollo de aplicaciones robóticas e industriales sensibles al contexto, junto con [ROS4HRI](https://ros4hri.github.io/), un estándar abierto de ROS y un conjunto de paquetes de ROS que facilitan el desarrollo de capacidades de interacción persona-robot (HRI)."
+
+#: ../../source/ARISE/ARISE.md:35
+msgid ""
+"Funded by the European Union. Views and opinions expressed are however "
+"those of the author(s) only and do not necessarily reflect those of the "
+"European Union or HADEA. Neither the European Union nor the granting "
+"authority can be held responsible for them"
+msgstr "Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos"
+

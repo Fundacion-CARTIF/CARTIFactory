@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-30 10:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:17
+msgid "Contents:"
+msgstr "Contenidos:"
+
+#: ../../source/index.rst:7
+msgid "Welcome to CARTIFactory!"
+msgstr "¡Bienvenidos a CARTIFactory!"
+
+#: ../../source/index.rst:9
+msgid ""
+"CARTIFactory iHub is a digital innovation pilot developed by the CARTIF "
+"Technology Centre to help companies access and adopt advanced "
+"technologies such as collaborative robotics, generative AI, digital "
+"twins, and industrial IoT. Based in the Boecillo Technology Park "
+"(Valladolid), it is part of the international FIWARE iHub network, "
+"promoting open, interoperable, and human-centered solutions for "
+"industrial digitalization."
+msgstr "El iHub CARTIFactory es una planta piloto de innovación digital desarrollada por el Centro Tecnológico CARTIF para ayudar a las empresas a acceder a tecnologías avanzadas y adoptarlas, como la robótica colaborativa, la IA generativa, los gemelos digitales y el IoT industrial. Ubicado en el Parque Tecnológico de Boecillo (Valladolid), forma parte de la red internacional de iHubs de FIWARE y promueve soluciones abiertas, interoperables y centradas en las personas para la digitalización industrial."
+
+#: ../../source/index.rst:11
+msgid ""
+"Focused on the principles of Industry 5.0, CARTIFactory fosters "
+"collaboration between industry, research, and public entities, providing "
+"testing facilities, training, and support for developing scalable and "
+"interoperable solutions. Its infrastructure enables real-world "
+"experimentation in areas such as human-robot interaction, advanced "
+"manufacturing, and smart logistics."
+msgstr "Centrado en los principios de la Industria 5.0, CARTIFactory fomenta la colaboración entre la industria, la investigación y las entidades públicas, ofreciendo instalaciones de ensayo, formación y apoyo para desarrollar soluciones escalables e interoperables. Su infraestructura permite experimentar en condiciones reales en ámbitos como la interacción persona-robot, la fabricación avanzada y la logística inteligente."
+
+#: ../../source/index.rst:13
+msgid ""
+"Through this initiative, CARTIF strengthens its role as a key player in "
+"industrial innovation, contributing to a more sustainable, resilient, and"
+" human-centric digital transformation."
+msgstr "A través de esta iniciativa, CARTIF refuerza su papel como actor clave en la innovación industrial y contribuye a una transformación digital más sostenible, resiliente y centrada en las personas."
+

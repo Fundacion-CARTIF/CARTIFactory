@@ -95,3 +95,36 @@
   line-height: 1.7;
   color: #222;
 }
+
+
+/* Language switcher */
+.language-switcher {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.language-switcher a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.language-switcher a:hover {
+    color: #2980b9;
+}
+
+.language-switcher a.active {
+    font-weight: 600;
+    color: #2980b9;
+}
+
+.language-switcher span {
+    color: #aaa;
+}
