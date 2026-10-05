@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo reutilizable de seguimiento del operario y reconocimiento de gestos &mdash; documentación de CARTIFactory - </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7b4e7885" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e2bb6099"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=f85f4cfb"></script>
+      <script defer="defer" src="../_static/language-switcher.js?v=1179e6ea"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="FIWARE iHub" href="../CARTIFactory/FIWARE_ihub.html" />
+    <link rel="prev" title="Módulo reutilizable de visión y búsqueda de objetos objetivo" href="Reusable__Module_1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CARTIFactory
+              <img src="../_static/CARTIFactory_robot_transparent.png" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ARISE.html">ARISE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TEF.html">TEF1: Celda robótica experimental para aplicaciones de recogida compleja de objetos y desmontaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reusable__Module_1.html">Módulo reutilizable de visión y búsqueda de objetos objetivo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Módulo reutilizable de seguimiento del operario y reconocimiento de gestos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features">Características</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Descripción general</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencias</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-included-in-the-module">Qué incluye el módulo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#d-hand-detection">Detección de manos en 2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-landmarks-3d-node">Nodo de puntos de referencia de las manos en 3D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-palm-plane-node">Nodo del plano de la palma de la mano</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#camera-to-robot-frame-hand-transformation">Transformación de las manos del sistema de referencia de la cámara al del robot</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-interfaces">Interfaces personalizadas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hand-tracking-message">Mensaje de seguimiento de manos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-tracking-3d-message">Mensaje de seguimiento de manos en 3D</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lifecycle-architecture">Arquitectura del ciclo de vida</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lifecycle-action">Acción del ciclo de vida</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-change-action">Acción de cambio de mano</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-module">Ejecución del módulo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/FIWARE_ihub.html">FIWARE iHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/About_us.html">Sobre nosotros</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CARTIFactory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ARISE.html">ARISE</a></li>
+      <li class="breadcrumb-item active">Módulo reutilizable de seguimiento del operario y reconocimiento de gestos</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reusable-module-for-operator-tracking-and-gesture-recognition">
+<h1>Módulo reutilizable de seguimiento del operario y reconocimiento de gestos<a class="headerlink" href="#reusable-module-for-operator-tracking-and-gesture-recognition" title="Link to this heading"></a></h1>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/ARISE_logo-light_mode.png"><img alt="../_images/ARISE_logo-light_mode.png" src="../_images/ARISE_logo-light_mode.png" style="height: 50px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Los módulos forman parte del <a class="reference external" href="https://arise-middleware.eu/">middleware de ARISE</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>¡Acceda al repositorio de GitHub <a class="reference external" href="https://github.com/Fundacion-CARTIF/cartifactory-operator-tracking">aquí</a>!</strong></p>
+</div>
+<p><a class="reference external" href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
+<a class="reference external" href="https://releases.ubuntu.com/24.04/"><img alt="ubuntu24" src="https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&amp;logo=ubuntu" /></a>
+<a class="reference external" href="https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0"><img alt="OrionCB" src="https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat" /></a></p>
+<section id="features">
+<h2>Características<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Detección de manos en tiempo real mediante MediaPipe Hands</p></li>
+<li><p>Estimación de puntos de referencia de las manos en 2D y 3D</p></li>
+<li><p>Cadena de procesamiento dinámica para el seguimiento de varias manos</p></li>
+<li><p>Estimación del plano de la palma y cálculo de su normal</p></li>
+<li><p>Transformación del sistema de referencia de la cámara al de la base del robot</p></li>
+<li><p>Arquitectura de nodos con ciclo de vida de ROS2</p></li>
+<li><p>Selección de manos durante la ejecución (left, right, both)</p></li>
+<li><p>Interfaces y acciones personalizadas de ROS2</p></li>
+<li><p>Interfaz integrada de supervisión y diagnóstico</p></li>
+</ul>
+</section>
+<section id="overview">
+<h2>Descripción general<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Este módulo proporciona una cadena de procesamiento completa para el seguimiento de manos, que incluye detección de manos en 2D, reconstrucción de puntos de referencia en 3D, estimación del plano de la palma y transformación al sistema de referencia del robot.</p>
+<p><img alt="Diagrama" src="../_images/Diagram_light1.png" /></p>
+<section id="dependencies">
+<h3>Dependencias<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<p>Todas las dependencias de Python se incluyen en el archivo <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. Para instalarlas, ejecute en la terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/requirements.txt
+</pre></div>
+</div>
+<p>Este paquete depende de otras interfaces de ROS2:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-vision-msgs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-hri-msgs
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-is-included-in-the-module">
+<h2>Qué incluye el módulo<a class="headerlink" href="#what-is-included-in-the-module" title="Link to this heading"></a></h2>
+<p>Proporcionamos el paquete <strong>CARTIFactory</strong>, que contiene varios nodos que, en conjunto, permiten probar este módulo reutilizable.</p>
+<section id="d-hand-detection">
+<h3>Detección de manos en 2D<a class="headerlink" href="#d-hand-detection" title="Link to this heading"></a></h3>
+<p>Este nodo es el punto de entrada de la cadena de procesamiento de manos. Recibe imágenes RGB, realiza inferencias de los puntos de referencia de las manos, identifica las manos izquierda y derecha y publica sus puntos de referencia 2D normalizados. El nodo también permite seleccionar las manos durante la ejecución (izquierda, derecha o ambas) mediante la interfaz de acciones del orquestador.</p>
+</section>
+<section id="hand-landmarks-3d-node">
+<h3>Nodo de puntos de referencia de las manos en 3D<a class="headerlink" href="#hand-landmarks-3d-node" title="Link to this heading"></a></h3>
+<p>El nodo sincroniza las detecciones de manos en 2D con las imágenes de profundidad y los parámetros intrínsecos de la cámara para estimar la posición 3D de cada punto de referencia de MediaPipe en el sistema de referencia de la cámara. Las cadenas de procesamiento se crean dinámicamente para cada mano en seguimiento.</p>
+</section>
+<section id="hand-palm-plane-node">
+<h3>Nodo del plano de la palma de la mano<a class="headerlink" href="#hand-palm-plane-node" title="Link to this heading"></a></h3>
+<p>El nodo ajusta un plano utilizando un subconjunto configurable de puntos de referencia de la mano y proporciona una estimación estable de la orientación de la palma. Esta información puede utilizarse para el análisis de gestos, la interacción persona-robot, la estimación de la dirección de señalamiento o la inferencia de la intención de agarre.</p>
+</section>
+<section id="camera-to-robot-frame-hand-transformation">
+<h3>Transformación de las manos del sistema de referencia de la cámara al del robot<a class="headerlink" href="#camera-to-robot-frame-hand-transformation" title="Link to this heading"></a></h3>
+<p>A partir de la pose actual del TCP del robot y de una transformación calibrada de la cámara al TCP, el nodo calcula los puntos de referencia de las manos y los planos de las palmas expresados en coordenadas del robot. Esto permite a las aplicaciones robóticas posteriores operar directamente en el espacio de trabajo del robot.</p>
+</section>
+</section>
+<section id="custom-interfaces">
+<h2>Interfaces personalizadas<a class="headerlink" href="#custom-interfaces" title="Link to this heading"></a></h2>
+<p>Se incluye un paquete custom_interfaces para gestionar el mensaje personalizado con la información de la cadena de procesamiento y el objetivo</p>
+<section id="hand-tracking-message">
+<h3>Mensaje de seguimiento de manos<a class="headerlink" href="#hand-tracking-message" title="Link to this heading"></a></h3>
+<p>Definición del mensaje para representar una mano en seguimiento mediante puntos de referencia de MediaPipe: <img alt="Mano" src="../_images/hand_landmarks.png" /></p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Campos de HandDetection</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Identificador único de la mano detectada o de la persona en seguimiento.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>Indica si la mano detectada es la izquierda o la derecha.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">landmarks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hri_msgs/NormalizedPointOfInterest2D[21]</span></code></p></td>
+<td><p>Array que contiene los 21 puntos de referencia de la mano de MediaPipe en coordenadas de imagen normalizadas.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">confidence</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Puntuación de confianza de la detección o el seguimiento de la mano.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hand-tracking-3d-message">
+<h3>Mensaje de seguimiento de manos en 3D<a class="headerlink" href="#hand-tracking-3d-message" title="Link to this heading"></a></h3>
+<p>Definición del mensaje para representar una mano en seguimiento en el espacio 3D mediante puntos de referencia de MediaPipe.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Campos de HandDetection3D</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Identificador único de la mano detectada o de la persona en seguimiento.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>Indica si la mano detectada es la izquierda o la derecha.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">confidence</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Puntuación de confianza del clasificador que distingue entre la mano izquierda y la derecha. Si no está disponible, utilice <code class="docutils literal notranslate"><span class="pre">NaN</span></code> o <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">landmarks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">geometry_msgs/Point[21]</span></code></p></td>
+<td><p>Array que contiene los 21 puntos de referencia de la mano de MediaPipe en coordenadas de imagen normalizadas.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">valid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool[21]</span></code></p></td>
+<td><p>Indica si cada punto de referencia es válido o está en seguimiento.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="lifecycle-architecture">
+<h2>Arquitectura del ciclo de vida<a class="headerlink" href="#lifecycle-architecture" title="Link to this heading"></a></h2>
+<p>Al iniciar, todos los nodos permanecen en el estado sin configurar. El módulo incluye un nodo orquestador que expone acciones de ROS2 para gestionar el ciclo de vida de toda la cadena de procesamiento.</p>
+<p>Transiciones del ciclo de vida admitidas:</p>
+<ul class="simple">
+<li><p>configure (configurar)</p></li>
+<li><p>activate (activar)</p></li>
+<li><p>deactivate (desactivar)</p></li>
+<li><p>cleanup (limpiar)</p></li>
+<li><p>shutdown (finalizar). Esta arquitectura permite a las aplicaciones externas iniciar, detener y reconfigurar toda la cadena de seguimiento de manos sin reiniciar el sistema.</p></li>
+</ul>
+<section id="lifecycle-action">
+<h3>Acción del ciclo de vida<a class="headerlink" href="#lifecycle-action" title="Link to this heading"></a></h3>
+<p>Todos los nodos se inician en el estado <code class="docutils literal notranslate"><span class="pre">unconfigured</span></code> al lanzar el módulo. Para unificar la inicialización del sistema, hemos creado un <code class="docutils literal notranslate"><span class="pre">orchestrator</span></code> que ofrece dos acciones. La primera cambia el estado de todos los nodos en el orden correcto.</p>
+<section id="goal">
+<h4>Objetivo<a class="headerlink" href="#goal" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Campos del objetivo</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_state</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Estado al que se desea cambiar el sistema.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="result">
+<h4>Resultado<a class="headerlink" href="#result" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Campos del resultado</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indica si la ejecución de la acción se completó correctamente.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">result_msg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mensaje final resultante de la ejecución de la acción.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="feedback">
+<h4>Información de progreso<a class="headerlink" href="#feedback" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Campos de la información de progreso</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feedback</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mensaje informativo que describe el estado actual de la ejecución de la acción.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="hand-change-action">
+<h3>Acción de cambio de mano<a class="headerlink" href="#hand-change-action" title="Link to this heading"></a></h3>
+<p>La segunda acción del <code class="docutils literal notranslate"><span class="pre">orchestrator</span></code> permite cambiar la mano que se va a seguir. Las opciones son <strong>left</strong> (izquierda), <strong>right</strong> (derecha) o <strong>both</strong> (ambas).</p>
+<section id="id1">
+<h4>Objetivo<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Campos del objetivo</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hand</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mano que se desea seguir. Opciones: left (izquierda), right (derecha), both (ambas).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h4>Resultado<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Campos del resultado</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indica si la ejecución de la acción se completó correctamente.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">result_msg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mensaje final resultante de la ejecución de la acción.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h4>Información de progreso<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Campos de la información de progreso</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feedback</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mensaje informativo que describe el estado actual de la ejecución de la acción.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="running-the-module">
+<h2>Ejecución del módulo<a class="headerlink" href="#running-the-module" title="Link to this heading"></a></h2>
+<p>El archivo de lanzamiento inicia toda la cadena de seguimiento de manos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>hand_hri_mediapipe<span class="w"> </span>hand_pipeline_lifecycle.launch.py
+</pre></div>
+</div>
+<p>Los argumentos de lanzamiento son los siguientes:</p>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Parámetros del nodo</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argumento</p></th>
+<th class="head"><p>Valor predeterminado</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">camera_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cameraD455</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Espacio de nombres de la cámara utilizado para construir los tópicos de color, profundidad e información de la cámara.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T_tcp_cam</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">identity/calibrated</span> <span class="pre">default</span></code> (identidad/valor calibrado predeterminado)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float[16]</span></code></p></td>
+<td><p>Matriz de transformación homogénea del sistema de referencia del TCP del robot al de la cámara, utilizada para transformar los puntos de referencia de las manos y los planos de las palmas al sistema de referencia de la base del robot.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>La matriz T_tcp_cam debe adaptarse a la calibración real entre la cámara y el robot de la instalación. Una calibración incorrecta producirá posiciones incorrectas de los puntos de referencia de las manos y de los planos de las palmas en el sistema de referencia de la base del robot.</p>
+</div>
+<hr class="docutils" />
+<p>Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos</p>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png"><img alt="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" src="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" style="height: 100px;" />
+</a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="Reusable__Module_1.html" class="btn btn-neutral float-left" title="Módulo reutilizable de visión y búsqueda de objetos objetivo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../CARTIFactory/FIWARE_ihub.html" class="btn btn-neutral float-right" title="FIWARE iHub" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor Fundación CARTIF. All rights reserved.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

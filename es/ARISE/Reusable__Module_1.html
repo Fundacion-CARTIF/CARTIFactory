@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo reutilizable de visión y búsqueda de objetos objetivo &mdash; documentación de CARTIFactory - </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7b4e7885" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e2bb6099"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=f85f4cfb"></script>
+      <script defer="defer" src="../_static/language-switcher.js?v=1179e6ea"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Módulo reutilizable de seguimiento del operario y reconocimiento de gestos" href="Reusable__Module_2.html" />
+    <link rel="prev" title="TEF1: Celda robótica experimental para aplicaciones de recogida compleja de objetos y desmontaje" href="TEF.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CARTIFactory
+              <img src="../_static/CARTIFactory_robot_transparent.png" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ARISE.html">ARISE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TEF.html">TEF1: Celda robótica experimental para aplicaciones de recogida compleja de objetos y desmontaje</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Módulo reutilizable de visión y búsqueda de objetos objetivo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features">Características</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Primeros pasos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencias</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-included-in-the-module">Qué incluye el módulo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#keyword-matcher">Comparador de palabras clave</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onnx-detector">Detector ONNX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipeline-monitor">Monitor de la cadena de procesamiento</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-interfaces">Interfaces personalizadas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pipeline-statistics">Estadísticas de la cadena de procesamiento</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detection-action">Acción de detección</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-fiware-s-context-broker">Conexión con el Context Broker de FIWARE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configure-fiware-to-store-the-reusable-module-topic">Configuración de FIWARE para almacenar el tópico del módulo reutilizable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grafana-connection-and-visualizing">Conexión y visualización con Grafana</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-module">Ejecución del módulo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#launch-arguments">Argumentos de lanzamiento</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Reusable__Module_2.html">Módulo reutilizable de seguimiento del operario y reconocimiento de gestos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/FIWARE_ihub.html">FIWARE iHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/About_us.html">Sobre nosotros</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CARTIFactory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ARISE.html">ARISE</a></li>
+      <li class="breadcrumb-item active">Módulo reutilizable de visión y búsqueda de objetos objetivo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reusable-module-for-vision-and-target-matching">
+<h1>Módulo reutilizable de visión y búsqueda de objetos objetivo<a class="headerlink" href="#reusable-module-for-vision-and-target-matching" title="Link to this heading"></a></h1>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/ARISE_logo-light_mode.png"><img alt="../_images/ARISE_logo-light_mode.png" src="../_images/ARISE_logo-light_mode.png" style="height: 50px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Los módulos forman parte del <a class="reference external" href="https://arise-middleware.eu/">middleware de ARISE</a></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><strong>¡Acceda al repositorio de GitHub <a class="reference external" href="https://github.com/Fundacion-CARTIF/cartifactory-vision-matching">aquí</a>!</strong></p>
+</div>
+<p><a class="reference external" href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
+<a class="reference external" href="https://releases.ubuntu.com/24.04/"><img alt="ubuntu24" src="https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&amp;logo=ubuntu" /></a>
+<a class="reference external" href="https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0"><img alt="OrionCB" src="https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat" /></a></p>
+<section id="features">
+<h2>Características<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Compatibilidad automática con CPU / CUDA</p></li>
+<li><p>Compatibilidad con segmentación (OBB a partir de la máscara)</p></li>
+<li><p>Publicación opcional de imágenes anotadas</p></li>
+<li><p>Publicación de <code class="docutils literal notranslate"><span class="pre">class_map</span></code> con retención del último mensaje</p></li>
+<li><p>Métricas industriales (FPS, infer_ms, device, etc.)</p></li>
+<li><p>Modo <code class="docutils literal notranslate"><span class="pre">class_id</span></code> configurable</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Primeros pasos<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>Este módulo forma parte de un sistema de detección para un asistente de IA. El usuario introduce una solicitud y, mediante procesamiento del lenguaje natural, se identifican la tarea y el objeto al que hace referencia. El objeto pasa a ser la <code class="docutils literal notranslate"><span class="pre">keyword</span></code>, o el objeto objetivo del módulo.</p>
+<p><img alt="Diagrama" src="../_images/Diagram_light.png" /></p>
+<section id="dependencies">
+<h3>Dependencias<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<p>Todas las dependencias de Python se incluyen en el archivo <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. Para instalarlas, ejecute en la terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/requirements.txt
+</pre></div>
+</div>
+<p>Este paquete depende de otras interfaces de ROS2:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-vision-msgs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-cv-bridge
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-is-included-in-the-module">
+<h2>Qué incluye el módulo<a class="headerlink" href="#what-is-included-in-the-module" title="Link to this heading"></a></h2>
+<p>Proporcionamos el paquete <strong>CARTIFactory</strong>, que contiene varios nodos que, en conjunto, permiten probar este módulo reutilizable.</p>
+<section id="keyword-matcher">
+<h3>Comparador de palabras clave<a class="headerlink" href="#keyword-matcher" title="Link to this heading"></a></h3>
+<p>El nodo keyword_matcher recibe los resultados del nodo detector. Su finalidad principal es determinar si una clase de objeto solicitada está presente en las detecciones más recientes.</p>
+<p>El nodo se suscribe a los resultados de detección más recientes y los almacena internamente. Cuando recibe una solicitud de coincidencia a través del servidor de acciones <code class="docutils literal notranslate"><span class="pre">custom_interfaces/MatchAction</span></code>, compara la palabra clave solicitada con las etiquetas de las clases detectadas y devuelve únicamente las detecciones que coinciden con ella. La comparación se puede configurar para no distinguir entre mayúsculas y minúsculas, detenerse en la primera coincidencia válida e ignorar las detecciones por debajo de un umbral de confianza configurable.</p>
+<p>Además, el nodo supervisa la disponibilidad del flujo de la cámara mediante los mensajes <code class="docutils literal notranslate"><span class="pre">CameraInfo</span></code> recibidos. Si no recibe información de la cámara durante un tiempo de espera configurable, la marca como no disponible y rechaza los objetivos entrantes de la acción de búsqueda de coincidencias. Así se evita aceptar solicitudes de coincidencia cuando la cadena de percepción no recibe datos en directo.</p>
+</section>
+<section id="onnx-detector">
+<h3>Detector ONNX<a class="headerlink" href="#onnx-detector" title="Link to this heading"></a></h3>
+<p>El nodo <code class="docutils literal notranslate"><span class="pre">detector_onnx</span></code> realiza inferencias de detección y segmentación de objetos en imágenes en ROS2 mediante un modelo ONNX ejecutado con ONNX Runtime. Se suscribe a un tópico de imágenes de cámara, preprocesa cada fotograma para adaptarlo al tamaño de entrada de la red, ejecuta la inferencia, posprocesa las salidas del modelo y publica los resultados como <code class="docutils literal notranslate"><span class="pre">vision_msgs/Detection2DArray</span></code>.</p>
+<p>El nodo también permite publicar opcionalmente una imagen de depuración en la que se dibujan máscaras, cuadros delimitadores, etiquetas y cuadros orientados sobre la imagen original. Publica un tópico con el mapa de clases y retención del último mensaje para que los nodos posteriores puedan convertir los identificadores de clase en etiquetas legibles, a partir de un archivo de configuración TOML o, en su defecto, de identificadores numéricos.</p>
+<p>La configuración se puede proporcionar mediante parámetros de ROS2 y complementar opcionalmente con un archivo <code class="docutils literal notranslate"><span class="pre">.toml</span></code>, que puede definir metadatos como el tipo de modelo, los nombres de las clases, el umbral de confianza predeterminado y la ruta del modelo. El nodo permite la ejecución en CPU o CUDA, según el dispositivo seleccionado y los proveedores de ONNX Runtime disponibles.</p>
+<p>Para la supervisión y la integración en cadenas de procesamiento de producción, el nodo también puede publicar estadísticas como los fotogramas descartados y la identidad del nodo. Incluye un modo opcional <code class="docutils literal notranslate"><span class="pre">drop_if_busy</span></code> que evita la acumulación en la cola descartando los fotogramas entrantes mientras se sigue ejecutando la inferencia del anterior.</p>
+<p>En conjunto, este nodo está diseñado como un componente de percepción de ROS2 para cadenas de visión industrial en tiempo real. Combina inferencia ONNX, detecciones orientadas basadas en máscaras, visualización de depuración, correspondencia de clases y estadísticas de ejecución en un único nodo detector.</p>
+<!-- <details> -->
+<!-- <summary>Supported ONNX model format</summary> -->
+<section id="supported-onnx-model-format">
+<h4>Formato de modelo ONNX compatible<a class="headerlink" href="#supported-onnx-model-format" title="Link to this heading"></a></h4>
+<p>La implementación actual espera modelos ONNX que sigan una <strong>estructura de salida de detecciones densas</strong>, con compatibilidad opcional con la segmentación de instancias.</p>
+</section>
+<section id="outputs">
+<h4>Salidas<a class="headerlink" href="#outputs" title="Link to this heading"></a></h4>
+<p>El modelo debe proporcionar una de las siguientes opciones:</p>
+<p><strong>Solo detección</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output[0]</span></code>: tensor que contiene los cuadros delimitadores y las puntuaciones de las clases</p></li>
+</ul>
+<p><strong>Detección + segmentación</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output[0]</span></code>: tensor que contiene los cuadros delimitadores, las puntuaciones de las clases y los coeficientes de las máscaras</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output[1]</span></code>: tensor que contiene los prototipos de las máscaras</p></li>
+</ul>
+</section>
+<section id="expected-prediction-structure">
+<h4>Estructura esperada de las predicciones<a class="headerlink" href="#expected-prediction-structure" title="Link to this heading"></a></h4>
+<p>Se espera que cada fila de predicción codifique:</p>
+<ul class="simple">
+<li><p>Cuadros delimitadores en <strong>formato basado en el centro</strong>: <code class="docutils literal notranslate"><span class="pre">(cx,</span> <span class="pre">cy,</span> <span class="pre">w,</span> <span class="pre">h)</span></code></p></li>
+<li><p>Puntuaciones de confianza por clase</p></li>
+<li><p>Coeficientes de máscara opcionales para reconstruir las máscaras de instancia</p></li>
+</ul>
+<p>Si la segmentación está habilitada, las máscaras se reconstruyen internamente combinando sus coeficientes con el tensor de prototipos.</p>
+</section>
+<section id="internal-postprocessing">
+<h4>Posprocesamiento interno<a class="headerlink" href="#internal-postprocessing" title="Link to this heading"></a></h4>
+<p>El nodo presupone un tensor de predicciones densas en el que cada fila representa una detección candidata. El posprocesamiento se realiza internamente e incluye:</p>
+<ul class="simple">
+<li><p>Filtrado por confianza</p></li>
+<li><p>Supresión de no máximos (NMS)</p></li>
+<li><p>Reconstrucción opcional de máscaras</p></li>
+<li><p>Extracción opcional de cuadros delimitadores orientados (OBB) a partir de las máscaras</p></li>
+</ul>
+<p>Si no hay salidas de máscaras, el nodo funciona automáticamente en modo de solo detección.</p>
+</section>
+<section id="input-preprocessing">
+<h4>Preprocesamiento de la entrada<a class="headerlink" href="#input-preprocessing" title="Link to this heading"></a></h4>
+<p>Antes de la inferencia, cada imagen se preprocesa mediante los siguientes pasos:</p>
+<ul class="simple">
+<li><p>Conversión de color (<code class="docutils literal notranslate"><span class="pre">BGR</span> <span class="pre">→</span> <span class="pre">RGB</span></code>)</p></li>
+<li><p>Redimensionado o ajuste con relleno (letterbox) para adaptarse al tamaño de entrada del modelo</p></li>
+<li><p>Normalización a <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code></p></li>
+<li><p>Conversión de la disposición de los datos a <code class="docutils literal notranslate"><span class="pre">NCHW</span></code></p></li>
+</ul>
+</section>
+<section id="output">
+<h4>Salida<a class="headerlink" href="#output" title="Link to this heading"></a></h4>
+<p>El nodo publica:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vision_msgs/Detection2DArray</span></code></p></li>
+</ul>
+<p>Opcionalmente, también puede publicar una imagen de depuración que incluya:</p>
+<ul class="simple">
+<li><p>Cuadros delimitadores</p></li>
+<li><p>Máscaras de segmentación</p></li>
+<li><p>Cuadros delimitadores orientados (OBB)</p></li>
+<li><p>Etiquetas y puntuaciones de las clases</p></li>
+</ul>
+</section>
+<section id="model-compatibility">
+<h4>Compatibilidad de modelos<a class="headerlink" href="#model-compatibility" title="Link to this heading"></a></h4>
+<p>Este nodo es compatible con modelos ONNX que:</p>
+<ul class="simple">
+<li><p>Proporcionen cuadros delimitadores y puntuaciones de las clases en un tensor unificado</p></li>
+<li><p>Incluyan opcionalmente salidas de prototipos de máscaras para la segmentación de instancias</p></li>
+<li><p>Utilicen una representación de los cuadros basada en el centro <code class="docutils literal notranslate"><span class="pre">(cx,</span> <span class="pre">cy,</span> <span class="pre">w,</span> <span class="pre">h)</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Los modelos que no sigan esta estructura pueden requerir una adaptación de la lógica de posprocesamiento.</p>
+</div>
+<!-- </details> -->
+</section>
+</section>
+<section id="pipeline-monitor">
+<h3>Monitor de la cadena de procesamiento<a class="headerlink" href="#pipeline-monitor" title="Link to this heading"></a></h3>
+<p>Este nodo se utiliza para transmitir distintas estadísticas del entorno de trabajo al Context Broker (véase la sección final sobre el Context Broker de FIWARE).</p>
+<p>Este nodo se suscribe a los tópicos de estadísticas publicados por los otros dos nodos y publica sus datos en un mensaje de estado conjunto mediante la interfaz <code class="docutils literal notranslate"><span class="pre">custom_interfaces/PipelineStats</span></code>.</p>
+</section>
+</section>
+<section id="custom-interfaces">
+<h2>Interfaces personalizadas<a class="headerlink" href="#custom-interfaces" title="Link to this heading"></a></h2>
+<p>Se incluye un paquete <code class="docutils literal notranslate"><span class="pre">custom_interfaces</span></code> para gestionar el mensaje personalizado con la información de la cadena de procesamiento y el objetivo</p>
+<section id="pipeline-statistics">
+<h3>Estadísticas de la cadena de procesamiento<a class="headerlink" href="#pipeline-statistics" title="Link to this heading"></a></h3>
+<p>Para enviar los diagnósticos al Context Broker utilizamos una interfaz personalizada <code class="docutils literal notranslate"><span class="pre">custom_interfaces/PipelineStats</span></code> con la siguiente definición:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Campos de PipelineStats</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">frames_dropped</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de fotogramas descartados antes del procesamiento debido a sobrecarga o problemas de sincronización.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_received</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número total de objetivos recibidos por el servidor de acciones.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_accepted</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de objetivos aceptados para su ejecución.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de objetivos rechazados por el servidor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_canceled</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de objetivos cancelados tras su aceptación.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_succeeded</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de objetivos completados correctamente.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">action_goals_failed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de objetivos que finalizaron con un fallo.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">match_requests</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número total de operaciones de búsqueda de coincidencias solicitadas.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">match_success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de operaciones de búsqueda de coincidencias completadas correctamente.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">match_fail</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>Número de operaciones de búsqueda de coincidencias que fallaron.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fps_input</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Tasa de fotogramas de las imágenes entrantes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fps_processed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Tasa de fotogramas que el nodo procesa realmente.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">avg_inference_ms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Tiempo medio de inferencia por fotograma en milisegundos.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">camera_available</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indica si el flujo de la cámara está disponible actualmente.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">node_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Nombre del nodo que publica estas métricas.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Si infer_ms &gt; 200 ms, se publica un estado WARN.</p>
+</div>
+</section>
+<section id="detection-action">
+<h3>Acción de detección<a class="headerlink" href="#detection-action" title="Link to this heading"></a></h3>
+<p>Esta acción permite a un cliente solicitar una operación de búsqueda visual mediante una palabra clave. El nodo realiza la detección y devuelve los resultados junto con una imagen anotada.</p>
+<section id="goal">
+<h4>Objetivo<a class="headerlink" href="#goal" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Campos del objetivo</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kw</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Palabra clave que describe el objeto o la clase que se debe buscar en la escena.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="result">
+<h4>Resultado<a class="headerlink" href="#result" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Campos del resultado</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">action_success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indica si la ejecución de la acción se completó correctamente.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">match_success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indica si se encontró una detección que coincidiera con la palabra clave solicitada.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">det</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">vision_msgs/Detection2DArray</span></code></p></td>
+<td><p>Array que contiene las detecciones generadas por el modelo.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">img</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sensor_msgs/Image</span></code></p></td>
+<td><p>Imagen con las detecciones anotadas para su visualización o depuración.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="feedback">
+<h4>Información de progreso<a class="headerlink" href="#feedback" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Campos de la información de progreso</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feedback</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Mensaje informativo que describe el estado actual de la ejecución de la acción.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Para invocar la acción, ejecute:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">"{kw: '&lt;'your keyword'&gt;}"</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Si también desea ver la información de progreso de la acción, añada <code class="docutils literal notranslate"><span class="pre">--feedback</span></code> al final.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span>/detection/match<span class="w"> </span>custom_interfaces/action/MatchAction<span class="w"> </span><span class="s2">"{kw: '&lt;your keyword&gt;'}"</span><span class="w"> </span>--feedback
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+# Defining the Models (TOML)
+We are using [Tom's Obvious Minimal Language](https://toml.io/en/) for the configuration description of the models. The file follows this structure:
+```bash
+title = "Wheels"
+description = "This model can detect wheels"
+path = "/path_to_your_model"
+
+[model]
+weights = "wheels-seg.onnx"
+
+[parameters]
+type = "Segmentation"
+confidence = 0.6
+
+[classes]
+classes=["Left","Right"]
+colours = [[0, 0, 250], [250, 0, 0]]
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="connecting-to-fiware-s-context-broker">
+<h2>Conexión con el Context Broker de FIWARE<a class="headerlink" href="#connecting-to-fiware-s-context-broker" title="Link to this heading"></a></h2>
+<p>La interacción se ejecuta en el ecosistema de la <a class="reference external" href="https://github.com/Engineering-Research-and-Development/arise-poc/">PoC de Engineering Group</a>. Esto es necesario para que el Context Broker pueda acceder a los tópicos de ROS2. En este módulo no se utiliza el IoT Agent OPCUA, por lo que su implementación es opcional.</p>
+<section id="configure-fiware-to-store-the-reusable-module-topic">
+<h3>Configuración de FIWARE para almacenar el tópico del módulo reutilizable<a class="headerlink" href="#configure-fiware-to-store-the-reusable-module-topic" title="Link to this heading"></a></h3>
+<p>Para que FIWARE almacene el tópico publicado por el módulo reutilizable, primero debe editar el archivo de configuración ubicado en:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conf/orionld/config-dds.json
+</pre></div>
+</div>
+<p>En este archivo, añada el siguiente bloque dentro de:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>"ngsild": {
+  "topics": { 
+    ...
+  }
+</pre></div>
+</div>
+<p>Añada esta entrada:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"rt/stats/pipeline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"entityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PipelineDetection"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"entityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ngsi-ld:stats:1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"attribute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stats"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Una vez añadida esta configuración, FIWARE podrá detectar el tópico <code class="docutils literal notranslate"><span class="pre">/stats/pipeline</span></code> y almacenar sus datos correctamente en la base de datos TimescaleDB.</p>
+</section>
+<section id="grafana-connection-and-visualizing">
+<h3>Conexión y visualización con Grafana<a class="headerlink" href="#grafana-connection-and-visualizing" title="Link to this heading"></a></h3>
+<p>Para visualizar con Grafana los datos almacenados en TimescaleDB, siga los pasos descritos en <strong>Step 4 - Access the Grafana Dashboard</strong> (Paso 4: Acceso al panel de Grafana) de la documentación oficial de la PoC de ARISE de Engineering. Esa sección explica cómo acceder a Grafana, conectarse a la fuente de datos TimescaleDB, crear un nuevo panel de control, añadir paneles, crear consultas y seleccionar el tipo de visualización adecuado. En la guía de la PoC de ARISE, Grafana está disponible en <code class="docutils literal notranslate"><span class="pre">https://localhost/login</span></code> con las credenciales predeterminadas <code class="docutils literal notranslate"><span class="pre">admin/admin</span></code>, y esa misma sección también aborda la configuración de la fuente de datos y la creación de paneles de control.</p>
+<p>En concreto, la documentación incluye:</p>
+<ul class="simple">
+<li><p>cómo configurar la fuente de datos TimescaleDB en Grafana,</p></li>
+<li><p>cómo crear un nuevo panel de control,</p></li>
+<li><p>cómo añadir un panel,</p></li>
+<li><p>cómo escribir una consulta para la fuente de datos seleccionada,</p></li>
+<li><p>y cómo elegir la visualización más adecuada para los datos.</p></li>
+</ul>
+<!-- <details> -->
+<!-- <summary>Example query</summary> -->
+<section id="example-query">
+<h4>Consulta de ejemplo<a class="headerlink" href="#example-query" title="Link to this heading"></a></h4>
+<p>La siguiente consulta se puede utilizar para visualizar las estadísticas de los objetivos de las acciones del módulo reutilizable:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="w">  </span><span class="n">ts</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"time"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_received'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Received"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_accepted'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Accepted"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_rejected'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Rejected"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_canceled'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Canceled"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_succeeded'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Succeeded"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="n">compound</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="w"> </span><span class="s1">'action_goals_failed'</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="ss">"Failed"</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="n">attributes</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">entityid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'urn:ngsi-ld:stats:1'</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Esta consulta recupera datos de series temporales de la entidad <code class="docutils literal notranslate"><span class="pre">urn:ngsi-ld:stats:1</span></code> de la tabla <code class="docutils literal notranslate"><span class="pre">public.attributes</span></code>. Para cada marca de tiempo (<code class="docutils literal notranslate"><span class="pre">ts</span></code>), extrae varios contadores almacenados en el campo JSON <code class="docutils literal notranslate"><span class="pre">compound</span></code> y los convierte en números enteros.</p>
+<p>Las series resultantes representan:</p>
+<ul class="simple">
+<li><p><strong>Received</strong> (recibidos): número de objetivos de acciones recibidos por el módulo,</p></li>
+<li><p><strong>Accepted</strong> (aceptados): número de objetivos de acciones aceptados,</p></li>
+<li><p><strong>Rejected</strong> (rechazados): número de objetivos de acciones rechazados,</p></li>
+<li><p><strong>Canceled</strong> (cancelados): número de objetivos de acciones cancelados,</p></li>
+<li><p><strong>Succeeded</strong> (completados): número de objetivos de acciones completados correctamente,</p></li>
+<li><p><strong>Failed</strong> (fallidos): número de objetivos de acciones que fallaron.</p></li>
+</ul>
+<p>En Grafana, esta consulta se puede mostrar como un gráfico de series temporales para supervisar la evolución de los contadores de objetivos de acciones a lo largo del tiempo.</p>
+<!-- </details> -->
+</section>
+<section id="reusable-module-dashboard-json">
+<h4>JSON del panel de control del módulo reutilizable<a class="headerlink" href="#reusable-module-dashboard-json" title="Link to this heading"></a></h4>
+<p>Además, el repositorio ya incluye un archivo JSON con la plantilla del panel de control del módulo reutilizable. Esto permite a los usuarios importar directamente ese panel de control en Grafana y acceder de inmediato a las visualizaciones predefinidas, sin tener que crear los paneles manualmente.</p>
+<p>Ejemplo de panel de control del módulo reutilizable:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/dashboard_image.png"><img alt="../_images/dashboard_image.png" src="../_images/dashboard_image.png" style="height: 300px;" />
+</a>
+</figure>
+</section>
+</section>
+</section>
+<section id="running-the-module">
+<h2>Ejecución del módulo<a class="headerlink" href="#running-the-module" title="Link to this heading"></a></h2>
+<p>El archivo de lanzamiento <code class="docutils literal notranslate"><span class="pre">cartifactory_pipeline.launch.py</span></code> permite iniciar el módulo fácilmente. Solo es necesario definir</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>cartifactory<span class="w"> </span>cartifactory_pipeline.launch.py<span class="w"> </span>toml_path:<span class="o">=</span>/path/to/model.toml
+</pre></div>
+</div>
+<p>Los siguientes argumentos de lanzamiento configuran el comportamiento del nodo detector ONNX y sus interfaces de ROS2.</p>
+<section id="launch-arguments">
+<h3>Argumentos de lanzamiento<a class="headerlink" href="#launch-arguments" title="Link to this heading"></a></h3>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Argumentos de lanzamiento</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argumento</p></th>
+<th class="head"><p>Valor predeterminado</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">toml_path</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Ruta al archivo de configuración <code class="docutils literal notranslate"><span class="pre">model.toml</span></code> utilizado por el nodo <code class="docutils literal notranslate"><span class="pre">onnx_detector</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">image_topic</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/camera/camera/color/image_raw</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Tópico de imágenes de entrada de ROS2 al que se suscribe el detector.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detections_topic</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/detections</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Tópico base en el que se publican los resultados de detección. Las imágenes anotadas se publican en <code class="docutils literal notranslate"><span class="pre">&lt;detections_topic&gt;/image</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">publish_debug_image</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Habilita la publicación de la imagen de depuración anotada que muestra las detecciones.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detections_qos</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sensor_data</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Perfil QoS utilizado al publicar los mensajes de detección.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">debug_qos</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">best_effort</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Perfil QoS utilizado al publicar el tópico de imágenes de depuración.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">img_h</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">480</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Altura de la imagen esperada por el modelo ONNX.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">img_w</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">640</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Anchura de la imagen esperada por el modelo ONNX.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">class_id_mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Determina cómo se publica la clase detectada: <code class="docutils literal notranslate"><span class="pre">id</span></code> (identificador numérico de la clase) o <code class="docutils literal notranslate"><span class="pre">name</span></code> (etiqueta de la clase).</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>Financiado por la Unión Europea. No obstante, los puntos de vista y las opiniones expresados son únicamente los de los autores y no reflejan necesariamente los de la Unión Europea ni los de HADEA. Ni la Unión Europea ni la autoridad otorgante pueden ser consideradas responsables de ellos</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png"><img alt="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" src="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" style="height: 100px;" />
+</a>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="TEF.html" class="btn btn-neutral float-left" title="TEF1: Celda robótica experimental para aplicaciones de recogida compleja de objetos y desmontaje" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="Reusable__Module_2.html" class="btn btn-neutral float-right" title="Módulo reutilizable de seguimiento del operario y reconocimiento de gestos" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor Fundación CARTIF. All rights reserved.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

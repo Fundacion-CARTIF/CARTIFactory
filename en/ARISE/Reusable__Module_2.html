@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reusable Module for Operator tracking and gesture recognition &mdash; CARTIFactory  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7b4e7885" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="../_static/language-switcher.js?v=1179e6ea"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FIWARE iHub" href="../CARTIFactory/FIWARE_ihub.html" />
+    <link rel="prev" title="Reusable Module for Vision and target Matching" href="Reusable__Module_1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CARTIFactory
+              <img src="../_static/CARTIFactory_robot_transparent.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ARISE.html">ARISE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TEF.html">TEF1: Experimental Robotic cell for Complex Picking and Dismantling Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reusable__Module_1.html">Reusable Module for Vision and target Matching</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reusable Module for Operator tracking and gesture recognition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-included-in-the-module">What is included in the module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#d-hand-detection">2D Hand detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-landmarks-3d-node">Hand landmarks 3D node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-palm-plane-node">Hand palm plane node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#camera-to-robot-frame-hand-transformation">Camera to robot frame hand transformation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-interfaces">Custom Interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hand-tracking-message">Hand Tracking Message</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-tracking-3d-message">Hand Tracking 3D Message</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lifecycle-architecture">Lifecycle Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lifecycle-action">Lifecycle action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hand-change-action">Hand Change Action</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-module">Running the Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/FIWARE_ihub.html">FIWARE iHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CARTIFactory/About_us.html">About us</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CARTIFactory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ARISE.html">ARISE</a></li>
+      <li class="breadcrumb-item active">Reusable Module for Operator tracking and gesture recognition</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reusable-module-for-operator-tracking-and-gesture-recognition">
+<h1>Reusable Module for Operator tracking and gesture recognition<a class="headerlink" href="#reusable-module-for-operator-tracking-and-gesture-recognition" title="Link to this heading"></a></h1>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/ARISE_logo-light_mode.png"><img alt="../_images/ARISE_logo-light_mode.png" src="../_images/ARISE_logo-light_mode.png" style="height: 50px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Modules are part of the <a class="reference external" href="https://arise-middleware.eu/">ARISE Middleware</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Access the GitHub repository <a class="reference external" href="https://github.com/Fundacion-CARTIF/cartifactory-operator-tracking">here</a>!</strong></p>
+</div>
+<p><a class="reference external" href="https://github.com/eProsima/vulcanexus"><img alt="vulcanexus" src="https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat" /></a>
+<a class="reference external" href="https://releases.ubuntu.com/24.04/"><img alt="ubuntu24" src="https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&amp;logo=ubuntu" /></a>
+<a class="reference external" href="https://github.com/FIWARE/context.Orion-LD/releases/tag/1.10.0"><img alt="OrionCB" src="https://img.shields.io/badge/FIWARE%20Orion%20LD-1.10.X-%233FA9F5?style=flat" /></a></p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Real-time hand detection using MediaPipe Hands</p></li>
+<li><p>2D and 3D hand landmark estimation</p></li>
+<li><p>Dynamic multi-hand tracking pipeline</p></li>
+<li><p>Palm plane estimation and normal computation</p></li>
+<li><p>Camera-to-robot base frame transformation</p></li>
+<li><p>ROS2 Lifecycle Node architecture</p></li>
+<li><p>Runtime hand selection (left, right, both)</p></li>
+<li><p>Custom ROS2 interfaces and actions</p></li>
+<li><p>Built-in monitoring and diagnostics interface</p></li>
+</ul>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This module provides a complete hand-tracking pipeline, including 2D hand detection, 3D landmark reconstruction, palm plane estimation and transformation into the robot reference frame.</p>
+<p><img alt="Diagram" src="../_images/Diagram_light1.png" /></p>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<p>All Python dependencies are included inside the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. To install, execute on terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>/requirements.txt
+</pre></div>
+</div>
+<p>This package is dependent on other ROS2 interfaces:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-vision-msgs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-<span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>-hri-msgs
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-is-included-in-the-module">
+<h2>What is included in the module<a class="headerlink" href="#what-is-included-in-the-module" title="Link to this heading"></a></h2>
+<p>We provide the <strong>CARTIFactory</strong> package, home to several nodes, that together allow you to test this reusable module.</p>
+<section id="d-hand-detection">
+<h3>2D Hand detection<a class="headerlink" href="#d-hand-detection" title="Link to this heading"></a></h3>
+<p>This node is the entry point of the hand-processing pipeline. It receives RGB images, performs hand landmark inference, identifies left and right hands, and publishes normalized 2D hand landmarks. The node also supports runtime hand selection (left, right, or both) through the orchestrator action interface.</p>
+</section>
+<section id="hand-landmarks-3d-node">
+<h3>Hand landmarks 3D node<a class="headerlink" href="#hand-landmarks-3d-node" title="Link to this heading"></a></h3>
+<p>The node synchronizes 2D hand detections with depth images and camera intrinsic parameters to estimate the 3D position of each MediaPipe landmark in the camera reference frame. Processing pipelines are created dynamically for every tracked hand.</p>
+</section>
+<section id="hand-palm-plane-node">
+<h3>Hand palm plane node<a class="headerlink" href="#hand-palm-plane-node" title="Link to this heading"></a></h3>
+<p>The node fits a plane using a configurable subset of hand landmarks and provides a stable estimation of palm orientation. This information can be used for gesture analysis, human-robot interaction, pointing estimation, or grasp intention inference.</p>
+</section>
+<section id="camera-to-robot-frame-hand-transformation">
+<h3>Camera to robot frame hand transformation<a class="headerlink" href="#camera-to-robot-frame-hand-transformation" title="Link to this heading"></a></h3>
+<p>Using the current robot TCP pose and a calibrated camera-to-TCP transformation, the node computes hand landmarks and palm planes expressed in robot coordinates. This enables downstream robotic applications to reason directly in the robot workspace.</p>
+</section>
+</section>
+<section id="custom-interfaces">
+<h2>Custom Interfaces<a class="headerlink" href="#custom-interfaces" title="Link to this heading"></a></h2>
+<p>A custom_interfaces package is included, to handle the custom message for the pipeline information and the goal</p>
+<section id="hand-tracking-message">
+<h3>Hand Tracking Message<a class="headerlink" href="#hand-tracking-message" title="Link to this heading"></a></h3>
+<p>Message definition for representing a tracked hand using MediaPipe landmarks:
+<img alt="Hand" src="../_images/hand_landmarks.png" /></p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">HandDetection fields</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Unique identifier for the detected hand or tracked person.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>Indicates whether the detected hand is left or right.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">landmarks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hri_msgs/NormalizedPointOfInterest2D[21]</span></code></p></td>
+<td><p>Array containing the 21 MediaPipe hand landmarks in normalized image coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">confidence</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Confidence score of the hand detection/tracking.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hand-tracking-3d-message">
+<h3>Hand Tracking 3D Message<a class="headerlink" href="#hand-tracking-3d-message" title="Link to this heading"></a></h3>
+<p>Message definition for representing a tracked hand in 3D space using MediaPipe landmarks.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">HandDetection3D fields</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Unique identifier for the detected hand or tracked person.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>Indicates whether the detected hand is left or right.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">confidence</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>Confidence score of the handedness classifier. If unavailable, use <code class="docutils literal notranslate"><span class="pre">NaN</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">landmarks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">geometry_msgs/Point[21]</span></code></p></td>
+<td><p>Array containing the 21 MediaPipe hand landmarks in normalized image coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">valid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool[21]</span></code></p></td>
+<td><p>Indicates whether each landmark is valid/tracked.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="lifecycle-architecture">
+<h2>Lifecycle Architecture<a class="headerlink" href="#lifecycle-architecture" title="Link to this heading"></a></h2>
+<p>At startup, all nodes remain in the unconfigured state. The module includes an orchestrator node that exposes ROS2 Actions for managing the lifecycle of the complete pipeline.</p>
+<p>Supported lifecycle transitions:</p>
+<ul class="simple">
+<li><p>configure</p></li>
+<li><p>activate</p></li>
+<li><p>deactivate</p></li>
+<li><p>cleanup</p></li>
+<li><p>shutdown
+This architecture allows external applications to start, stop and reconfigure the entire hand-tracking pipeline without restarting the system.</p></li>
+</ul>
+<section id="lifecycle-action">
+<h3>Lifecycle action<a class="headerlink" href="#lifecycle-action" title="Link to this heading"></a></h3>
+<p>All nodes will start as <code class="docutils literal notranslate"><span class="pre">unconfigured</span></code> upon launching the module. To unify the initialization of the system, we have created an <code class="docutils literal notranslate"><span class="pre">orchestrator</span></code> that hosts two actions, the first one being an action to change state to all the nodes in the correct order.</p>
+<section id="goal">
+<h4>Goal<a class="headerlink" href="#goal" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Goal fields</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_state</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>State we want to change the system to.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="result">
+<h4>Result<a class="headerlink" href="#result" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Result fields</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indicates whether the action execution completed successfully.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">result_msg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Final message resulting from the execution of the action.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="feedback">
+<h4>Feedback<a class="headerlink" href="#feedback" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Feedback fields</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feedback</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Informational message describing the current status of the action execution.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="hand-change-action">
+<h3>Hand Change Action<a class="headerlink" href="#hand-change-action" title="Link to this heading"></a></h3>
+<p>The second action from the <code class="docutils literal notranslate"><span class="pre">orchestrator</span></code> is created for changing which hand is going to be tracked. Options are <strong>left</strong>, <strong>right</strong> or <strong>both</strong>.</p>
+<section id="id1">
+<h4>Goal<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Goal fields</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hand</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Hand we want to track. Options: (left, right, both).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h4>Result<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Result fields</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 30.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Indicates whether the action execution completed successfully.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">result_msg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Final message resulting from the execution of the action.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h4>Feedback<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Feedback fields</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feedback</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Informational message describing the current status of the action execution.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="running-the-module">
+<h2>Running the Module<a class="headerlink" href="#running-the-module" title="Link to this heading"></a></h2>
+<p>The launch file starts the full hand-tracking pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>hand_hri_mediapipe<span class="w"> </span>hand_pipeline_lifecycle.launch.py
+</pre></div>
+</div>
+<p>Launch arguments are the following:</p>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Node parameters</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">camera_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cameraD455</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Camera namespace used to build the color, depth, and camera info topics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T_tcp_cam</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">identity/calibrated</span> <span class="pre">default</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float[16]</span></code></p></td>
+<td><p>Homogeneous transformation matrix from the robot TCP frame to the camera frame, used to transform hand landmarks and palm planes into the robot base frame.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The T_tcp_cam matrix must be adapted to the real camera-to-robot calibration of the setup. An incorrect calibration will produce incorrect hand landmark and palm plane positions in the robot base frame.</p>
+</div>
+<hr class="docutils" />
+<p>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or HADEA. Neither the European Union nor the granting authority can be held responsible for them</p>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png"><img alt="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" src="../_images/EN_Co_fundedbytheEU_RGB_Monochrome.png" style="height: 100px;" />
+</a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reusable__Module_1.html" class="btn btn-neutral float-left" title="Reusable Module for Vision and target Matching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../CARTIFactory/FIWARE_ihub.html" class="btn btn-neutral float-right" title="FIWARE iHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Fundación CARTIF. All rights reserved.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
