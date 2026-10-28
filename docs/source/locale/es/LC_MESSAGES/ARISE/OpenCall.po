@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Fundación CARTIF. All rights reserved
+# This file is distributed under the same license as the CARTIFactory
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CARTIFactory \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 12:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/ARISE/OpenCall.md:1
+msgid "Open Modules from ARISE Open Calls"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:7
+msgid "Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:11
+msgid ""
+"**This is a work in progress.** Open Call modules will be indexed in the "
+"following weeks."
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:15
+msgid "PipelineStats fields"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:19
+msgid "Project"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:20
+msgid "Description"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:21
+msgid "Repository Links"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:22
+msgid "HERMES"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:23
+msgid "Tracking and detection of 3D obstacles."
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:24 ../../source/ARISE/OpenCall.md:27
+#: ../../source/ARISE/OpenCall.md:30
+msgid "Coming soon."
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:25
+msgid "HEROX"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:26
+msgid "Connection to ERP systems (Odoo)"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:28
+msgid "i-Genius"
+msgstr ""
+
+#: ../../source/ARISE/OpenCall.md:29
+msgid "Tran manipulation from videos"
+msgstr ""
+
