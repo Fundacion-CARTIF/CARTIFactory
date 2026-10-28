@@ -12,7 +12,7 @@ Modules are part of the [ARISE Middleware](https://arise-middleware.eu/)
 ```
 
 
-```{list-table} PipelineStats fields
+```{list-table} Modules comming from the Open Call experiments
 :header-rows: 1
 :widths: 25 15 60
 
